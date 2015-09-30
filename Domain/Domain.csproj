@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\BusinessLogicException.cs" />
     <Compile Include="Exceptions\DifferentOperationCurrenciesException.cs" />
     <Compile Include="Payment\PaymentEntity.cs" />
     <Compile Include="Payment\PaymentType.cs" />
@@ -46,7 +47,7 @@
     <Compile Include="PriceLists\RoutePriceList.cs" />
     <Compile Include="PriceLists\PriceType.cs" />
     <Compile Include="PriceLists\ShopPriceList.cs" />
-    <Compile Include="ProductMaps\AbstractProductMapEntity.cs" />
+    <Compile Include="ProductMaps\ProductMapEntity.cs" />
     <Compile Include="ProductMaps\RouteIssuedGoodsProductMap.cs" />
     <Compile Include="ProductMaps\RouteReturnedGoodsProductMap.cs" />
     <Compile Include="ProductMaps\RouteReturnedReturnsProductMap.cs" />

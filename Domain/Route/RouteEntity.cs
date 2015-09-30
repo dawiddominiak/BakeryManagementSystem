@@ -16,9 +16,31 @@ namespace Domain.Route
         public List<Shop.ShopEntity> Shops { get; set; }
         public PriceLists.RoutePriceList RoutePriceList { get; set; }
 
-        public Shared.Money CalculateDriverSettlement()
+        /*public Dictionary<Product.ProductEntity, int> CalculateDirectGoodsSell()
         {
-            return null;
-        }
+            var directGoodsSell = new Dictionary<Product.ProductEntity, int>();
+            
+            foreach(KeyValuePair<Product.ProductEntity, int> warehouseGoodAmount in WarehouseIssue.Products)
+            {
+                int issuedGoodAmount;
+                int returnedGoodAmount;
+                
+                if(!IssuedGoods.Products.TryGetValue(warehouseGoodAmount.Key, out issuedGoodAmount)) 
+                {
+                    issuedGoodAmount = 0;
+                }
+
+                if (!ReturnedGoods.Products.TryGetValue(warehouseGoodAmount.Key, out returnedGoodAmount))
+                {
+                    returnedGoodAmount = 0;
+                }
+
+                directGoodsSell.Add(warehouseGoodAmount.Key, warehouseGoodAmount.Value - issuedGoodAmount - returnedGoodAmount);
+            }
+
+            return directGoodsSell;
+        }*/
+
+
     }
 }

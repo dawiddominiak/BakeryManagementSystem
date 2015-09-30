@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.ProductMaps
 {
-    class ShopReturnsProductMap : AbstractProductMapEntity
+    class ShopReturnsProductMap : ProductMapEntity
     {
     }
 }
