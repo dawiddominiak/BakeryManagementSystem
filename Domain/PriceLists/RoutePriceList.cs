@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Domain.PriceLists
 {
-    class DriverPriceList : AbstractPriceListEntity
+    class RoutePriceList : AbstractPriceListEntity
     {
-        public DriverPriceList()
+        public RoutePriceList()
         {
-            PriceType = PriceTypes.Gross;
+            PriceType = PriceTypes.Route;
         }
     }
 }

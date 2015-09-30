@@ -10,7 +10,7 @@ namespace Domain.PriceLists
     {
         public ShopPriceList()
         {
-            PriceType = PriceTypes.Net;
+            PriceType = PriceTypes.Shop;
         }
     }
 }

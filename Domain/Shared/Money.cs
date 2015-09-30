@@ -52,8 +52,35 @@ namespace Domain.Shared
             }
             else
             {
-                throw new Exception("Different currencies in subtraction.");
+                throw new Exceptions.DifferentOperationCurrenciesException("Different currencies in subtraction.");
             }
+        }
+
+        public static Money operator *(Money money, int times)
+        {
+            return new Money
+            {
+                Amount = money.Amount * times,
+                Currency = money.Currency
+            };
+        }
+
+        public static Money operator *(int times, Money money)
+        {
+            return new Money
+            {
+                Amount = money.Amount * times,
+                Currency = money.Currency
+            };
+        }
+
+        public static Money operator /(Money money, int divident)
+        {
+            return new Money
+            {
+                Amount = money.Amount / divident,
+                Currency = money.Currency
+            };
         }
     }
 }

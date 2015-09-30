@@ -14,11 +14,11 @@ namespace Domain.Route
         public ProductMaps.RouteReturnedGoodsProductMap ReturnedGoods { get; set; }
         public ProductMaps.RouteReturnedReturnsProductMap ReturnedReturns { get; set; }
         public List<Shop.ShopEntity> Shops { get; set; }
-        public PriceLists.DriverPriceList DriverPriceList { get; set; }
+        public PriceLists.RoutePriceList RoutePriceList { get; set; }
 
         public Shared.Money CalculateDriverSettlement()
         {
-            
+            return null;
         }
     }
 }

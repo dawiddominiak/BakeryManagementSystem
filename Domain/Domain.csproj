@@ -39,10 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\DifferentOperationCurrenciesException.cs" />
     <Compile Include="Payment\PaymentEntity.cs" />
     <Compile Include="Payment\PaymentType.cs" />
     <Compile Include="PriceLists\AbstractPriceListEntity.cs" />
-    <Compile Include="PriceLists\DriverPriceList.cs" />
+    <Compile Include="PriceLists\RoutePriceList.cs" />
     <Compile Include="PriceLists\PriceType.cs" />
     <Compile Include="PriceLists\ShopPriceList.cs" />
     <Compile Include="ProductMaps\AbstractProductMapEntity.cs" />
