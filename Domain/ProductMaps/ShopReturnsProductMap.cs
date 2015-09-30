@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.WorkDay.Route
+namespace Domain.ProductMaps
 {
-    class ReturnedReturns : ProductMap
+    class ShopReturnsProductMap : AbstractProductMapEntity
     {
-        public ReturnedReturns() : base() { }
     }
 }

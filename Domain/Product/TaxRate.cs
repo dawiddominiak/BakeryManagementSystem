@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.WorkDay.Route
+namespace Domain.Product
 {
-    class ReturnedGoods : ProductMap
+    class TaxRate
     {
-        public ReturnedGoods() : base() { }
+        public decimal Rate { get; set; }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.PriceList
+namespace Domain.ProductMaps
 {
-    class PriceList
+    class RouteReturnedGoodsProductMap : AbstractProductMapEntity
     {
     }
 }

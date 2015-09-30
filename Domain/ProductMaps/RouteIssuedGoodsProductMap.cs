@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.WorkDay.Shop
+namespace Domain.ProductMaps
 {
-    public class Order : ProductMap
+    class RouteIssuedGoodsProductMap : AbstractProductMapEntity
     {
-        public Order() : base() { }
     }
 }

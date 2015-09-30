@@ -39,21 +39,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Payment\Payment.cs" />
-    <Compile Include="PriceList\PriceList.cs" />
+    <Compile Include="Payment\PaymentEntity.cs" />
+    <Compile Include="Payment\PaymentType.cs" />
+    <Compile Include="PriceLists\AbstractPriceListEntity.cs" />
+    <Compile Include="PriceLists\DriverPriceList.cs" />
+    <Compile Include="PriceLists\PriceType.cs" />
+    <Compile Include="PriceLists\ShopPriceList.cs" />
+    <Compile Include="ProductMaps\AbstractProductMapEntity.cs" />
+    <Compile Include="ProductMaps\RouteIssuedGoodsProductMap.cs" />
+    <Compile Include="ProductMaps\RouteReturnedGoodsProductMap.cs" />
+    <Compile Include="ProductMaps\RouteReturnedReturnsProductMap.cs" />
+    <Compile Include="ProductMaps\RouteWarehouseIssueProductMap.cs" />
+    <Compile Include="ProductMaps\ShopDeliveryProductMap.cs" />
+    <Compile Include="ProductMaps\ShopOrderProductMap.cs" />
+    <Compile Include="ProductMaps\ShopReturnsProductMap.cs" />
+    <Compile Include="Product\ProductEntity.cs" />
+    <Compile Include="Product\TaxRate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ware\Assortment.cs" />
-    <Compile Include="Ware\Product.cs" />
-    <Compile Include="WorkDay\Route\ReturnedGoods.cs" />
-    <Compile Include="WorkDay\Route\IssuedGoods.cs" />
-    <Compile Include="WorkDay\Route\ReturnedReturns.cs" />
-    <Compile Include="WorkDay\Route\WarehouseIssue.cs" />
-    <Compile Include="WorkDay\Shop\Delivery.cs" />
-    <Compile Include="WorkDay\Shop\Order.cs" />
-    <Compile Include="WorkDay\ProductMap.cs" />
-    <Compile Include="WorkDay\Shop\Returns.cs" />
-    <Compile Include="WorkDay\Route\Route.cs" />
-    <Compile Include="WorkDay\Shop\Shop.cs" />
+    <Compile Include="Route\RouteEntity.cs" />
+    <Compile Include="Shared\Currency.cs" />
+    <Compile Include="Shared\Money.cs" />
+    <Compile Include="Shared\Address.cs" />
+    <Compile Include="Shared\Phone.cs" />
+    <Compile Include="Shop\OwnerEntity.cs" />
+    <Compile Include="Shop\ShopEntity.cs" />
+    <Compile Include="Workday\WorkDayEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ErrorHandlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

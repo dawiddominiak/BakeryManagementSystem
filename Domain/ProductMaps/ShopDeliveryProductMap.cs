@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Ware
+namespace Domain.ProductMaps
 {
-    class Product
+    class ShopDeliveryProductMap : AbstractProductMapEntity
     {
     }
 }

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Payment
 {
-    public class Payment
+    class PaymentEntity
     {
+        public Shared.Money Money { get; set; }
+        public PaymentType PaymentType { get; set; }
     }
 }
