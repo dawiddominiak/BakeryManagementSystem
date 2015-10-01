@@ -31,5 +31,40 @@ namespace Domain.ProductMaps
                 Products = productsDictionary
             };
         }
+
+        public static ProductMapEntity operator -(ProductMapEntity sourceMap, ProductMapEntity collectionMap)
+        {
+            var productsDictionary = sourceMap.Products.ToDictionary(entry => entry.Key, entry => entry.Value);
+
+            foreach (var collectionPair in collectionMap.Products)
+            {
+                if (!productsDictionary.ContainsKey(collectionPair.Key) && collectionPair.Value != 0)
+                {
+
+                    throw new Exceptions.BusinessLogicException("Próbujesz wykonać operację odejmowania listy produktów, której wynik da ujemną ilość produktu \"" + collectionPair.Key.Name + "\".");
+                } 
+                else if(productsDictionary.ContainsKey(collectionPair.Key))
+                {
+                    if(collectionPair.Value < productsDictionary[collectionPair.Key])
+                    {
+                        productsDictionary[collectionPair.Key] -= collectionPair.Value;
+                    }
+                    else if(collectionPair.Value == productsDictionary[collectionPair.Key])
+                    {
+                        productsDictionary.Remove(collectionPair.Key);
+                    }
+                    else
+                    {
+
+                        throw new Exceptions.BusinessLogicException("Próbujesz wykonać operację odejmowania listy produktów, której wynik da ujemną ilość produktu \"" + collectionPair.Key.Name + "\".");
+                    }
+                }
+            }
+
+            return new ProductMapEntity
+            {
+                Products = productsDictionary
+            };
+        }
     }
 }
