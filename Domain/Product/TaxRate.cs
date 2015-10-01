@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Product
 {
-    class TaxRate
+    public class TaxRate
     {
         public decimal Rate { get; set; }
     }

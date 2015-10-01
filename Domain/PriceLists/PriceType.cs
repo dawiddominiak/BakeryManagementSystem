@@ -2,5 +2,5 @@
 
 namespace Domain.PriceLists
 {
-    enum PriceTypes { Route, Shop }
+    public enum PriceTypes { Route, Shop }
 }

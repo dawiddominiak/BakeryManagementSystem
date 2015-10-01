@@ -11,9 +11,9 @@ namespace Domain.Shop
         public string Code { get; set; }
         public string Name { get; set; }
         public OwnerEntity Owner { get; set; }
-        public ProductMaps.ShopOrderProductMap Order { get; set; }
-        public ProductMaps.ShopDeliveryProductMap Delivery { get; set; }
-        public ProductMaps.ShopReturnsProductMap Returns { get; set; }
+        public ProductMaps.ProductMapEntity Order { get; set; }
+        public ProductMaps.ProductMapEntity Delivery { get; set; }
+        public ProductMaps.ProductMapEntity Returns { get; set; }
         public List<Payment.PaymentEntity> Payments { get; set; }
         public Shared.Address Address { get; set; }
         public List<Shared.Phone> Phones { get; private set; }

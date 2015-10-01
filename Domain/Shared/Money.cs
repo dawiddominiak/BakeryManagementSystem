@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Shared
 {
-    class Money : IEquatable<Money>
+    public class Money : IEquatable<Money>
     {
         public decimal Amount { get; set; }
         public Currency Currency { get; set; }

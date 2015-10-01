@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Exceptions
 {
-    class BusinessLogicException : Exception
+    [Serializable]
+    class BusinessLogicException : Exception, ISerializable
     {
         public BusinessLogicException()
         { }

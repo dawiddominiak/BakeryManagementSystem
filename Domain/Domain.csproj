@@ -48,13 +48,6 @@
     <Compile Include="PriceLists\PriceType.cs" />
     <Compile Include="PriceLists\ShopPriceList.cs" />
     <Compile Include="ProductMaps\ProductMapEntity.cs" />
-    <Compile Include="ProductMaps\RouteIssuedGoodsProductMap.cs" />
-    <Compile Include="ProductMaps\RouteReturnedGoodsProductMap.cs" />
-    <Compile Include="ProductMaps\RouteReturnedReturnsProductMap.cs" />
-    <Compile Include="ProductMaps\RouteWarehouseIssueProductMap.cs" />
-    <Compile Include="ProductMaps\ShopDeliveryProductMap.cs" />
-    <Compile Include="ProductMaps\ShopOrderProductMap.cs" />
-    <Compile Include="ProductMaps\ShopReturnsProductMap.cs" />
     <Compile Include="Product\ProductEntity.cs" />
     <Compile Include="Product\TaxRate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -2,5 +2,5 @@
 
 namespace Domain.Shared
 {
-    enum Currency { PLN }
+    public enum Currency { PLN }
 }

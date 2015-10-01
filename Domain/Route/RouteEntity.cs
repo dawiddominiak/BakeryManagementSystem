@@ -9,10 +9,10 @@ namespace Domain.Route
     class RouteEntity
     {
         public string Name { get; set; }
-        public ProductMaps.RouteWarehouseIssueProductMap WarehouseIssue { get; set; }
-        public ProductMaps.RouteIssuedGoodsProductMap IssuedGoods { get; set; }
-        public ProductMaps.RouteReturnedGoodsProductMap ReturnedGoods { get; set; }
-        public ProductMaps.RouteReturnedReturnsProductMap ReturnedReturns { get; set; }
+        public ProductMaps.ProductMapEntity WarehouseIssue { get; set; }
+        public ProductMaps.ProductMapEntity IssuedGoods { get; set; }
+        public ProductMaps.ProductMapEntity ReturnedGoods { get; set; }
+        public ProductMaps.ProductMapEntity ReturnedReturns { get; set; }
         public List<Shop.ShopEntity> Shops { get; set; }
         public PriceLists.RoutePriceList RoutePriceList { get; set; }
 
