@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Exceptions\BusinessLogicException.cs" />
     <Compile Include="Exceptions\DifferentOperationCurrenciesException.cs" />
+    <Compile Include="Exceptions\MissingProductsInPriceListException.cs" />
+    <Compile Include="Exceptions\NumberOfProductsLowerThanZeroException.cs" />
     <Compile Include="Payment\PaymentEntity.cs" />
     <Compile Include="Payment\PaymentType.cs" />
     <Compile Include="PriceLists\AbstractPriceListEntity.cs" />
@@ -60,9 +62,7 @@
     <Compile Include="Shop\ShopEntity.cs" />
     <Compile Include="Workday\WorkDayEntity.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ErrorHandlers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

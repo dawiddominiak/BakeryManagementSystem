@@ -41,7 +41,7 @@ namespace Domain.ProductMaps
                 if (!productsDictionary.ContainsKey(collectionPair.Key) && collectionPair.Value != 0)
                 {
 
-                    throw new Exceptions.BusinessLogicException("Próbujesz wykonać operację odejmowania listy produktów, której wynik da ujemną ilość produktu \"" + collectionPair.Key.Name + "\".");
+                    throw new Exceptions.NumberOfProductsLowerThanZeroException();
                 } 
                 else if(productsDictionary.ContainsKey(collectionPair.Key))
                 {
@@ -56,7 +56,7 @@ namespace Domain.ProductMaps
                     else
                     {
 
-                        throw new Exceptions.BusinessLogicException("Próbujesz wykonać operację odejmowania listy produktów, której wynik da ujemną ilość produktu \"" + collectionPair.Key.Name + "\".");
+                        throw new Exceptions.NumberOfProductsLowerThanZeroException();
                     }
                 }
             }
