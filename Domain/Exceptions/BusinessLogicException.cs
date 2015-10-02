@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Domain.Exceptions
 {
     [Serializable]
-    class BusinessLogicException : Exception, ISerializable
+    public class BusinessLogicException : Exception, ISerializable
     {
         public BusinessLogicException()
         { }

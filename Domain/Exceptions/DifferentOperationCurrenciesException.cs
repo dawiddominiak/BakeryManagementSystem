@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Domain.Exceptions
 {
     [Serializable]
-    class DifferentOperationCurrenciesException : Exception, ISerializable
+    public class DifferentOperationCurrenciesException : Exception, ISerializable
     {
         public DifferentOperationCurrenciesException()
         { }
