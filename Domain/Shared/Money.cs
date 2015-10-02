@@ -26,6 +26,7 @@ namespace Domain.Shared
 
         public static Money operator +(Money money1, Money money2)
         {
+
             if(money1.Currency == money2.Currency)
             {
                 return new Money
@@ -42,6 +43,7 @@ namespace Domain.Shared
 
         public static Money operator -(Money money1, Money money2)
         {
+
             if (money1.Currency == money2.Currency)
             {
                 return new Money
@@ -58,6 +60,7 @@ namespace Domain.Shared
 
         public static Money operator *(Money money, int times)
         {
+
             return new Money
             {
                 Amount = money.Amount * times,
@@ -76,11 +79,24 @@ namespace Domain.Shared
 
         public static Money operator /(Money money, int divident)
         {
+
             return new Money
             {
                 Amount = money.Amount / divident,
                 Currency = money.Currency
             };
+        }
+
+        public static bool operator ==(Money money1, Money money2)
+        {
+
+            return (money1.Amount == money2.Amount && money1.Currency == money2.Currency);
+        }
+
+        public static bool operator !=(Money money1, Money money2)
+        {
+
+            return !(money1 == money2);
         }
     }
 }

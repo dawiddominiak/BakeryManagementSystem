@@ -135,10 +135,12 @@ namespace DomainUnitTests
             try
             {
                 var map3 = map2 - map1;
+
+                throw new Exception("Unexpected success");
             }
-            catch(Domain.Exceptions.NumberOfProductsLowerThanZeroException)
+            catch(Domain.Exceptions.NumberOfProductsLowerThanZeroException ex)
             {
-                //Correct behavior
+                Assert.IsNotNull(ex);
             }
         }
 
@@ -178,10 +180,12 @@ namespace DomainUnitTests
             try
             {
                 var map3 = map1 - map2;
+
+                throw new Exception("Unexpected success");
             }
-            catch(Domain.Exceptions.NumberOfProductsLowerThanZeroException)
+            catch(Domain.Exceptions.NumberOfProductsLowerThanZeroException ex)
             {
-                //Correct behavior
+                Assert.IsNotNull(ex);
             }
         }
     }

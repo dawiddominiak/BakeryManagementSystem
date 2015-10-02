@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.PriceLists
 {
-    class RoutePriceList : AbstractPriceListEntity
+    public class RoutePriceList : AbstractPriceListEntity
     {
         public RoutePriceList()
         {
