@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Shared
+namespace Application.Shared
 {
-    class Phone
+    public class Phone
     {
         public string CountryCode { get; set; }
         public string RegionalCode { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Shared
+namespace Application.Shared
 {
     public enum Currency { PLN }
 }

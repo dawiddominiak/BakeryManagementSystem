@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Exceptions
+namespace Application.Exceptions
 {
     [Serializable]
     public class DifferentOperationCurrenciesException : Exception, ISerializable

@@ -2,5 +2,5 @@
 
 namespace Domain.Payment
 {
-    enum PaymentType { Direct, Account }
+    public enum PaymentType { Direct, Account }
 }

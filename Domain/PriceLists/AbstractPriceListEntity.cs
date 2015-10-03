@@ -8,25 +8,25 @@ namespace Domain.PriceLists
 {
     public abstract class AbstractPriceListEntity
     {
-        public Dictionary<Product.ProductEntity, Shared.Money> PriceList;
+        public Dictionary<Product.ProductEntity, Application.Shared.Money> PriceList;
         public PriceTypes PriceType { get; protected set; }
 
-        public static Shared.Money operator *(PriceLists.AbstractPriceListEntity priceList, ProductMaps.ProductMapEntity map)
+        public static Application.Shared.Money operator *(PriceLists.AbstractPriceListEntity priceList, ProductMaps.ProductMapEntity map)
         {
-            var money = new Shared.Money
+            var money = new Application.Shared.Money
             {
                 Amount = 0,
-                Currency = Shared.Currency.PLN //TODO: parametrisation
+                Currency = Application.Shared.Currency.PLN //TODO: parametrisation
             };
 
             foreach(var productPair in map.Products)
             {
-                Shared.Money productPrice;
+                Application.Shared.Money productPrice;
                     
                 if(!priceList.PriceList.TryGetValue(productPair.Key, out productPrice))
                 {
 
-                    throw new Exceptions.MissingProductsInPriceListException();
+                    throw new Application.Exceptions.MissingProductsInPriceListException();
                 }
 
                 money += productPair.Value * productPrice;
@@ -35,7 +35,7 @@ namespace Domain.PriceLists
             return money;
         }
 
-        public static Shared.Money operator *(ProductMaps.ProductMapEntity map, PriceLists.AbstractPriceListEntity priceList)
+        public static Application.Shared.Money operator *(ProductMaps.ProductMapEntity map, PriceLists.AbstractPriceListEntity priceList)
         {
             return priceList * map;
         }

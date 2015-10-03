@@ -39,10 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\BusinessLogicException.cs" />
-    <Compile Include="Exceptions\DifferentOperationCurrenciesException.cs" />
-    <Compile Include="Exceptions\MissingProductsInPriceListException.cs" />
-    <Compile Include="Exceptions\NumberOfProductsLowerThanZeroException.cs" />
     <Compile Include="Payment\PaymentEntity.cs" />
     <Compile Include="Payment\PaymentType.cs" />
     <Compile Include="PriceLists\AbstractPriceListEntity.cs" />
@@ -54,15 +50,16 @@
     <Compile Include="Product\TaxRate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Route\RouteEntity.cs" />
-    <Compile Include="Shared\Currency.cs" />
-    <Compile Include="Shared\Money.cs" />
-    <Compile Include="Shared\Address.cs" />
-    <Compile Include="Shared\Phone.cs" />
     <Compile Include="Shop\OwnerEntity.cs" />
     <Compile Include="Shop\ShopEntity.cs" />
     <Compile Include="Workday\WorkDayEntity.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj">
+      <Project>{be492e99-1a65-4443-80b4-b14c8367f231}</Project>
+      <Name>Application</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
