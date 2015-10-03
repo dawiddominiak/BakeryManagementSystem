@@ -37,7 +37,7 @@ namespace Application.Shared
             }
             else
             {
-                throw new Exception("Different currencies in addition.");
+                throw new Exceptions.DifferentOperationCurrenciesException("Different currencies in addition.");
             }
         }
 
@@ -97,6 +97,22 @@ namespace Application.Shared
         {
 
             return !(money1 == money2);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashStringBuilder = new StringBuilder();
+            hashStringBuilder.Append(Amount);
+            hashStringBuilder.Append(Currency.GetHashCode());
+
+            return hashStringBuilder.ToString().GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            var money = (Money) obj;
+
+            return (money.Amount == Amount && money.Currency == Currency);
         }
     }
 }

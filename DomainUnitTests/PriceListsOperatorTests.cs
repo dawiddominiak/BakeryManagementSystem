@@ -1,7 +1,7 @@
 ﻿using System;
 using Domain.ProductMaps;
 using Domain.PriceLists;
-using Domain.Shared;
+using Application.Shared;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DomainUnitTests
@@ -126,7 +126,7 @@ namespace DomainUnitTests
 
                 throw new Exception("Unexpected success");
             }
-            catch(Domain.Exceptions.MissingProductsInPriceListException ex)
+            catch(Application.Exceptions.MissingProductsInPriceListException ex)
             {
                 Assert.IsNotNull(ex);
             }
