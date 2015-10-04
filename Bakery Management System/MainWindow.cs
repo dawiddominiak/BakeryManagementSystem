@@ -16,5 +16,15 @@ namespace BakeryManagementSystem
         {
             InitializeComponent();
         }
+
+        private void newWorkingDayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void assortmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new Assortment()).Show(this);
+        }
     }
 }

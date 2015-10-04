@@ -117,7 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppName" xml:space="preserve">
-    <value>Bakery management system</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="newWorkingDayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="newWorkingDayToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nowy dzień roboczy</value>
+  </data>
+  <data name="openWorkingDayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="openWorkingDayToolStripMenuItem.Text" xml:space="preserve">
+    <value>Otwórz dzień roboczy</value>
+  </data>
+  <data name="recentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="recentToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ostatnie</value>
+  </data>
+  <data name="importDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="importDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Importuj dane</value>
+  </data>
+  <data name="exportDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="exportDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Eksportuj dane</value>
+  </data>
+  <data name="resetDataToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="resetDataToolStripMenuItem.Text" xml:space="preserve">
+    <value>Resetuj dane</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>258, 30</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Wyjdź</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 29</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Plik</value>
   </data>
 </root>

@@ -15,5 +15,11 @@ namespace Application
         }
 
         public Infrastructure.Languages.LanguagesStore LanguageStore;
+
+        public string Get(string key)
+        {
+
+            return LanguageStore.GetValue(key);
+        }
     }
 }

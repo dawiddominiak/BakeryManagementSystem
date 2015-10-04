@@ -10,7 +10,7 @@ namespace Infrastructure.Languages
     {
         public string GetValue(string key)
         {
-            return en_US.resources.ResourceManager.GetString(key);
+            return pl_PL.resources.ResourceManager.GetString(key);
         }
     }
 }
