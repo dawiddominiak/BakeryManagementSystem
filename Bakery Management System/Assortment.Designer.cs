@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addNewButton = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -44,21 +44,22 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.addNewButton);
             this.splitContainer1.Panel1.Controls.Add(this.listBox1);
             this.splitContainer1.Size = new System.Drawing.Size(887, 482);
             this.splitContainer1.SplitterDistance = 295;
             this.splitContainer1.TabIndex = 2;
             // 
-            // button1
+            // addNewButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.Location = new System.Drawing.Point(0, 446);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(295, 36);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add new";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addNewButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.addNewButton.Location = new System.Drawing.Point(0, 446);
+            this.addNewButton.Name = "addNewButton";
+            this.addNewButton.Size = new System.Drawing.Size(295, 36);
+            this.addNewButton.TabIndex = 1;
+            this.addNewButton.Text = "Add new";
+            this.addNewButton.UseVisualStyleBackColor = true;
+            this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
             // 
             // listBox1
             // 
@@ -91,7 +92,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addNewButton;
 
     }
 }

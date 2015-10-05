@@ -16,5 +16,10 @@ namespace BakeryManagementSystem
         {
             InitializeComponent();
         }
+
+        private void addNewButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

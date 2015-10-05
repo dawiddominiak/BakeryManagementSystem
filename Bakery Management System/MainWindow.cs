@@ -17,6 +17,7 @@ namespace BakeryManagementSystem
         public MainWindow()
         {
             InitializeComponent();
+            ChildWindow = new Dictionary<string, Form>();
         }
 
         private void newWorkingDayToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,7 +33,10 @@ namespace BakeryManagementSystem
                 assortmentWindow = new Assortment();
                 ChildWindow.Add("Assortment", assortmentWindow);
             }
-            assortmentWindow.Show(this);
+            if(!assortmentWindow.Visible)
+            {
+                assortmentWindow.Show(this);
+            }
         }
     }
 }

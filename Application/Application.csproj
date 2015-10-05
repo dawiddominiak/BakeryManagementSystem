@@ -39,11 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AssortmentReadModel.cs" />
     <Compile Include="Helpers\LanguageReadModel.cs" />
+    <Compile Include="Helpers\TaxRateReadModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{1550f145-1f56-48d2-acd4-8fecc740d01d}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{45a3b262-7756-4a4f-837f-38be836c2ca4}</Project>
       <Name>Infrastructure</Name>
