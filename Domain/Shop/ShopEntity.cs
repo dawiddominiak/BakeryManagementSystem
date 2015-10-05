@@ -15,7 +15,7 @@ namespace Domain.Shop
         public ProductMaps.ProductMapEntity Delivery { get; set; }
         public ProductMaps.ProductMapEntity Returns { get; set; }
         public List<Payment.PaymentEntity> Payments { get; set; }
-        public Application.Shared.Address Address { get; set; }
-        public List<Application.Shared.Phone> Phones { get; private set; }
+        public Shared.Structs.Address Address { get; set; }
+        public List<Shared.Structs.Phone> Phones { get; private set; }
     }
 }

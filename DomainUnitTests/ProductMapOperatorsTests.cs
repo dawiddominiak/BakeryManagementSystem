@@ -138,7 +138,7 @@ namespace DomainUnitTests
 
                 throw new Exception("Unexpected success");
             }
-            catch(Application.Exceptions.NumberOfProductsLowerThanZeroException ex)
+            catch(Shared.Exceptions.NumberOfProductsLowerThanZeroException ex)
             {
                 Assert.IsNotNull(ex);
             }
@@ -183,7 +183,7 @@ namespace DomainUnitTests
 
                 throw new Exception("Unexpected success");
             }
-            catch(Application.Exceptions.NumberOfProductsLowerThanZeroException ex)
+            catch(Shared.Exceptions.NumberOfProductsLowerThanZeroException ex)
             {
                 Assert.IsNotNull(ex);
             }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Shared
+namespace Shared.Structs
 {
     public class Money : IEquatable<Money>
     {

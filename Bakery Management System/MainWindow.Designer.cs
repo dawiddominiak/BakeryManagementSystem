@@ -47,6 +47,8 @@
             this.shopsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.priceListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.othersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vatRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -140,7 +142,8 @@
             this.assortmentToolStripMenuItem,
             this.shopsToolStripMenuItem,
             this.routesToolStripMenuItem,
-            this.priceListsToolStripMenuItem});
+            this.priceListsToolStripMenuItem,
+            this.othersToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             resources.ApplyResources(this.managementToolStripMenuItem, "managementToolStripMenuItem");
             // 
@@ -164,6 +167,18 @@
             // 
             this.priceListsToolStripMenuItem.Name = "priceListsToolStripMenuItem";
             resources.ApplyResources(this.priceListsToolStripMenuItem, "priceListsToolStripMenuItem");
+            // 
+            // othersToolStripMenuItem
+            // 
+            this.othersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vatRatesToolStripMenuItem});
+            this.othersToolStripMenuItem.Name = "othersToolStripMenuItem";
+            resources.ApplyResources(this.othersToolStripMenuItem, "othersToolStripMenuItem");
+            // 
+            // vatRatesToolStripMenuItem
+            // 
+            this.vatRatesToolStripMenuItem.Name = "vatRatesToolStripMenuItem";
+            resources.ApplyResources(this.vatRatesToolStripMenuItem, "vatRatesToolStripMenuItem");
             // 
             // MainWindow
             // 
@@ -202,5 +217,7 @@
         private System.Windows.Forms.ToolStripMenuItem shopsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem routesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem priceListsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem othersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vatRatesToolStripMenuItem;
     }
 }

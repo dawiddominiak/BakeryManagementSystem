@@ -12,7 +12,7 @@ namespace Domain.Shop
         public string Name { get; set; }
         public string TaxIdentificationNumber { get; set; }
         public string NationalEconomyRegister { get; set; }
-        public Application.Shared.Address Address { get; set; }
-        public List<Application.Shared.Phone> Phones { get; private set; }
+        public Shared.Structs.Address Address { get; set; }
+        public List<Shared.Structs.Phone> Phones { get; private set; }
     }
 }

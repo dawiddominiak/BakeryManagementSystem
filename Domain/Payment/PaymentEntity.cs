@@ -8,7 +8,7 @@ namespace Domain.Payment
 {
     public class PaymentEntity
     {
-        public Application.Shared.Money Money { get; set; }
+        public Shared.Structs.Money Money { get; set; }
         public PaymentType PaymentType { get; set; }
     }
 }

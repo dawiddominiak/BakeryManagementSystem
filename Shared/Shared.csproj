@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1550F145-1F56-48D2-ACD4-8FECC740D01D}</ProjectGuid>
+    <ProjectGuid>{EB997C6C-C488-4831-B9DE-930D7A38DBBA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain</RootNamespace>
-    <AssemblyName>Domain</AssemblyName>
+    <RootNamespace>Shared</RootNamespace>
+    <AssemblyName>Shared</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,26 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Payment\PaymentEntity.cs" />
-    <Compile Include="Payment\PaymentType.cs" />
-    <Compile Include="PriceLists\AbstractPriceListEntity.cs" />
-    <Compile Include="PriceLists\RoutePriceList.cs" />
-    <Compile Include="PriceLists\PriceType.cs" />
-    <Compile Include="PriceLists\ShopPriceList.cs" />
-    <Compile Include="ProductMaps\ProductMapEntity.cs" />
-    <Compile Include="Product\ProductEntity.cs" />
-    <Compile Include="Product\TaxRate.cs" />
+    <Compile Include="Exceptions\BusinessLogicException.cs" />
+    <Compile Include="Exceptions\DifferentOperationCurrenciesException.cs" />
+    <Compile Include="Exceptions\MissingProductsInPriceListException.cs" />
+    <Compile Include="Exceptions\NumberOfProductsLowerThanZeroException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Route\RouteEntity.cs" />
-    <Compile Include="Shop\OwnerEntity.cs" />
-    <Compile Include="Shop\ShopEntity.cs" />
-    <Compile Include="Workday\WorkDayEntity.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Shared\Shared.csproj">
-      <Project>{eb997c6c-c488-4831-b9de-930d7a38dbba}</Project>
-      <Name>Shared</Name>
-    </ProjectReference>
+    <Compile Include="Structs\Address.cs" />
+    <Compile Include="Structs\Currency.cs" />
+    <Compile Include="Structs\Money.cs" />
+    <Compile Include="Structs\Phone.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -41,7 +41,7 @@ namespace Domain.ProductMaps
                 if (!productsDictionary.ContainsKey(collectionPair.Key) && collectionPair.Value != 0)
                 {
 
-                    throw new Application.Exceptions.NumberOfProductsLowerThanZeroException();
+                    throw new Shared.Exceptions.NumberOfProductsLowerThanZeroException();
                 } 
                 else if(productsDictionary.ContainsKey(collectionPair.Key))
                 {
@@ -56,7 +56,7 @@ namespace Domain.ProductMaps
                     else
                     {
 
-                        throw new Application.Exceptions.NumberOfProductsLowerThanZeroException();
+                        throw new Shared.Exceptions.NumberOfProductsLowerThanZeroException();
                     }
                 }
             }

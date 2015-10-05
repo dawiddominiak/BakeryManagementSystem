@@ -31,6 +31,6 @@ namespace Application
         }
 
         public Infrastructure.Languages.ILanguageStrategy CurrentLanguage { get; set; }
-        public Shared.Currency DefaultCurrency { get; set; }
+        public Shared.Structs.Currency DefaultCurrency { get; set; }
     }
 }

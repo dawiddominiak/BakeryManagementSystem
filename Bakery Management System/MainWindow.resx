@@ -121,6 +121,85 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 29</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 29</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="assortmentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 30</value>
+  </data>
+  <data name="assortmentToolStripMenuItem.Text" xml:space="preserve">
+    <value>Assortment</value>
+  </data>
+  <data name="shopsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 30</value>
+  </data>
+  <data name="shopsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Shops</value>
+  </data>
+  <data name="routesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 30</value>
+  </data>
+  <data name="routesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Routes</value>
+  </data>
+  <data name="priceListsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 30</value>
+  </data>
+  <data name="priceListsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Price lists</value>
+  </data>
+  <data name="vatRatesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 30</value>
+  </data>
+  <data name="vatRatesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vat rates</value>
+  </data>
+  <data name="othersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 30</value>
+  </data>
+  <data name="othersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="managementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 29</value>
+  </data>
+  <data name="managementToolStripMenuItem.Text" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1360, 33</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="newWorkingDayToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 30</value>
   </data>
@@ -163,78 +242,11 @@
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 29</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
   <data name="openSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 30</value>
   </data>
   <data name="openSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>Open settings</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 29</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="assortmentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 30</value>
-  </data>
-  <data name="assortmentToolStripMenuItem.Text" xml:space="preserve">
-    <value>Assortment</value>
-  </data>
-  <data name="shopsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 30</value>
-  </data>
-  <data name="shopsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Shops</value>
-  </data>
-  <data name="routesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 30</value>
-  </data>
-  <data name="routesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Routes</value>
-  </data>
-  <data name="priceListsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 30</value>
-  </data>
-  <data name="priceListsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Price lists</value>
-  </data>
-  <data name="managementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 29</value>
-  </data>
-  <data name="managementToolStripMenuItem.Text" xml:space="preserve">
-    <value>Management</value>
-  </data>
-  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1360, 33</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="menuStrip1.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dataGridView1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -394,6 +406,18 @@
     <value>priceListsToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;priceListsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;othersToolStripMenuItem.Name" xml:space="preserve">
+    <value>othersToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;othersToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;vatRatesToolStripMenuItem.Name" xml:space="preserve">
+    <value>vatRatesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;vatRatesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
