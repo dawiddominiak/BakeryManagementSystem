@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Data.OleDb;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,15 +13,9 @@ namespace Infrastructure.Database
     {
         public OleDbConnection Connection { get; private set; }
 
-        public Manager(string connectionString)
+        public Manager(OleDbConnection connection)
         {
-            Connection = new OleDbConnection(connectionString);
-            Connection.Open();
-        }
-
-        ~Manager()
-        {
-            Connection.Close();
+            Connection = connection;
         }
 
         public static string CreateNewDatabase(string fileName)
@@ -60,7 +55,7 @@ namespace Infrastructure.Database
             }
 
             var tmpQueryString = string.Join(",", tmpList.ToArray());
-            var queryString = "CREATE TABLE [" + name + "](" + tmpQueryString + ")";
+            var queryString = "CREATE TABLE [" + name.ToLower() + "](" + tmpQueryString + ")";
             var tableCreationCmd = new OleDbCommand();
 
             tableCreationCmd.Connection = Connection;
@@ -68,5 +63,15 @@ namespace Infrastructure.Database
             tableCreationCmd.ExecuteNonQuery();
         
         }
+
+        protected bool TableExists(string tableName)
+        {
+            var schema = Connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+
+            return schema.Rows
+                .OfType<DataRow>()
+                .Any(r => r.ItemArray[2].ToString().ToLower() == tableName.ToLower());
+        }
+
     }
 }
