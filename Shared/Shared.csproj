@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity.cs" />
     <Compile Include="Exceptions\BusinessLogicException.cs" />
     <Compile Include="Exceptions\DifferentOperationCurrenciesException.cs" />
     <Compile Include="Exceptions\MissingProductsInPriceListException.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Structs\Currency.cs" />
     <Compile Include="Structs\Money.cs" />
     <Compile Include="Structs\Phone.cs" />
+    <Compile Include="ValueObject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
