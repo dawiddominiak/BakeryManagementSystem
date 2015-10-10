@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    public interface Entity<T>
+    public interface IEntity<in T>
     {
-        bool sameIdentityAs(T other);
+        bool SameIdentityAs(T other);
     }
 }

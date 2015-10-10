@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shared
 {
-    interface ValueObject<T>
+    public interface IValueObject<in T>
     {
-        bool sameValueAs(T other);
+        bool SameValueAs(T other);
     }
 }

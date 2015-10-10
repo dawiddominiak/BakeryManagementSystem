@@ -51,8 +51,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Route\RouteEntity.cs" />
     <Compile Include="Shop\OwnerEntity.cs" />
-    <Compile Include="Shop\ShopEntity.cs" />
-    <Compile Include="Workday\WorkDayEntity.cs" />
+    <Compile Include="Shop\Shop.cs" />
+    <Compile Include="Shop\ShopCode.cs" />
+    <Compile Include="Workday\Month.cs" />
+    <Compile Include="Workday\WorkDay.cs" />
+    <Compile Include="Workday\WorkdayDate.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">
