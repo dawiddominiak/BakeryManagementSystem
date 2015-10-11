@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.Route;
+﻿using System.Collections.Generic;
 using Shared;
 
 namespace Domain.Workday
@@ -11,12 +6,12 @@ namespace Domain.Workday
     class WorkDay : IEntity<WorkDay>
     {
         public Date Date { get; private set; }
-        public List<Route.RouteEntity> Routes { get; private set; }
+        public List<Route.Route> Routes { get; private set; }
 
         public WorkDay(Date date)
         {
             Date = date;
-            Routes = new List<RouteEntity>();
+            Routes = new List<Route.Route>();
         }
 
         public bool SameIdentityAs(WorkDay other)

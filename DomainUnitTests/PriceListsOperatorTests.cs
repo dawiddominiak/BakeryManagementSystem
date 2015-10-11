@@ -12,13 +12,13 @@ namespace DomainUnitTests
         [TestMethod]
         public void MultiplicationTest_OfCorrectMapAndPriceList_GivesCorrectMoneyObject()
         {
-            var product1 = new Domain.Product.ProductEntity { };
-            var product2 = new Domain.Product.ProductEntity { };
-            var product3 = new Domain.Product.ProductEntity { };
+            var product1 = new Domain.Product.Product { };
+            var product2 = new Domain.Product.Product { };
+            var product3 = new Domain.Product.Product { };
 
-            var map = new ProductMapEntity
+            var map = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 120
@@ -34,7 +34,7 @@ namespace DomainUnitTests
 
             var priceList = new RoutePriceList()
             {
-                PriceList = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, Money>
+                PriceList = new System.Collections.Generic.Dictionary<Domain.Product.Product, Money>
                 {
                     {
                         product1,
@@ -76,13 +76,13 @@ namespace DomainUnitTests
         [TestMethod]
         public void MultiplicationTest_OfIncompatibileMapAndPriceList_ThrowsAnError()
         {
-            var product1 = new Domain.Product.ProductEntity { };
-            var product2 = new Domain.Product.ProductEntity { };
-            var product3 = new Domain.Product.ProductEntity { };
+            var product1 = new Domain.Product.Product { };
+            var product2 = new Domain.Product.Product { };
+            var product3 = new Domain.Product.Product { };
 
-            var map = new ProductMapEntity
+            var map = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 120
@@ -99,7 +99,7 @@ namespace DomainUnitTests
             //price list with missing price of 3th product
             var priceList = new RoutePriceList()
             {
-                PriceList = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, Money>
+                PriceList = new System.Collections.Generic.Dictionary<Domain.Product.Product, Money>
                 {
                     {
                         product1,

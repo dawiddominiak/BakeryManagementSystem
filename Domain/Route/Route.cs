@@ -1,20 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Domain.ProductMaps;
+using Shared;
 
 namespace Domain.Route
 {
-    class RouteEntity
+    class Route : IEntity<Route>
     {
+        public RouteId RouteId { get; private set; }
         public string Name { get; set; }
-        public ProductMaps.ProductMapEntity WarehouseIssue { get; set; }
-        public ProductMaps.ProductMapEntity IssuedGoods { get; set; }
-        public ProductMaps.ProductMapEntity ReturnedGoods { get; set; }
-        public ProductMaps.ProductMapEntity ReturnedReturns { get; set; }
-        public List<Shop.ShopEntity> Shops { get; set; }
+        public ProductMap WarehouseIssue { get; set; }
+        public ProductMap IssuedGoods { get; set; }
+        public ProductMap ReturnedGoods { get; set; }
+        public ProductMap ReturnedReturns { get; set; }
+        public List<Shop.Shop> Shops { get; private set; }
         public PriceLists.RoutePriceList RoutePriceList { get; set; }
+
+        public Route(RouteId routeId)
+        {
+            RouteId = routeId;
+            Shops = new List<Shop.Shop>();
+        }
 
         /*public Dictionary<Product.ProductEntity, int> CalculateDirectGoodsSell()
         {
@@ -42,5 +47,10 @@ namespace Domain.Route
         }*/
 
 
+
+        public bool SameIdentityAs(Route other)
+        {
+            return RouteId.SameValueAs(other.RouteId);
+        }
     }
 }

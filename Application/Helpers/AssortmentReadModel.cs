@@ -8,7 +8,7 @@ namespace Application.Helpers
 {
     public class AssortmentReadModel
     {
-        public void save(Domain.Product.ProductEntity product)
+        public void save(Domain.Product.Product product)
         {
 
         }

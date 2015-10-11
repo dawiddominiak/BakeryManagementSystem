@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shared;
 
 namespace Domain.ProductMaps
 {
-    public class ProductMapEntity
+    public class ProductMap : IValueObject<ProductMap>
     {
-        public Dictionary<Product.ProductEntity, int> Products { get; set; }
+        public Dictionary<Product.Product, int> Products { get; private set; }
 
-        public static ProductMapEntity operator +(ProductMapEntity sourceMap, ProductMapEntity collectionMap)
+        public ProductMap()
+        {
+            Products = new Dictionary<Product.Product, int>();
+        }
+
+        public static ProductMap operator +(ProductMap sourceMap, ProductMap collectionMap)
         {
             var productsDictionary = sourceMap.Products.ToDictionary(entry => entry.Key, entry => entry.Value);
 
@@ -26,13 +29,13 @@ namespace Domain.ProductMaps
                 }
             }
 
-            return new ProductMapEntity
+            return new ProductMap
             {
                 Products = productsDictionary
             };
         }
 
-        public static ProductMapEntity operator -(ProductMapEntity sourceMap, ProductMapEntity collectionMap)
+        public static ProductMap operator -(ProductMap sourceMap, ProductMap collectionMap)
         {
             var productsDictionary = sourceMap.Products.ToDictionary(entry => entry.Key, entry => entry.Value);
 
@@ -61,10 +64,41 @@ namespace Domain.ProductMaps
                 }
             }
 
-            return new ProductMapEntity
+            return new ProductMap
             {
                 Products = productsDictionary
             };
+        }
+
+        public bool SameValueAs(ProductMap other)
+        {
+            var x = Products;
+            var y = other.Products;
+
+            if (x.Count != y.Count)
+            {
+                return false;
+            }
+
+            if (x.Keys.Except(y.Keys).Any())
+            {
+                return false;
+            }
+
+            if (y.Keys.Except(x.Keys).Any())
+            {
+                return false;
+            }
+
+            foreach (var pair in x)
+            {
+                if (pair.Value != y[pair.Key])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

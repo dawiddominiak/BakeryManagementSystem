@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain.Payment
+﻿namespace Domain.Payment
 {
     public enum PaymentType { Direct, Account }
 }

@@ -10,13 +10,13 @@ namespace DomainUnitTests
         [TestMethod]
         public void AdditionTest_OfTwoCorrectMaps_IsAddingMaps()
         {
-            var product1 = new Domain.Product.ProductEntity { };
-            var product2 = new Domain.Product.ProductEntity { };
-            var product3 = new Domain.Product.ProductEntity { };
+            var product1 = new Domain.Product.Product { };
+            var product2 = new Domain.Product.Product { };
+            var product3 = new Domain.Product.Product { };
 
-            var map1 = new ProductMapEntity
+            var map1 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 30
@@ -27,9 +27,9 @@ namespace DomainUnitTests
                 }
             };
 
-            var map2 = new ProductMapEntity
+            var map2 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product2, 10
@@ -58,12 +58,12 @@ namespace DomainUnitTests
         public void SubtractionTest_OfTwoCorrectMaps_IsSubtractingMaps()
         {
 
-            var product1 = new Domain.Product.ProductEntity { };
-            var product2 = new Domain.Product.ProductEntity { };
+            var product1 = new Domain.Product.Product { };
+            var product2 = new Domain.Product.Product { };
 
-            var map1 = new ProductMapEntity
+            var map1 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 30
@@ -74,9 +74,9 @@ namespace DomainUnitTests
                 }
             };
 
-            var map2 = new ProductMapEntity
+            var map2 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 10
@@ -103,12 +103,12 @@ namespace DomainUnitTests
         public void SubtractionTest_WhereSubtrahendIsHigherThanMinuend_ThrowsAnError()
         {
 
-            var product1 = new Domain.Product.ProductEntity { };
-            var product2 = new Domain.Product.ProductEntity { };
+            var product1 = new Domain.Product.Product { };
+            var product2 = new Domain.Product.Product { };
 
-            var map1 = new ProductMapEntity
+            var map1 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 30
@@ -119,9 +119,9 @@ namespace DomainUnitTests
                 }
             };
 
-            var map2 = new ProductMapEntity
+            var map2 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 10
@@ -147,13 +147,13 @@ namespace DomainUnitTests
         [TestMethod]
         public void SubtractionTest_OfTwoIncompatibileMaps_ThrowsAnError()
         {
-            var product1 = new Domain.Product.ProductEntity { };
-            var product2 = new Domain.Product.ProductEntity { };
-            var product3 = new Domain.Product.ProductEntity { };
+            var product1 = new Domain.Product.Product { };
+            var product2 = new Domain.Product.Product { };
+            var product3 = new Domain.Product.Product { };
 
-            var map1 = new ProductMapEntity
+            var map1 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product1, 100
@@ -164,9 +164,9 @@ namespace DomainUnitTests
                 }
             };
 
-            var map2 = new ProductMapEntity
+            var map2 = new ProductMap
             {
-                Products = new System.Collections.Generic.Dictionary<Domain.Product.ProductEntity, int>
+                Products = new System.Collections.Generic.Dictionary<Domain.Product.Product, int>
                 {
                     {
                         product2, 10

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.PriceLists
+﻿namespace Domain.PriceLists
 {
-    public class ShopPriceList : AbstractPriceListEntity
+    public class ShopPriceList : AbstractPriceList
     {
-        public ShopPriceList()
+        public ShopPriceList(PriceListId priceListId) : base(priceListId)
         {
             PriceType = PriceTypes.Shop;
         }

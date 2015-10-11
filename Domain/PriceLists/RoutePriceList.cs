@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.PriceLists
+﻿namespace Domain.PriceLists
 {
-    public class RoutePriceList : AbstractPriceListEntity
+    public class RoutePriceList : AbstractPriceList
     {
-        public RoutePriceList()
+        public RoutePriceList(PriceListId priceListId) : base(priceListId)
         {
             PriceType = PriceTypes.Route;
         }

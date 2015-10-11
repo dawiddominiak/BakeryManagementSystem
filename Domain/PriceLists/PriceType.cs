@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain.PriceLists
+﻿namespace Domain.PriceLists
 {
     public enum PriceTypes { Route, Shop }
 }

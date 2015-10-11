@@ -1,17 +1,17 @@
 ﻿using Shared;
 
-namespace Domain.Shop
+namespace Domain.Product
 {
-    public class ShopCode : IValueObject<ShopCode>
+    public class ProductCode : IValueObject<ProductCode>
     {
         public string Code { get; private set; }
 
-        public ShopCode(string code)
+        public ProductCode(string code)
         {
             Code = code;
         }
 
-        public bool SameValueAs(ShopCode other)
+        public bool SameValueAs(ProductCode other)
         {
             return Code == other.Code;
         }

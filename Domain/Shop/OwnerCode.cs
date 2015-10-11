@@ -2,16 +2,16 @@
 
 namespace Domain.Shop
 {
-    public class ShopCode : IValueObject<ShopCode>
+    public class OwnerCode : IValueObject<OwnerCode>
     {
         public string Code { get; private set; }
 
-        public ShopCode(string code)
+        public OwnerCode(string code)
         {
             Code = code;
         }
 
-        public bool SameValueAs(ShopCode other)
+        public bool SameValueAs(OwnerCode other)
         {
             return Code == other.Code;
         }
