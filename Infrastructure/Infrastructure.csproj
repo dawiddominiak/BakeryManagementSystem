@@ -39,13 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\CRUD.cs" />
-    <Compile Include="Database\Manager.cs" />
-    <Compile Include="Database\TaxRateCRUD.cs" />
-    <Compile Include="Serializers\DTOSerializer.cs" />
-    <Compile Include="DTO\DTO.cs" />
-    <Compile Include="DTO\ProductDTO.cs" />
-    <Compile Include="DTO\TaxRateDTO.cs" />
     <Compile Include="Languages\en-US\resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -61,7 +54,6 @@
     </Compile>
     <Compile Include="Languages\PolishPLLanguageStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serializers\TaxRateSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Languages\en-US\resources.resx">

@@ -1,32 +1,21 @@
-﻿using Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application
+﻿namespace Application
 {
     class Settings
     {
-        private static Settings instance;
+        private static Settings _instance;
 
         private Settings() 
         {
             //Default values
-            CurrentLanguage = new Infrastructure.Languages.PolishPLLanguageStrategy();
+            CurrentLanguage = new Infrastructure.Languages.PolishPlLanguageStrategy();
         }
 
         public static Settings Instance
         {
             get
             {
-                if (instance == null)
-                {
-                    instance = new Settings();
-                }
-
-                return instance;
+                _instance = new Settings();
+                return _instance;
             }
         }
 

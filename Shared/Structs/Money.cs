@@ -1,28 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Shared.Structs
 {
-    public class Money : IEquatable<Money>
+    public class Money : IEquatable<Money>, IValueObject<Money>
     {
         public decimal Amount { get; set; }
         public Currency Currency { get; set; }
-
-        public bool Equals(Money otherMoney)
-        {
-
-            if (this.Amount == otherMoney.Amount && this.Currency == otherMoney.Currency)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         public static Money operator +(Money money1, Money money2)
         {
@@ -89,6 +73,15 @@ namespace Shared.Structs
 
         public static bool operator ==(Money money1, Money money2)
         {
+            if (money1 == null && money2 == null)
+            {
+                return true;
+            }
+
+            if (money1 == null || money2 == null)
+            {
+                return false;
+            }
 
             return (money1.Amount == money2.Amount && money1.Currency == money2.Currency);
         }
@@ -97,6 +90,28 @@ namespace Shared.Structs
         {
 
             return !(money1 == money2);
+        }
+
+        public static Money FromNative(decimal amount, string currency)
+        {
+            Currency enumerableCurrency;
+            Currency.TryParse(currency, out enumerableCurrency);
+
+            return new Money
+            {
+                Amount = amount,
+                Currency = enumerableCurrency
+            };
+        }
+
+        public bool Equals(Money otherMoney)
+        {
+            return SameValueAs(otherMoney);
+        }
+
+        public override bool Equals(object o)
+        {
+            return SameValueAs((Money)o);
         }
 
         public override int GetHashCode()
@@ -108,11 +123,9 @@ namespace Shared.Structs
             return hashStringBuilder.ToString().GetHashCode();
         }
 
-        public override bool Equals(object obj)
+        public bool SameValueAs(Money other)
         {
-            var money = (Money) obj;
-
-            return (money.Amount == Amount && money.Currency == Currency);
+            return (Amount == other.Amount && Currency == other.Currency);
         }
     }
 }

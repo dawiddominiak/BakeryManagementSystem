@@ -21,7 +21,7 @@ namespace Domain.PriceLists
             var money = new Money
             {
                 Amount = 0,
-                Currency = Currency.PLN //TODO: parametrisation
+                Currency = Currency.Pln //TODO: parametrisation
             };
 
             foreach(var productPair in map.Products)
