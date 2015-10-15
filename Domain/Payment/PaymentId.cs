@@ -3,11 +3,11 @@ using Shared;
 
 namespace Domain.Payment
 {
-    public class PaymentId : IValueObject<PaymentId>
+    public struct PaymentId : IValueObject<PaymentId>
     {
         public Guid Id { get; private set; }
 
-        public PaymentId(Guid id)
+        public PaymentId(Guid id) : this()
         {
             Id = id;
         }

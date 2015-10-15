@@ -3,10 +3,16 @@ using System.Text;
 
 namespace Shared.Structs
 {
-    public class Money : IEquatable<Money>, IValueObject<Money>
+    public struct Money : IEquatable<Money>, IValueObject<Money>
     {
         public decimal Amount { get; set; }
         public Currency Currency { get; set; }
+
+        public Money(decimal amount, Currency currency) : this()
+        {
+            Amount = amount;
+            Currency = currency;
+        }
 
         public static Money operator +(Money money1, Money money2)
         {
@@ -73,16 +79,6 @@ namespace Shared.Structs
 
         public static bool operator ==(Money money1, Money money2)
         {
-            if (money1 == null && money2 == null)
-            {
-                return true;
-            }
-
-            if (money1 == null || money2 == null)
-            {
-                return false;
-            }
-
             return (money1.Amount == money2.Amount && money1.Currency == money2.Currency);
         }
 
