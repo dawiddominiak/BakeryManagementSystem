@@ -16,7 +16,7 @@ namespace Domain.Workday
 
         public bool SameIdentityAs(WorkDay other)
         {
-            return Date.SameValueAs(other.Date);
+            return Date.Equals(other.Date);
         }
     }
 }

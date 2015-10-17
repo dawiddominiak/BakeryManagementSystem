@@ -3,8 +3,9 @@ using Shared;
 using Shared.Structs;
 
 namespace Domain.PriceLists
+//TODO: value from that
 {
-    public abstract class AbstractPriceList : IEntity<AbstractPriceList>
+    public class AbstractPriceList : IEntity<AbstractPriceList>
     {
         public PriceListId PriceListId { get; private set; }
         public Dictionary<Product.Product, Money> PriceList { get; private set; }
@@ -47,7 +48,7 @@ namespace Domain.PriceLists
 
         public bool SameIdentityAs(AbstractPriceList other)
         {
-            return PriceListId.SameValueAs(other.PriceListId);
+            return PriceListId.Equals(other.PriceListId);
         }
     }
 }

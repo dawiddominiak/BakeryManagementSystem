@@ -2,7 +2,7 @@
 
 namespace Shared.Structs
 {
-    public struct Address : IValueObject<Address>
+    public struct Address : IEquatable<Address>
     {
         public string Street { get; private set; }
         public string PostalCode { get; private set; }
@@ -22,14 +22,6 @@ namespace Shared.Structs
             return new Address(street, postalCode, city, country);
         }
 
-        public bool SameValueAs(Address other)
-        {
-            return Street == other.Street
-                   && PostalCode == other.PostalCode
-                   && City == other.City
-                   && Country == other.Country;
-        }
-
         public override string ToString()
         {
             string[] arr = {
@@ -40,6 +32,14 @@ namespace Shared.Structs
             };
 
             return string.Join(Environment.NewLine, arr);
+        }
+
+        bool IEquatable<Address>.Equals(Address other)
+        {
+            return Street == other.Street
+               && PostalCode == other.PostalCode
+               && City == other.City
+               && Country == other.Country;
         }
     }
 }

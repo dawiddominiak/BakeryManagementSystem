@@ -1,6 +1,8 @@
-﻿namespace Shared.Structs
+﻿using System;
+
+namespace Shared.Structs
 {
-    public struct Phone : IValueObject<Phone>
+    public struct Phone : IEquatable<Phone>
     {
         public string CountryCode { get; private set; }
         public string RegionalCode { get; private set; }
@@ -18,16 +20,16 @@
             return new Phone(countryCode, regionalCode, number);
         }
 
-        public bool SameValueAs(Phone other)
-        {
-            return CountryCode == other.CountryCode 
-                && RegionalCode == other.RegionalCode 
-                && Number == other.Number;
-        }
-
         public override string ToString()
         {
             return CountryCode + " " + RegionalCode + " " + Number;
+        }
+
+        public bool Equals(Phone other)
+        {
+            return CountryCode == other.CountryCode
+                && RegionalCode == other.RegionalCode
+                && Number == other.Number;
         }
     }
 }

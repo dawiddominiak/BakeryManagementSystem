@@ -44,24 +44,24 @@ namespace Tests.Shared.Structs
         }
 
         [TestMethod]
-        public void TestSameValueAs_ShouldBeTrue()
+        public void TestEquals_ShouldBeTrue()
         {
             var phoneToCompare = new Phone(_country, _area, _number);
             
             Assert.IsTrue(
-                _phone.SameValueAs(
+                _phone.Equals(
                     phoneToCompare
                 )
             );
         }
 
         [TestMethod]
-        public void TestSameValueAs_ShouldBeFalse()
+        public void TestEquals_ShouldBeFalse()
         {
             var phoneToCompare = new Phone(_country, _area, "7654321");
 
             Assert.IsFalse(
-                _phone.SameValueAs(
+                _phone.Equals(
                     phoneToCompare
                 )
             );
@@ -71,7 +71,7 @@ namespace Tests.Shared.Structs
         public void TestFromNative()
         {
             Assert.IsTrue(condition: Phone.FromNative(_country, _area, _number)
-                    .SameValueAs(
+                    .Equals(
                         _phone
                     )
             );

@@ -1,12 +1,17 @@
-﻿using Shared;
+﻿using System;
 
 namespace Domain.Product
 {
-    public class TaxRate : IValueObject<TaxRate>
+    public struct TaxRate : IEquatable<TaxRate>
     {
-        public decimal Rate { get; set; }
+        public decimal Rate { get; private set; }
 
-        public bool SameValueAs(TaxRate other)
+        public TaxRate(decimal rate) : this()
+        {
+            Rate = rate;
+        }
+
+        public bool Equals(TaxRate other)
         {
             return Rate == other.Rate;
         }

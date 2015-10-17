@@ -1,19 +1,20 @@
-﻿using Shared;
+﻿using System;
+using Shared;
 
 namespace Domain.Product
 {
-    public class ProductCode : IValueObject<ProductCode>
+    public struct ProductCode : IEquatable<ProductCode>
     {
         public string Code { get; private set; }
 
-        public ProductCode(string code)
+        public ProductCode(string code) : this()
         {
             Code = code;
         }
 
-        public bool SameValueAs(ProductCode other)
+        bool IEquatable<ProductCode>.Equals(ProductCode other)
         {
-            return Code == other.Code;
+            return Code == other.Code;            
         }
     }
 }

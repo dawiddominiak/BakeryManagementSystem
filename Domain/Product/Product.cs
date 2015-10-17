@@ -15,7 +15,7 @@ namespace Domain.Product
 
         public bool SameIdentityAs(Product other)
         {
-            return Code.SameValueAs(other.Code);
+            return Code.Equals(other.Code);
         }
     }
 }

@@ -1,16 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
-using Shared;
 
 namespace Domain.ProductMaps
 {
-    public class ProductMap : IValueObject<ProductMap>
+    public struct ProductMap : IEquatable<ProductMap>
     {
-        public Dictionary<Product.Product, int> Products { get; private set; }
+        public ImmutableDictionary<Product.Product, int> Products { get; set; }
 
-        public ProductMap()
+        public ProductMap(Dictionary<Product.Product, int> productMap) : this()
         {
-            Products = new Dictionary<Product.Product, int>();
+            Products = productMap.ToImmutableDictionary();
         }
 
         public static ProductMap operator +(ProductMap sourceMap, ProductMap collectionMap)
@@ -29,10 +30,7 @@ namespace Domain.ProductMaps
                 }
             }
 
-            return new ProductMap
-            {
-                Products = productsDictionary
-            };
+            return new ProductMap(productsDictionary);
         }
 
         public static ProductMap operator -(ProductMap sourceMap, ProductMap collectionMap)
@@ -64,13 +62,10 @@ namespace Domain.ProductMaps
                 }
             }
 
-            return new ProductMap
-            {
-                Products = productsDictionary
-            };
+            return new ProductMap(productsDictionary);
         }
 
-        public bool SameValueAs(ProductMap other)
+        bool IEquatable<ProductMap>.Equals(ProductMap other)
         {
             var x = Products;
             var y = other.Products;

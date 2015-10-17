@@ -26,7 +26,7 @@ namespace Domain.Shop
 
         public bool SameIdentityAs(Shop other)
         {
-            return Code.SameValueAs(other.Code);
+            return Code.Equals(other.Code);
         }
     }
 }

@@ -1,13 +1,12 @@
 ﻿using System;
-using Shared;
 
 namespace Domain.Route
 {
-    public class RouteId : IValueObject<RouteId>
+    public struct RouteId : IEquatable<RouteId>
     {
         public Guid Id { get; private set; }
 
-        public RouteId(Guid id)
+        public RouteId(Guid id) : this()
         {
             Id = id;
         }
@@ -22,7 +21,7 @@ namespace Domain.Route
             return Id.ToString();
         }
 
-        public bool SameValueAs(RouteId other)
+        bool IEquatable<RouteId>.Equals(RouteId other)
         {
             return Id.ToString() == other.Id.ToString();
         }

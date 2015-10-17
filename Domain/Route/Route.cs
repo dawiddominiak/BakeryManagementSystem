@@ -50,7 +50,7 @@ namespace Domain.Route
 
         public bool SameIdentityAs(Route other)
         {
-            return RouteId.SameValueAs(other.RouteId);
+            return RouteId.Equals(other.RouteId);
         }
     }
 }

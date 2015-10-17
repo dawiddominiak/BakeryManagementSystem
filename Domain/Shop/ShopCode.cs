@@ -1,17 +1,18 @@
-﻿using Shared;
+﻿using System;
+using Shared;
 
 namespace Domain.Shop
 {
-    public class ShopCode : IValueObject<ShopCode>
+    public struct ShopCode : IEquatable<ShopCode>
     {
         public string Code { get; private set; }
 
-        public ShopCode(string code)
+        public ShopCode(string code) : this()
         {
             Code = code;
         }
 
-        public bool SameValueAs(ShopCode other)
+        bool IEquatable<ShopCode>.Equals(ShopCode other)
         {
             return Code == other.Code;
         }

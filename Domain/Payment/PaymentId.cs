@@ -1,9 +1,8 @@
 ﻿using System;
-using Shared;
 
 namespace Domain.Payment
 {
-    public struct PaymentId : IValueObject<PaymentId>
+    public struct PaymentId : IEquatable<PaymentId>
     {
         public Guid Id { get; private set; }
 
@@ -22,7 +21,7 @@ namespace Domain.Payment
             return Id.ToString();
         }
 
-        public bool SameValueAs(PaymentId other)
+       bool IEquatable<PaymentId>.Equals(PaymentId other)
         {
             return Id.ToString() == other.Id.ToString();
         }

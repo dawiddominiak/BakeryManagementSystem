@@ -15,7 +15,7 @@ namespace Domain.Payment
 
         public bool SameIdentityAs(Payment other)
         {
-            return PaymentId.SameValueAs(other.PaymentId);
+            return PaymentId.Equals(other.PaymentId);
         }
     }
 }

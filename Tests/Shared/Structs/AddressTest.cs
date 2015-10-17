@@ -53,20 +53,20 @@ namespace Tests.Shared.Structs
         }
 
         [TestMethod]
-        public void TestSameValueAs_ShouldBeTrue()
+        public void TestEquals_ShouldBeTrue()
         {
             var address = new Address(_street, _postalCode, _city, _country);
             Assert.IsTrue(
-                address.SameValueAs(_address)
+                address.Equals(_address)
             );
         }
 
         [TestMethod]
-        public void TestSameValueAs_ShouldBeFalse()
+        public void TestEquals_ShouldBeFalse()
         {
             var address = new Address("Other street 200/1", _postalCode, _city, _country);
             Assert.IsFalse(
-                address.SameValueAs(_address)
+                address.Equals(_address)
             );
         }
 
@@ -74,7 +74,7 @@ namespace Tests.Shared.Structs
         public void TestFromNative()
         {
             Address.FromNative(_street, _postalCode, _city, _country)
-                .SameValueAs(
+                .Equals(
                     _address
                 );
         }

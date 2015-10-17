@@ -31,22 +31,22 @@ namespace Tests.Shared.Structs
         }
 
         [TestMethod]
-        public void TestSameValueAs_ShouldBeTrue()
+        public void TestEquals_ShouldBeTrue()
         {
             var moneyToCompare = new Money(_amount, _currency);
 
             Assert.IsTrue(
-                _money.SameValueAs(moneyToCompare)
+                _money.Equals(moneyToCompare)
             );
         }
 
         [TestMethod]
-        public void TestSameValueAs_ShouldBeFalse()
+        public void TestEquals_ShouldBeFalse()
         {
             var moneyToCompare = new Money(_amount, Currency.Eur);
 
             Assert.IsFalse(
-                _money.SameValueAs(moneyToCompare)
+                _money.Equals(moneyToCompare)
             );
         }
 
@@ -54,7 +54,7 @@ namespace Tests.Shared.Structs
         public void TestFromNative()
         {
             Assert.IsTrue(
-                _money.SameValueAs(
+                _money.Equals(
                     Money.FromNative(_amount, "Pln")
                 )
             );

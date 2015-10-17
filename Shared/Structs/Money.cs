@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Shared.Structs
 {
-    public struct Money : IEquatable<Money>, IValueObject<Money>
+    public struct Money : IEquatable<Money>
     {
         public decimal Amount { get; set; }
         public Currency Currency { get; set; }
@@ -100,16 +100,6 @@ namespace Shared.Structs
             };
         }
 
-        public bool Equals(Money otherMoney)
-        {
-            return SameValueAs(otherMoney);
-        }
-
-        public override bool Equals(object o)
-        {
-            return SameValueAs((Money)o);
-        }
-
         public override int GetHashCode()
         {
             var hashStringBuilder = new StringBuilder();
@@ -119,7 +109,7 @@ namespace Shared.Structs
             return hashStringBuilder.ToString().GetHashCode();
         }
 
-        public bool SameValueAs(Money other)
+        bool IEquatable<Money>.Equals(Money other)
         {
             return (Amount == other.Amount && Currency == other.Currency);
         }
