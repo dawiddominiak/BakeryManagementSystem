@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Domain\Payment\PaymentIdTest.cs" />
     <Compile Include="Domain\Payment\PaymentTest.cs" />
+    <Compile Include="Domain\ProductMap\ProductMapTest.cs" />
     <Compile Include="Domain\Product\TaxRateTest.cs" />
     <Compile Include="Domain\Product\ProductCodeTest.cs" />
     <Compile Include="Domain\Product\ProductTest.cs" />

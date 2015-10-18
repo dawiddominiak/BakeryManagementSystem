@@ -7,7 +7,7 @@ namespace Domain.ProductMaps
 {
     public struct ProductMap : IEquatable<ProductMap>
     {
-        public ImmutableDictionary<Product.Product, int> Products { get; set; }
+        public ImmutableDictionary<Product.Product, int> Products { get; private set; }
 
         public ProductMap(Dictionary<Product.Product, int> productMap) : this()
         {
@@ -65,7 +65,7 @@ namespace Domain.ProductMaps
             return new ProductMap(productsDictionary);
         }
 
-        bool IEquatable<ProductMap>.Equals(ProductMap other)
+        public bool Equals(ProductMap other)
         {
             var x = Products;
             var y = other.Products;
