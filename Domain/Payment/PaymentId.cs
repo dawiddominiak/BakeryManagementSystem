@@ -21,7 +21,7 @@ namespace Domain.Payment
             return Id.ToString();
         }
 
-       bool IEquatable<PaymentId>.Equals(PaymentId other)
+        public bool Equals(PaymentId other)
         {
             return Id.ToString() == other.Id.ToString();
         }
