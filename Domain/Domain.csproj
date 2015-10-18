@@ -46,11 +46,7 @@
     <Compile Include="Payment\Payment.cs" />
     <Compile Include="Payment\PaymentId.cs" />
     <Compile Include="Payment\PaymentType.cs" />
-    <Compile Include="PriceLists\AbstractPriceList.cs" />
-    <Compile Include="PriceLists\PriceListId.cs" />
-    <Compile Include="PriceLists\RoutePriceList.cs" />
-    <Compile Include="PriceLists\PriceType.cs" />
-    <Compile Include="PriceLists\ShopPriceList.cs" />
+    <Compile Include="PriceLists\PriceList.cs" />
     <Compile Include="ProductMaps\ProductMap.cs" />
     <Compile Include="Product\Product.cs" />
     <Compile Include="Product\ProductCode.cs" />
@@ -64,7 +60,7 @@
     <Compile Include="Shop\ShopCode.cs" />
     <Compile Include="Workday\Month.cs" />
     <Compile Include="Workday\WorkDay.cs" />
-    <Compile Include="Workday\WorkdayDate.cs" />
+    <Compile Include="Workday\Date.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">

@@ -13,7 +13,7 @@ namespace Domain.Route
         public ProductMap ReturnedGoods { get; set; }
         public ProductMap ReturnedReturns { get; set; }
         public List<Shop.Shop> Shops { get; private set; }
-        public PriceLists.RoutePriceList RoutePriceList { get; set; }
+        public PriceLists.PriceList RoutePriceList { get; set; }
 
         public Route(RouteId routeId)
         {
