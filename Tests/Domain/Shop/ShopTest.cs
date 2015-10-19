@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Domain.Payment;
+using Domain.Product;
 using Domain.Shop;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.Structs;
@@ -20,6 +22,10 @@ namespace Tests.Domain.Shop
         private Address _address;
         private Phone _phone;
 
+        private global::Domain.PriceLists.PriceList _priceList1;
+        private global::Domain.PriceLists.PriceList _priceList2;
+        private global::Domain.PriceLists.PriceList _priceList3;
+
         [TestInitialize]
         public void Initialization()
         {
@@ -28,7 +34,9 @@ namespace Tests.Domain.Shop
             _order = new global::Domain.ProductMaps.ProductMap();
             _delivery = new global::Domain.ProductMaps.ProductMap();
             _returns = new global::Domain.ProductMaps.ProductMap();
-            _payment = new global::Domain.Payment.Payment(new PaymentId(Guid.NewGuid()));
+            _payment = new global::Domain.Payment.Payment(
+                new PaymentId(Guid.NewGuid())
+            );
             _address = new Address("Example street", "00-000", "Warsaw", "PL");
             _phone = new Phone("48", "22", "1234567");
 
@@ -42,8 +50,34 @@ namespace Tests.Domain.Shop
                 Address = _address
             };
 
-            _shop.Payments.Add(_payment);
+            _shop.Payments.Add(new DateTime(2000, 1, 1), _payment);
             _shop.Phones.Add(_phone);
+
+            var product1 = new global::Domain.Product.Product("P1", "product 1", new TaxRate(0.23m));
+            var money1 = Money.FromNative(0.25m, "Pln");
+            var product2 = new global::Domain.Product.Product("P2", "product 2", new TaxRate(0.23m));
+            var money2 = Money.FromNative(1m, "Pln");
+
+            _priceList1 = new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
+                {
+                    {product1, money1},
+                    {product2, money2}
+                }
+            );
+            _priceList2 =
+                new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
+                {
+                    {product1, money1}
+                });
+            _priceList3 =
+                new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
+                {
+                    {product2, money2}
+                });
+
+            _shop.PriceLists.Add(new DateTime(2010, 1, 1), _priceList1);
+            _shop.PriceLists.Add(new DateTime(2013, 1, 1), _priceList2);
+            _shop.PriceLists.Add(new DateTime(2015, 1, 1), _priceList3);
         }
 
         [TestMethod]
@@ -100,7 +134,7 @@ namespace Tests.Domain.Shop
         public void HasPayments()
         {
             Assert.IsTrue(
-                _shop.Payments.First().SameIdentityAs(_payment)    
+                _shop.Payments.First().Value.SameIdentityAs(_payment)    
             );
         }
 
@@ -118,6 +152,60 @@ namespace Tests.Domain.Shop
             Assert.IsTrue(
                 _shop.Phones.First().Equals(_phone)    
             );
+        }
+
+        [TestMethod]
+        public void SameIdentityAs_ShouldBeFalse()
+        {
+            Assert.IsFalse(
+                _shop.SameIdentityAs(new global::Domain.Shop.Shop(new ShopCode("OCS")))
+            );
+        }
+
+        [TestMethod]
+        public void SameIdentityAs_ShoudBeTrue()
+        {
+            Assert.IsTrue(
+                _shop.SameIdentityAs(new global::Domain.Shop.Shop(new ShopCode("SC")))
+            );
+        }
+
+        [TestMethod]
+        public void GetPriceList_ShouldGetFirstElement()
+        {
+            var priceList = _shop.GetPriceList(new DateTime(2011, 1, 1));
+
+            Assert.IsTrue(
+                priceList.Equals(_priceList1)
+            );
+        }
+
+        [TestMethod]
+        public void GetPriceList_ShouldGetSecondElement()
+        {
+            var priceList = _shop.GetPriceList(new DateTime(2014, 1, 1));
+
+            Assert.IsTrue(
+                priceList.Equals(_priceList2)
+            );
+        }
+
+        [TestMethod]
+        public void GetPriceList_ShouldGetLastElement()
+        {
+            var priceList = _shop.GetPriceList(new DateTime(2016, 1, 1));
+
+            Assert.IsTrue(
+                priceList.Equals(_priceList3)
+            );
+        }
+
+        [TestMethod]
+        public void GetPriceList_ShouldBeNull()
+        {
+            var priceList = _shop.GetPriceList(new DateTime(2000, 1, 1));
+
+            Assert.IsNull(priceList);
         }
     }
 }

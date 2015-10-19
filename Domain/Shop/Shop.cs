@@ -16,7 +16,7 @@ namespace Domain.Shop
         public ProductMap Order { get; set; }
         public ProductMap Delivery { get; set; }
         public ProductMap Returns { get; set; }
-        public List<Payment.Payment> Payments { get; private set; }
+        public SortedList<DateTime, Payment.Payment> Payments { get; private set; }
         public Address Address { get; set; }
         public List<Phone> Phones { get; private set; }
         public SortedList<DateTime, PriceList> PriceLists { get; private set; } 
@@ -24,16 +24,14 @@ namespace Domain.Shop
         public Shop(ShopCode code)
         {
             Code = code;
-            Payments = new List<Payment.Payment>();
+            Payments = new SortedList<DateTime, Payment.Payment>();
             Phones = new List<Phone>();
             PriceLists = new SortedList<DateTime, PriceList>();
         }
 
         public PriceList? GetPriceList(DateTime dateTime)
         {
-            var previousDate = new DateTime(1000, 1, 1);
-
-            foreach (var pair in PriceLists.Where(pair => previousDate.CompareTo(dateTime) <= 0 && pair.Key.CompareTo(dateTime) > 0))
+            foreach (var pair in PriceLists.Reverse().Where(pair => dateTime.CompareTo(pair.Key) >= 0))
             {
                 return pair.Value;
             }
