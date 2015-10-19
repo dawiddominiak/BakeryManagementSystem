@@ -12,7 +12,7 @@ namespace Domain.Shop
             Code = code;
         }
 
-        bool IEquatable<ShopCode>.Equals(ShopCode other)
+        public bool Equals(ShopCode other)
         {
             return Code == other.Code;
         }

@@ -13,7 +13,7 @@ namespace Domain.Product
 
         public bool Equals(TaxRate other)
         {
-            return Rate == other.Rate;
+            return Rate.Equals(other.Rate);
         }
     }
 }

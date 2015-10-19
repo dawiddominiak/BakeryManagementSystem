@@ -67,33 +67,40 @@ namespace Domain.ProductMaps
 
         public bool Equals(ProductMap other)
         {
+
             var x = Products;
             var y = other.Products;
 
-            if (x.Count != y.Count)
+            if (x == null && y == null)
+            {
+                return true;
+            }
+
+            if (x == null || y == null)
             {
                 return false;
             }
 
-            if (x.Keys.Except(y.Keys).Any())
+            if (x.Keys == null && y.Keys == null)
+            {
+                return true;
+            }
+
+            if (x.Keys == null || y.Keys == null)
             {
                 return false;
             }
 
-            if (y.Keys.Except(x.Keys).Any())
+            if (
+                x.Count != y.Count ||
+                x.Keys.Except(y.Keys).Any() ||
+                y.Keys.Except(x.Keys).Any()
+            )
             {
                 return false;
             }
 
-            foreach (var pair in x)
-            {
-                if (pair.Value != y[pair.Key])
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            return x.All(pair => pair.Value == y[pair.Key]);
         }
     }
 }

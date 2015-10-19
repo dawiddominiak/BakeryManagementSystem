@@ -1,5 +1,4 @@
 ﻿using System;
-using Shared;
 
 namespace Domain.Shop
 {
@@ -12,7 +11,7 @@ namespace Domain.Shop
             Code = code;
         }
 
-        bool IEquatable<OwnerCode>.Equals(OwnerCode other)
+        public bool Equals(OwnerCode other)
         {
             return Code == other.Code;            
         }

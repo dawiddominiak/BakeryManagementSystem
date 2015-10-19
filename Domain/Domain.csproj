@@ -49,18 +49,15 @@
     <Compile Include="PriceLists\PriceList.cs" />
     <Compile Include="ProductMaps\ProductMap.cs" />
     <Compile Include="Product\Product.cs" />
-    <Compile Include="Product\ProductCode.cs" />
     <Compile Include="Product\TaxRate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Route\Route.cs" />
-    <Compile Include="Route\RouteId.cs" />
+    <Compile Include="Route\RouteName.cs" />
+    <Compile Include="Route\RouteWorkday.cs" />
     <Compile Include="Shop\OwnerCode.cs" />
     <Compile Include="Shop\Owner.cs" />
     <Compile Include="Shop\Shop.cs" />
     <Compile Include="Shop\ShopCode.cs" />
-    <Compile Include="Workday\Month.cs" />
-    <Compile Include="Workday\WorkDay.cs" />
-    <Compile Include="Workday\Date.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">

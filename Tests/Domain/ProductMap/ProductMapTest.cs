@@ -17,8 +17,8 @@ namespace Tests.Domain.ProductMap
         public void Initialization()
         {
 
-            _product1 = new global::Domain.Product.Product(new ProductCode("P1"));
-            _product2 = new global::Domain.Product.Product(new ProductCode("P2"));
+            _product1 = new global::Domain.Product.Product("P1", "Product 1", new TaxRate(0.23m));
+            _product2 = new global::Domain.Product.Product("P2", "Product 2", new TaxRate(0.23m));
             _productMap = new global::Domain.ProductMaps.ProductMap(
             new Dictionary<global::Domain.Product.Product, int>()
             {
@@ -64,7 +64,7 @@ namespace Tests.Domain.ProductMap
             {
                 {_product1, 10},
                 {_product2, 5},
-                {new global::Domain.Product.Product(new ProductCode("P3")), 1}
+                {new global::Domain.Product.Product("P3", "Product 3", new TaxRate(0.23m)), 1}
             });
 
             Assert.IsFalse(
@@ -126,6 +126,7 @@ namespace Tests.Domain.ProductMap
             {
                 {_product1, 20}
             });
+
 
             try
             {

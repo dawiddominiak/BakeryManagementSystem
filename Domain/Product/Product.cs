@@ -1,21 +1,26 @@
-﻿using Shared;
+﻿using System;
+using Shared;
 
 namespace Domain.Product
 {
-    public class Product : IEntity<Product>
+    public struct Product : IEquatable<Product>
     {
-        public ProductCode Code { get; private set; }
-        public string Name { get; set; }
-        public TaxRate TaxRate { get; set; }
+        public string Code { get; private set; }
+        public string Name { get; private set; }
+        public TaxRate TaxRate { get; private set; }
 
-        public Product(ProductCode code)
+        public Product(string code, string name, TaxRate taxRate) : this()
         {
             Code = code;
+            Name = name;
+            TaxRate = taxRate;
         }
 
-        public bool SameIdentityAs(Product other)
+        public bool Equals(Product other)
         {
-            return Code.Equals(other.Code);
+            return Code == other.Code &&
+                Name == other.Name &&
+                TaxRate.Equals(other.TaxRate);
         }
     }
 }

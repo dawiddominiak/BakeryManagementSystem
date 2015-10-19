@@ -7,48 +7,47 @@ namespace Tests.Domain.Product
     public class ProductTest
     {
         private global::Domain.Product.Product _product;
+        private TaxRate _taxRate;
 
         [TestInitialize]
         public void Initialization()
         {
-            _product = new global::Domain.Product.Product(new ProductCode("P1"))
-            {
-                Name = "Test name",
-                TaxRate = new TaxRate(0.23m)
-            };
+            _taxRate = new TaxRate(0.23m);
+            _product = new global::Domain.Product.Product("P1", "Product 1",
+                _taxRate);
         }
 
         [TestMethod]
         public void TestHasCode()
         {
-            Assert.IsTrue(_product.Code.Equals(new ProductCode("P1")));
+            Assert.AreEqual(_product.Code, "P1");
         }
 
         [TestMethod]
         public void TestHasName()
         {
-            Assert.AreEqual(_product.Name, "Test name");
+            Assert.AreEqual(_product.Name, "Product 1");
         }
 
         [TestMethod]
         public void TestHasTaxRate()
         {
-            Assert.IsTrue(_product.TaxRate.Equals(new TaxRate(0.23m)));
+            Assert.IsTrue(_product.TaxRate.Equals(_taxRate));
         }
 
         [TestMethod]
-        public void TestSameIdentityAs_ShouldBeTrue()
+        public void Equals_ShouldBeTrue()
         {
-            Assert.IsTrue(_product.SameIdentityAs(
-                new global::Domain.Product.Product(new ProductCode("P1")))
+            Assert.IsTrue(_product.Equals(
+                new global::Domain.Product.Product("P1", "Product 1", _taxRate))
             );
         }
 
         [TestMethod]
-        public void TestSameIdentityAs_ShouldBeFalse()
+        public void Equals_ShouldBeFalse()
         {
-            Assert.IsFalse(_product.SameIdentityAs(
-                new global::Domain.Product.Product(new ProductCode("P2")))
+            Assert.IsFalse(_product.Equals(
+                new global::Domain.Product.Product("P2", "Product 1", _taxRate))
             );
         }
     }

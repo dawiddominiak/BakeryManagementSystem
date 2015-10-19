@@ -1,56 +1,27 @@
 ﻿using System.Collections.Generic;
 using Domain.ProductMaps;
+using Domain.Shop;
 using Shared;
 
 namespace Domain.Route
 {
     class Route : IEntity<Route>
     {
-        public RouteId RouteId { get; private set; }
-        public string Name { get; set; }
-        public ProductMap WarehouseIssue { get; set; }
-        public ProductMap IssuedGoods { get; set; }
-        public ProductMap ReturnedGoods { get; set; }
-        public ProductMap ReturnedReturns { get; set; }
-        public List<Shop.Shop> Shops { get; private set; }
+        public RouteName RouteName { get; private set; }
+        public SortedList<ShopCode, Shop.Shop> Shops { get; private set; } //Value - because it's a list of entities
         public PriceLists.PriceList RoutePriceList { get; set; }
+        public List<RouteWorkday> Workdays { get; private set; } 
 
-        public Route(RouteId routeId)
+        public Route(RouteName routeName)
         {
-            RouteId = routeId;
-            Shops = new List<Shop.Shop>();
+            RouteName = routeName;
+            Shops = new SortedList<ShopCode, Shop.Shop>();
+            Workdays = new List<RouteWorkday>();
         }
-
-        /*public Dictionary<Product.ProductEntity, int> CalculateDirectGoodsSell()
-        {
-            var directGoodsSell = new Dictionary<Product.ProductEntity, int>();
-            
-            foreach(KeyValuePair<Product.ProductEntity, int> warehouseGoodAmount in WarehouseIssue.Products)
-            {
-                int issuedGoodAmount;
-                int returnedGoodAmount;
-                
-                if(!IssuedGoods.Products.TryGetValue(warehouseGoodAmount.Key, out issuedGoodAmount)) 
-                {
-                    issuedGoodAmount = 0;
-                }
-
-                if (!ReturnedGoods.Products.TryGetValue(warehouseGoodAmount.Key, out returnedGoodAmount))
-                {
-                    returnedGoodAmount = 0;
-                }
-
-                directGoodsSell.Add(warehouseGoodAmount.Key, warehouseGoodAmount.Value - issuedGoodAmount - returnedGoodAmount);
-            }
-
-            return directGoodsSell;
-        }*/
-
-
 
         public bool SameIdentityAs(Route other)
         {
-            return RouteId.Equals(other.RouteId);
+            return RouteName.Equals(other.RouteName);
         }
     }
 }

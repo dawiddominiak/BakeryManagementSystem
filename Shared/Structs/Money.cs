@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Text;
+using Shared.Exceptions;
 
 namespace Shared.Structs
 {
     public struct Money : IEquatable<Money>
     {
-        public decimal Amount { get; set; }
-        public Currency Currency { get; set; }
+        public decimal Amount { get; private set; }
+        public Currency Currency { get; private set; }
+
+        public Money(decimal amount) : this(amount, Currency.Undefined)
+        {
+            if (amount != 0m)
+            {
+                throw new NoCurrencySpecifiedException();
+            }
+        }
 
         public Money(decimal amount, Currency currency) : this()
         {
@@ -16,36 +25,17 @@ namespace Shared.Structs
 
         public static Money operator +(Money money1, Money money2)
         {
-
-            if(money1.Currency == money2.Currency)
-            {
-                return new Money
-                {
-                    Amount = money1.Amount + money2.Amount,
-                    Currency = money1.Currency
-                };
-            }
-            else
-            {
-                throw new Exceptions.DifferentOperationCurrenciesException("Different currencies in addition.");
-            }
+            var currency = GetDefinedCurrency(money1, money2);
+            
+            return new Money(money1.Amount + money2.Amount, currency);
         }
 
         public static Money operator -(Money money1, Money money2)
         {
 
-            if (money1.Currency == money2.Currency)
-            {
-                return new Money
-                {
-                    Amount = money1.Amount + money2.Amount,
-                    Currency = money1.Currency
-                };
-            }
-            else
-            {
-                throw new Exceptions.DifferentOperationCurrenciesException("Different currencies in subtraction.");
-            }
+            var currency = GetDefinedCurrency(money1, money2);
+
+            return new Money(money1.Amount - money2.Amount, currency);
         }
 
         public static Money operator *(Money money, int times)
@@ -75,6 +65,32 @@ namespace Shared.Structs
                 Amount = money.Amount / divident,
                 Currency = money.Currency
             };
+        }
+
+        private static Currency GetDefinedCurrency(Money money1, Money money2)
+        {
+
+            if (money1.Currency == Currency.Undefined || money2.Currency == Currency.Undefined)
+            {
+                if (money1.Currency != Currency.Undefined)
+                {
+                    return money1.Currency;
+                }
+
+                if (money2.Currency != Currency.Undefined)
+                {
+                    return money2.Currency;
+                }
+            } else if (money1.Currency == money2.Currency)
+            {
+                return money1.Currency;
+            }
+            else
+            {
+                throw new Exceptions.DifferentOperationCurrenciesException("Different currencies in addition.");
+            }
+
+            return Currency.Undefined; //It shouldn't occur
         }
 
         public static bool operator ==(Money money1, Money money2)

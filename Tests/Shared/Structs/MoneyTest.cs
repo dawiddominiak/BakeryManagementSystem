@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shared.Exceptions;
 using Shared.Structs;
 
 namespace Tests.Shared.Structs
@@ -28,6 +30,21 @@ namespace Tests.Shared.Structs
         public void TestHasAmount()
         {
             Assert.AreEqual(_money.Amount, _amount);
+        }
+
+        [TestMethod]
+        public void TestShouldThrowNoCurrencySpecifiedException()
+        {
+            try
+            {
+                new Money(1m);
+
+                throw new Exception("Unexpected success");
+            }
+            catch (NoCurrencySpecifiedException e)
+            {
+                Assert.IsNotNull(e);
+            }
         }
 
         [TestMethod]
@@ -106,7 +123,7 @@ namespace Tests.Shared.Structs
         {
             var difference = Money.FromNative(100.00m, "Eur") - Money.FromNative(50.00m, "Eur");
 
-            Assert.IsFalse(
+            Assert.IsTrue(
                 difference == Money.FromNative(50m, "Eur")
             );
         }

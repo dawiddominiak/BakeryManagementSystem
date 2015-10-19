@@ -56,10 +56,14 @@
   <ItemGroup>
     <Compile Include="Domain\Payment\PaymentIdTest.cs" />
     <Compile Include="Domain\Payment\PaymentTest.cs" />
+    <Compile Include="Domain\PriceList\PriceListTest.cs" />
     <Compile Include="Domain\ProductMap\ProductMapTest.cs" />
     <Compile Include="Domain\Product\TaxRateTest.cs" />
-    <Compile Include="Domain\Product\ProductCodeTest.cs" />
     <Compile Include="Domain\Product\ProductTest.cs" />
+    <Compile Include="Domain\Shop\OwnerCodeTest.cs" />
+    <Compile Include="Domain\Shop\ShopCodeTest.cs" />
+    <Compile Include="Domain\Shop\ShopTest.cs" />
+    <Compile Include="Domain\Shop\OwnerTest.cs" />
     <Compile Include="Shared\Structs\AddressTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Structs\MoneyTest.cs" />
