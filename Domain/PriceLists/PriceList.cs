@@ -1,28 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
+﻿using System.Collections.Generic;
+using Shared;
 using Shared.Structs;
 
 namespace Domain.PriceLists
 {
-    public struct PriceList : IEquatable<PriceList>
+    public class PriceList : IEntity<PriceList>
     {
-        public ImmutableDictionary<Product.Product, Money> Prices { get; private set; }
+        public PriceListId Id { get; private set; }
+        public ISeller Seller { get; set; }
+        public DateTimePeriod ApplicationPeriod { get; set; }
+        public Dictionary<Product.Product, Money> Prices { get; set; }
 
-        public PriceList(Dictionary<Product.Product, Money> prices) : this()
+        public PriceList(PriceListId id)
         {
-            Prices = prices.ToImmutableDictionary();
+            Id = id;
+            Prices = new Dictionary<Product.Product, Money>();
         }
 
         public static Money operator *(PriceList priceList, ProductMaps.ProductMap map)
         {
-            if (priceList.Prices.IsEmpty)
+            var money = new Money(0m);
+         
+            if (priceList.Prices.Count == 0)
             {
-                return new Money(0m);
+                return money;
             }
-
-            Money money = new Money(0m);
 
             foreach(var productPair in map.Products)
             {
@@ -45,37 +47,9 @@ namespace Domain.PriceLists
             return priceList * map;
         }
 
-        public bool Equals(PriceList other)
+        public bool SameIdentityAs(PriceList other)
         {
-
-            if (Prices == null && other.Prices == null)
-            {
-                return true;
-            }
-
-            if (Prices == null || other.Prices == null)
-            {
-                return false;
-            }
-
-            if (Prices.Keys == null && other.Prices.Keys == null)
-            {
-                return true;
-            }
-
-            if (Prices.Keys == null || other.Prices.Keys == null)
-            {
-                return false;
-            }
-
-            if (Prices.Count != other.Prices.Count ||
-                Prices.Keys.Except(other.Prices.Keys).Any() ||
-                other.Prices.Keys.Except(Prices.Keys).Any())
-            {
-                return false;
-            }
-
-            return Prices.All(pair => pair.Value == other.Prices[pair.Key]);
+            return Id.Equals(other.Id);
         }
     }
 }

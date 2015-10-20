@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.PriceLists;
 using Domain.Product;
+using Domain.ProductMaps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.Exceptions;
 using Shared.Structs;
@@ -20,16 +22,23 @@ namespace Tests.Domain.PriceList
         {
             _product1 = new global::Domain.Product.Product("P1", "Product 1", new TaxRate(0.23m));
             _product2 = new global::Domain.Product.Product("P2", "Product 2", new TaxRate(0.08m));
-            _productMap = new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
+            _productMap = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                {_product1, 20},
-                {_product2, 250}
-            });
-            _priceList = new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
+                Products = new Dictionary<global::Domain.Product.Product, int>()
+                {
+                    {_product1, 20},
+                    {_product2, 250}
+                }
+            };
+
+            _priceList = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
             {
-                {_product1, Money.FromNative(2.35m, "Pln")},
-                {_product2, Money.FromNative(0.45m, "Pln")}
-            });
+                Prices = new Dictionary<global::Domain.Product.Product, Money>()
+                {
+                    {_product1, Money.FromNative(2.35m, "Pln")},
+                    {_product2, Money.FromNative(0.45m, "Pln")}
+                }
+            };
         }
 
         [TestMethod]
@@ -44,12 +53,15 @@ namespace Tests.Domain.PriceList
         [TestMethod]
         public void Equals_OfPriceListsWithHigherLength_ShouldBeFalse()
         {
-            var priceListToCompare = new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
+            var priceListToCompare = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
             {
-                {_product1, Money.FromNative(2.35m, "Pln")},
-                {_product2, Money.FromNative(0.45m, "Pln")},
-                {new global::Domain.Product.Product("P3", "Product 3", new TaxRate(0.23m)), Money.FromNative(0.10m, "Pln")}
-            });
+                Prices = new Dictionary<global::Domain.Product.Product, Money>()
+                {
+                    {_product1, Money.FromNative(2.35m, "Pln")},
+                    {_product2, Money.FromNative(0.45m, "Pln")},
+                    {new global::Domain.Product.Product("P3", "Product 3", new TaxRate(0.23m)), Money.FromNative(0.10m, "Pln")}
+                }
+            };
 
             Assert.IsFalse(
                 _priceList.Equals(priceListToCompare)
@@ -57,31 +69,23 @@ namespace Tests.Domain.PriceList
         }
 
         [TestMethod]
-        public void Equals_OfPriceListsWithDifferentValues_ShouldBeFalse()
+        public void SameIdentityAs_OfPriceListsWithDifferentIds_ShouldBeFalse()
         {
             var priceListsToCompare =
-                new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
-                {
-                    {_product1, Money.FromNative(2.30m, "Pln")},
-                    {_product2, Money.FromNative(0.45m, "Pln")}
-                });
-
+                new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()));
+            
             Assert.IsFalse(
-                _priceList.Equals(priceListsToCompare)
+                _priceList.SameIdentityAs(priceListsToCompare)
             );
         }
 
         [TestMethod]
-        public void Equals_OfTwoIdenticalMaps_ShouldBeTrue()
+        public void SameIdentityAs_OfTwoMapsWithSameId_ShouldBeTrue()
         {
-            var priceListsToCompare = new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
-            {
-                {_product1, Money.FromNative(2.35m, "Pln")},
-                {_product2, Money.FromNative(0.45m, "Pln")}
-            });
+            var priceListsToCompare = new global::Domain.PriceLists.PriceList(_priceList.Id);            
 
             Assert.IsTrue(
-                _priceList.Equals(priceListsToCompare)
+                _priceList.SameIdentityAs(priceListsToCompare)
             );
         }
 
@@ -90,10 +94,13 @@ namespace Tests.Domain.PriceList
         {
             try
             {
-                var testPriceList = new global::Domain.PriceLists.PriceList(new Dictionary<global::Domain.Product.Product, Money>()
+                var testPriceList = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
                 {
-                    {_product1, Money.FromNative(2.35m, "Pln")}
-                });
+                    Prices = new Dictionary<global::Domain.Product.Product, Money>()
+                    {
+                        {_product1, Money.FromNative(2.35m, "Pln")}
+                    }
+                };
 
                 var money = testPriceList * _productMap;
 

@@ -6,19 +6,19 @@ namespace Shared.Structs
     /// DateTimePeriod object. Mutable struct representing constant 
     /// (from DateTime to DateTime) time period.
     /// </summary>
-    public struct DateTimePeriod : IEquatable<DateTimePeriod>
+    public class DateTimePeriod : IEquatable<DateTimePeriod>
     {
         public DateTime From { get; set; }
         public DateTime To { get; set; }
 
-        public DateTimePeriod(DateTime from, DateTime to) : this()
+        public DateTimePeriod(DateTime from, DateTime to)
         {
             //TODO: check correct
             From = from;
             To = to;
         }
 
-        public DateTimePeriod(DateTime from, TimeSpan span) : this()
+        public DateTimePeriod(DateTime from, TimeSpan span)
         {
             From = from;
             To = from + span;

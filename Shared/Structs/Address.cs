@@ -34,7 +34,7 @@ namespace Shared.Structs
             return string.Join(Environment.NewLine, arr);
         }
 
-        bool IEquatable<Address>.Equals(Address other)
+        public bool Equals(Address other)
         {
             return Street == other.Street
                && PostalCode == other.PostalCode

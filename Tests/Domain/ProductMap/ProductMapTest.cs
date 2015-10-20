@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Domain.Product;
+using Domain.ProductMaps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.Exceptions;
 
@@ -19,16 +21,18 @@ namespace Tests.Domain.ProductMap
 
             _product1 = new global::Domain.Product.Product("P1", "Product 1", new TaxRate(0.23m));
             _product2 = new global::Domain.Product.Product("P2", "Product 2", new TaxRate(0.23m));
-            _productMap = new global::Domain.ProductMaps.ProductMap(
-            new Dictionary<global::Domain.Product.Product, int>()
+            _productMap = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
+                Products = new Dictionary<global::Domain.Product.Product, int>()
                 {
-                    _product1, 10
-                },
-                {
-                    _product2, 5
+                    {
+                        _product1, 10
+                    },
+                    {
+                        _product2, 5
+                    }
                 }
-            });
+            };
         }
 
         [TestMethod]
@@ -45,88 +49,63 @@ namespace Tests.Domain.ProductMap
         }
 
         [TestMethod]
-        public void Equals_OfProductMapsWithLowerLength_ShouldBeFalse()
-        {
-            var productMapToCompare = new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
-            {
-                {_product1, 10}
-            });
-
-            Assert.IsFalse(
-                _productMap.Equals(productMapToCompare)    
-            );
-        }
-
-        [TestMethod]
-        public void Equals_OfProductMapsWithHigherLength_ShouldBeFalse()
-        {
-            var productMapToCompare = new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
-            {
-                {_product1, 10},
-                {_product2, 5},
-                {new global::Domain.Product.Product("P3", "Product 3", new TaxRate(0.23m)), 1}
-            });
-
-            Assert.IsFalse(
-                _productMap.Equals(productMapToCompare)
-            );
-        }
-
-        [TestMethod]
-        public void Equals_OfProductMapsWithDifferentValues_ShouldBeFalse()
+        public void SameIdentityAs_OfProductMapsWithDifferentId_ShouldBeFalse()
         {
             var productMapToCompare =
-                new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
-                {
-                    {_product1, 10},
-                    {_product2, 4}
-                });
+                new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()));            
 
             Assert.IsFalse(
-                _productMap.Equals(productMapToCompare)
+                _productMap.SameIdentityAs(productMapToCompare)
             );
         }
 
         [TestMethod]
-        public void Equals_OfTwoIdenticalMaps_ShouldBeTrue()
+        public void SameIdentityAs_OfMapsWithTheSameId_ShouldBeTrue()
         {
-            var productMapToCompare = new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
-            {
-                {_product1, 10},
-                {_product2, 5}
-            });
+            var productMapToCompare = new global::Domain.ProductMaps.ProductMap(_productMap.Id);            
 
             Assert.IsTrue(
-                _productMap.Equals(productMapToCompare)
+                _productMap.SameIdentityAs(productMapToCompare)
             );
         }
 
         [TestMethod]
         public void TestAddOperator()
         {
-            var products1 = new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
+            var products1 = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                {_product1, 5}
-            });
+                Products = new Dictionary<global::Domain.Product.Product, int>()
+                {
+                    {_product1, 5}
+                }
+            };
 
             var products2 =
-                new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
+                new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
+            {
+                Products = new Dictionary<global::Domain.Product.Product, int>()
                 {
                     {_product1, 5},
                     {_product2, 5}
-                });
+                }
+            };
 
-            Assert.IsTrue(_productMap.Equals(products1 + products2));
+            var result = products1 + products2;
+
+            Assert.AreEqual(result[_product1], 10);
+            Assert.AreEqual(result[_product2], 5);
         }
 
         [TestMethod]
         public void SubtractOperator_ShouldThrowException()
         {
-            var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
+            var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                {_product1, 20}
-            });
-
+                Products = new Dictionary<global::Domain.Product.Product, int>()
+                {
+                    {_product1, 20}
+                }
+            };
 
             try
             {
@@ -143,22 +122,18 @@ namespace Tests.Domain.ProductMap
         [TestMethod]
         public void SubtractOperator_ShouldCorrectlySubtractTwoMaps()
         {
-            var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
+            var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                {_product1, 10}
-            });
+                Products = new Dictionary<global::Domain.Product.Product, int>()
+                {
+                    {_product1, 10}
+                }
+            };
 
             var result = _productMap - productsToSubtract;
 
-            Assert.IsTrue(
-                result.Equals(
-                    new global::Domain.ProductMaps.ProductMap(new Dictionary<global::Domain.Product.Product, int>()
-                        {
-                            {_product2, 5}
-                        }
-                    )
-                )
-            );
+            Assert.AreEqual(result[_product2], 5);
+            Assert.IsFalse(result.ContainsKey(_product1));
         }
     }
 }

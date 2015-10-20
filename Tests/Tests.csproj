@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -62,7 +63,6 @@
     <Compile Include="Domain\Product\ProductTest.cs" />
     <Compile Include="Domain\Route\RouteNameTest.cs" />
     <Compile Include="Domain\Route\RouteTest.cs" />
-    <Compile Include="Domain\Route\RouteWorkdayTest.cs" />
     <Compile Include="Domain\Shop\OwnerCodeTest.cs" />
     <Compile Include="Domain\Shop\ShopCodeTest.cs" />
     <Compile Include="Domain\Shop\ShopTest.cs" />
