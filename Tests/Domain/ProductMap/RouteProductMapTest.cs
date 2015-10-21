@@ -1,32 +1,32 @@
 ﻿using System;
 using Domain.ProductMaps;
 using Domain.ProductMaps.Exceptions;
-using Domain.ProductMaps.Shop;
-using Domain.Shop;
+using Domain.ProductMaps.Route;
+using Domain.Route;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain.ProductMap
 {
     /// <summary>
-    /// Unit tests of ShopProductMap.
+    /// Unit tests of RouteProductMap.
     /// </summary>
     [TestClass]
-    public class ShopProductMapTest
+    public class RouteProductMapTest
     {
-        private ShopProductMap _shopProductMap;
-        private global::Domain.Shop.Shop _shop;
+        private RouteProductMap _routeProductMap;
+        private global::Domain.Route.Route _route;
         private ProductMapId _productMapId;
 
         [TestInitialize]
         public void OnTestInitialize()
         {
             _productMapId = new ProductMapId(Guid.NewGuid());
-            _shop = new global::Domain.Shop.Shop(new ShopCode("SC"));
+            _route = new global::Domain.Route.Route(new RouteName("RN"));
 
-            _shopProductMap = new ShopProductMap(
+            _routeProductMap = new RouteProductMap(
                 _productMapId,
-                _shop,
-                ShopProductMapType.Order
+                _route,
+                RouteProductMapType.WarehouseIssue
             );
         }
 
@@ -34,7 +34,7 @@ namespace Tests.Domain.ProductMap
         public void HasShop()
         {
             Assert.IsTrue(
-                _shop.SameIdentityAs(_shopProductMap.Shop)    
+                _route.SameIdentityAs(_routeProductMap.Route)
             );
         }
 
@@ -42,7 +42,7 @@ namespace Tests.Domain.ProductMap
         public void HasType()
         {
             Assert.IsTrue(
-                _shopProductMap.Type.Equals(ShopProductMapType.Order)
+                _routeProductMap.Type.Equals(RouteProductMapType.WarehouseIssue)
             );
         }
 
@@ -52,28 +52,28 @@ namespace Tests.Domain.ProductMap
             try
             {
                 // ReSharper disable once ObjectCreationAsStatement
-                new ShopProductMap(
+                new RouteProductMap(
                     _productMapId,
-                    _shop,
+                    _route,
                     "wrong"
                 );
                 throw new Exception("Unexpected success!");
             }
-            catch (WrongShopProductMapTypeException e)
+            catch (WrongRouteProductMapTypeException e)
             {
                 Assert.IsNotNull(e);
             }
         }
-
+        
         [TestMethod]
         public void NativeConstructor_WithSameData_ShouldConstractSameObject()
         {
             Assert.IsTrue(
-                _shopProductMap.SameIdentityAs(
-                    new ShopProductMap(
+                _routeProductMap.SameIdentityAs(
+                    new RouteProductMap(
                         _productMapId,
-                        _shop,
-                        "order"
+                        _route,
+                        "warehouseissue"
                     )
                 )
             );
