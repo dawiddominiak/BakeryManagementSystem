@@ -50,12 +50,14 @@
     <Compile Include="Payment\PaymentType.cs" />
     <Compile Include="PriceLists\PriceList.cs" />
     <Compile Include="PriceLists\PriceListId.cs" />
+    <Compile Include="ProductMaps\Exceptions\WrongRouteProductMapTypeException.cs" />
+    <Compile Include="ProductMaps\Exceptions\WrongShopProductMapTypeException.cs" />
     <Compile Include="ProductMaps\ProductMap.cs" />
     <Compile Include="ProductMaps\ProductMapId.cs" />
-    <Compile Include="ProductMaps\RouteProductMap.cs" />
-    <Compile Include="ProductMaps\RouteProductMapType.cs" />
-    <Compile Include="ProductMaps\ShopProductMap.cs" />
-    <Compile Include="ProductMaps\ShopProductMapType.cs" />
+    <Compile Include="ProductMaps\Route\RouteProductMap.cs" />
+    <Compile Include="ProductMaps\Route\RouteProductMapType.cs" />
+    <Compile Include="ProductMaps\Shop\ShopProductMap.cs" />
+    <Compile Include="ProductMaps\Shop\ShopProductMapType.cs" />
     <Compile Include="Product\Product.cs" />
     <Compile Include="Product\TaxRate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +77,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

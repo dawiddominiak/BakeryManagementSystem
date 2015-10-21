@@ -87,7 +87,7 @@ namespace Shared.Structs
             }
             else
             {
-                throw new Exceptions.DifferentOperationCurrenciesException("Different currencies in addition.");
+                throw new DifferentOperationCurrenciesException("Different currencies in addition.");
             }
 
             return Currency.Undefined; //It shouldn't occur
@@ -107,7 +107,7 @@ namespace Shared.Structs
         public static Money FromNative(decimal amount, string currency)
         {
             Currency enumerableCurrency;
-            Currency.TryParse(currency, out enumerableCurrency);
+            Enum.TryParse(currency, out enumerableCurrency);
 
             return new Money
             {
@@ -125,7 +125,13 @@ namespace Shared.Structs
             return hashStringBuilder.ToString().GetHashCode();
         }
 
-        bool IEquatable<Money>.Equals(Money other)
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is Money && Equals((Money)obj);
+        }
+
+        public bool Equals(Money other)
         {
             return (Amount == other.Amount && Currency == other.Currency);
         }

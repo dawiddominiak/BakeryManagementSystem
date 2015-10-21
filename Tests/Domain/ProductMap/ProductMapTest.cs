@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using Domain.Product;
 using Domain.ProductMaps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -109,8 +108,10 @@ namespace Tests.Domain.ProductMap
 
             try
             {
+                // ReSharper disable once UnusedVariable
+                // Needed for test.
                 var result = _productMap - productsToSubtract;
-
+                
                 throw new Exception("Unexpected success");
             }
             catch (NumberOfProductsLowerThanZeroException e)

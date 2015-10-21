@@ -1,4 +1,4 @@
-﻿namespace Domain.ProductMaps
+﻿namespace Domain.ProductMaps.Shop
 {
     public enum ShopProductMapType
     {
