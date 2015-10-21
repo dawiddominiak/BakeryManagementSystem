@@ -113,6 +113,16 @@ namespace Tests.Domain.PriceList
         }
 
         [TestMethod]
+        public void MultiplyOperator_OfEmptyProductMap_ShouldReturnZeroMoney()
+        {
+            var money = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid())) * new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()));
+
+            Assert.IsTrue(
+                money.Equals(new Money(0m))    
+            );
+        }
+
+        [TestMethod]
         public void MultiplyOperator_OfProperPriceList_ShouldGivesMoney()
         {
             var money = _priceList * _productMap;

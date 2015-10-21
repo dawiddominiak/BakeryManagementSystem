@@ -21,7 +21,7 @@ namespace Domain.PriceLists
         {
             var money = new Money(0m);
          
-            if (priceList.Prices.Count == 0)
+            if (map.Products.Count == 0)
             {
                 return money;
             }

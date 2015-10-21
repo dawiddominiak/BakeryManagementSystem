@@ -126,13 +126,14 @@ namespace Tests.Domain.ProductMap
             {
                 Products = new Dictionary<global::Domain.Product.Product, int>()
                 {
-                    {_product1, 10}
+                    {_product1, 10},
+                    {_product2, 2}
                 }
             };
 
             var result = _productMap - productsToSubtract;
 
-            Assert.AreEqual(result[_product2], 5);
+            Assert.AreEqual(result[_product2], 3);
             Assert.IsFalse(result.ContainsKey(_product1));
         }
     }
