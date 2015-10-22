@@ -5,12 +5,12 @@ using Shared.Exceptions;
 
 namespace Domain.ProductMaps
 {
-    public class ProductMap : IEntity<ProductMap>
+    public abstract class ProductMap : IEntity<ProductMap>
     {
         public ProductMapId Id { get; private set; }
         public Dictionary<Assortment.Product, int> Products { get; set; }
 
-        public ProductMap(ProductMapId id)
+        protected ProductMap(ProductMapId id)
         {
             Id = id;
             Products = new Dictionary<Assortment.Product, int>();

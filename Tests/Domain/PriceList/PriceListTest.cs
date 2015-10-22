@@ -9,6 +9,13 @@ using Shared.Structs;
 
 namespace Tests.Domain.PriceList
 {
+    public class RealProductMap : global::Domain.ProductMaps.ProductMap
+    {
+        public RealProductMap(ProductMapId id) : base(id)
+        {
+        }
+    }
+
     [TestClass]
     public class PriceListTest
     {
@@ -22,7 +29,7 @@ namespace Tests.Domain.PriceList
         {
             _product1 = new global::Domain.Assortment.Product("P1", "Product 1", new TaxRate(0.23m));
             _product2 = new global::Domain.Assortment.Product("P2", "Product 2", new TaxRate(0.08m));
-            _productMap = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
+            _productMap = new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
@@ -116,7 +123,7 @@ namespace Tests.Domain.PriceList
         [TestMethod]
         public void MultiplyOperator_OfEmptyProductMap_ShouldReturnZeroMoney()
         {
-            var money = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid())) * new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()));
+            var money = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid())) * new RealProductMap(new ProductMapId(Guid.NewGuid()));
 
             Assert.IsTrue(
                 money.Equals(new Money(0m))    

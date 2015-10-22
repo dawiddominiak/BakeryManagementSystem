@@ -3,7 +3,7 @@ using Shared;
 
 namespace Domain.Assortment
 {
-    public class Assortment : IEntity<Assortment>
+    public class Assortment : IEntity<Assortment>, IAggregateRoot
     {
         public AssortmentId AssortmentId { get; private set; }
         public List<Product> Products { get; private set; }

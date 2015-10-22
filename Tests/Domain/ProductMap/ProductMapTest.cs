@@ -7,6 +7,13 @@ using Shared.Exceptions;
 
 namespace Tests.Domain.ProductMap
 {
+    public class RealProductMap : global::Domain.ProductMaps.ProductMap
+    {
+        public RealProductMap(ProductMapId id) : base(id)
+        {
+        }
+    }
+
     [TestClass]
     public class ProductMapTest
     {
@@ -20,7 +27,7 @@ namespace Tests.Domain.ProductMap
 
             _product1 = new global::Domain.Assortment.Product("P1", "Product 1", new TaxRate(0.23m));
             _product2 = new global::Domain.Assortment.Product("P2", "Product 2", new TaxRate(0.23m));
-            _productMap = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
+            _productMap = new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
@@ -51,7 +58,7 @@ namespace Tests.Domain.ProductMap
         public void SameIdentityAs_OfProductMapsWithDifferentId_ShouldBeFalse()
         {
             var productMapToCompare =
-                new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()));            
+                new RealProductMap(new ProductMapId(Guid.NewGuid()));            
 
             Assert.IsFalse(
                 _productMap.SameIdentityAs(productMapToCompare)
@@ -61,7 +68,7 @@ namespace Tests.Domain.ProductMap
         [TestMethod]
         public void SameIdentityAs_OfMapsWithTheSameId_ShouldBeTrue()
         {
-            var productMapToCompare = new global::Domain.ProductMaps.ProductMap(_productMap.Id);            
+            var productMapToCompare = new RealProductMap(_productMap.Id);            
 
             Assert.IsTrue(
                 _productMap.SameIdentityAs(productMapToCompare)
@@ -71,7 +78,7 @@ namespace Tests.Domain.ProductMap
         [TestMethod]
         public void TestAddOperator()
         {
-            var products1 = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
+            var products1 = new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
@@ -80,7 +87,7 @@ namespace Tests.Domain.ProductMap
             };
 
             var products2 =
-                new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
+                new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
@@ -98,7 +105,7 @@ namespace Tests.Domain.ProductMap
         [TestMethod]
         public void SubtractOperator_ShouldThrowException()
         {
-            var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
+            var productsToSubtract = new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
@@ -123,7 +130,7 @@ namespace Tests.Domain.ProductMap
         [TestMethod]
         public void SubtractOperator_ShouldCorrectlySubtractTwoMaps()
         {
-            var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
+            var productsToSubtract = new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
