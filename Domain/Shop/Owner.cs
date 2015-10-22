@@ -11,12 +11,14 @@ namespace Domain.Shop
         public string TaxIdentificationNumber { get; set; }
         public string NationalEconomyRegister { get; set; }
         public Address Address { get; set; }
-        public List<Phone> Phones { get; private set; }
+        public List<Phone> Phones { get; set; }
+        public List<Shop> Shops { get; set; } 
 
         public Owner(OwnerCode code)
         {
             Code = code;
             Phones = new List<Phone>();
+            Shops = new List<Shop>();
         }
 
         public bool SameIdentityAs(Owner other)

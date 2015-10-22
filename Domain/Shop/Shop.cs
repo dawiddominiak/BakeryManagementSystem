@@ -12,7 +12,7 @@ namespace Domain.Shop
         public Owner Owner { get; set; }
         public SortedList<DateTime, Payment.Payment> Payments { get; private set; }
         public Address Address { get; set; }
-        public List<Phone> Phones { get; private set; }
+        public List<Phone> Phones { get; set; }
 
         public Shop(ShopCode code)
         {

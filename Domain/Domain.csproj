@@ -52,6 +52,7 @@
     <Compile Include="Payment\Payment.cs" />
     <Compile Include="Payment\PaymentId.cs" />
     <Compile Include="Payment\PaymentType.cs" />
+    <Compile Include="Payment\Exceptions\WrongPaymentTypeException.cs" />
     <Compile Include="PriceLists\IPriceListRepository.cs" />
     <Compile Include="PriceLists\PriceList.cs" />
     <Compile Include="PriceLists\PriceListId.cs" />
