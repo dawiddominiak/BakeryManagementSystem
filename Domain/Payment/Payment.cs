@@ -2,7 +2,7 @@
 
 namespace Domain.Payment
 {
-    public class Payment : IEntity<Payment>
+    public class Payment : IEntity<Payment>, IAggregateRoot
     {
         public PaymentId PaymentId { get; private set; }
         public Shared.Structs.Money Money { get; set; }

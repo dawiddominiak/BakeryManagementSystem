@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Domain.Assortment;
 using Domain.PriceLists;
-using Domain.Product;
 using Domain.ProductMaps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.Exceptions;
@@ -14,17 +14,17 @@ namespace Tests.Domain.PriceList
     {
         private global::Domain.PriceLists.PriceList _priceList;
         private global::Domain.ProductMaps.ProductMap _productMap;
-        private global::Domain.Product.Product _product1;
-        private global::Domain.Product.Product _product2;
+        private global::Domain.Assortment.Product _product1;
+        private global::Domain.Assortment.Product _product2;
 
         [TestInitialize]
         public void Initialization()
         {
-            _product1 = new global::Domain.Product.Product("P1", "Product 1", new TaxRate(0.23m));
-            _product2 = new global::Domain.Product.Product("P2", "Product 2", new TaxRate(0.08m));
+            _product1 = new global::Domain.Assortment.Product("P1", "Product 1", new TaxRate(0.23m));
+            _product2 = new global::Domain.Assortment.Product("P2", "Product 2", new TaxRate(0.08m));
             _productMap = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                Products = new Dictionary<global::Domain.Product.Product, int>()
+                Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
                     {_product1, 20},
                     {_product2, 250}
@@ -33,7 +33,7 @@ namespace Tests.Domain.PriceList
 
             _priceList = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
             {
-                Prices = new Dictionary<global::Domain.Product.Product, Money>()
+                Prices = new Dictionary<global::Domain.Assortment.Product, Money>()
                 {
                     {_product1, Money.FromNative(2.35m, "Pln")},
                     {_product2, Money.FromNative(0.45m, "Pln")}
@@ -55,11 +55,11 @@ namespace Tests.Domain.PriceList
         {
             var priceListToCompare = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
             {
-                Prices = new Dictionary<global::Domain.Product.Product, Money>()
+                Prices = new Dictionary<global::Domain.Assortment.Product, Money>()
                 {
                     {_product1, Money.FromNative(2.35m, "Pln")},
                     {_product2, Money.FromNative(0.45m, "Pln")},
-                    {new global::Domain.Product.Product("P3", "Product 3", new TaxRate(0.23m)), Money.FromNative(0.10m, "Pln")}
+                    {new global::Domain.Assortment.Product("P3", "Product 3", new TaxRate(0.23m)), Money.FromNative(0.10m, "Pln")}
                 }
             };
 
@@ -96,12 +96,13 @@ namespace Tests.Domain.PriceList
             {
                 var testPriceList = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
                 {
-                    Prices = new Dictionary<global::Domain.Product.Product, Money>()
+                    Prices = new Dictionary<global::Domain.Assortment.Product, Money>()
                     {
                         {_product1, Money.FromNative(2.35m, "Pln")}
                     }
                 };
 
+                // ReSharper disable once UnusedVariable
                 var money = testPriceList * _productMap;
 
                 throw new Exception("Unexpected success!");

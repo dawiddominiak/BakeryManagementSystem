@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Product
+namespace Domain.Assortment
 {
     public struct Product : IEquatable<Product>
     {

@@ -4,17 +4,17 @@ using Shared.Structs;
 
 namespace Domain.PriceLists
 {
-    public class PriceList : IEntity<PriceList>
+    public class PriceList : IEntity<PriceList>, IAggregateRoot
     {
         public PriceListId Id { get; private set; }
         public ISeller Seller { get; set; }
         public DateTimePeriod ApplicationPeriod { get; set; }
-        public Dictionary<Product.Product, Money> Prices { get; set; }
+        public Dictionary<Assortment.Product, Money> Prices { get; set; }
 
         public PriceList(PriceListId id)
         {
             Id = id;
-            Prices = new Dictionary<Product.Product, Money>();
+            Prices = new Dictionary<Assortment.Product, Money>();
         }
 
         public static Money operator *(PriceList priceList, ProductMaps.ProductMap map)

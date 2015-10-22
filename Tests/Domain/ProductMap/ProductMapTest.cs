@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Domain.Product;
+using Domain.Assortment;
 using Domain.ProductMaps;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.Exceptions;
@@ -10,19 +10,19 @@ namespace Tests.Domain.ProductMap
     [TestClass]
     public class ProductMapTest
     {
-        private global::Domain.Product.Product _product1;
-        private global::Domain.Product.Product _product2;
+        private global::Domain.Assortment.Product _product1;
+        private global::Domain.Assortment.Product _product2;
         private global::Domain.ProductMaps.ProductMap _productMap;
 
         [TestInitialize]
         public void Initialization()
         {
 
-            _product1 = new global::Domain.Product.Product("P1", "Product 1", new TaxRate(0.23m));
-            _product2 = new global::Domain.Product.Product("P2", "Product 2", new TaxRate(0.23m));
+            _product1 = new global::Domain.Assortment.Product("P1", "Product 1", new TaxRate(0.23m));
+            _product2 = new global::Domain.Assortment.Product("P2", "Product 2", new TaxRate(0.23m));
             _productMap = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                Products = new Dictionary<global::Domain.Product.Product, int>()
+                Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
                     {
                         _product1, 10
@@ -73,7 +73,7 @@ namespace Tests.Domain.ProductMap
         {
             var products1 = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                Products = new Dictionary<global::Domain.Product.Product, int>()
+                Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
                     {_product1, 5}
                 }
@@ -82,7 +82,7 @@ namespace Tests.Domain.ProductMap
             var products2 =
                 new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                Products = new Dictionary<global::Domain.Product.Product, int>()
+                Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
                     {_product1, 5},
                     {_product2, 5}
@@ -100,7 +100,7 @@ namespace Tests.Domain.ProductMap
         {
             var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                Products = new Dictionary<global::Domain.Product.Product, int>()
+                Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
                     {_product1, 20}
                 }
@@ -125,7 +125,7 @@ namespace Tests.Domain.ProductMap
         {
             var productsToSubtract = new global::Domain.ProductMaps.ProductMap(new ProductMapId(Guid.NewGuid()))
             {
-                Products = new Dictionary<global::Domain.Product.Product, int>()
+                Products = new Dictionary<global::Domain.Assortment.Product, int>()
                 {
                     {_product1, 10},
                     {_product2, 2}

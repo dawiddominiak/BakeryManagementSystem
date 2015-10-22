@@ -8,15 +8,15 @@ namespace Domain.ProductMaps
     public class ProductMap : IEntity<ProductMap>
     {
         public ProductMapId Id { get; private set; }
-        public Dictionary<Product.Product, int> Products { get; set; }
+        public Dictionary<Assortment.Product, int> Products { get; set; }
 
         public ProductMap(ProductMapId id)
         {
             Id = id;
-            Products = new Dictionary<Product.Product, int>();
+            Products = new Dictionary<Assortment.Product, int>();
         }
 
-        public static Dictionary<Product.Product, int> operator +(ProductMap sourceMap, ProductMap collectionMap)
+        public static Dictionary<Assortment.Product, int> operator +(ProductMap sourceMap, ProductMap collectionMap)
         {
             
             var productsDictionary = sourceMap.Products.ToDictionary(entry => entry.Key, entry => entry.Value);
@@ -36,7 +36,7 @@ namespace Domain.ProductMaps
             return productsDictionary;
         }
 
-        public static Dictionary<Product.Product, int> operator -(ProductMap sourceMap, ProductMap collectionMap)
+        public static Dictionary<Assortment.Product, int> operator -(ProductMap sourceMap, ProductMap collectionMap)
         {
             var productsDictionary = sourceMap.Products.ToDictionary(entry => entry.Key, entry => entry.Value);
 

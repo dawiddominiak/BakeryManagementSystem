@@ -1,4 +1,4 @@
-﻿using Domain.Product;
+﻿using Domain.Assortment;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain.Product
@@ -6,14 +6,14 @@ namespace Tests.Domain.Product
     [TestClass]
     public class ProductTest
     {
-        private global::Domain.Product.Product _product;
+        private global::Domain.Assortment.Product _product;
         private TaxRate _taxRate;
 
         [TestInitialize]
         public void Initialization()
         {
             _taxRate = new TaxRate(0.23m);
-            _product = new global::Domain.Product.Product("P1", "Product 1",
+            _product = new global::Domain.Assortment.Product("P1", "Product 1",
                 _taxRate);
         }
 
@@ -39,7 +39,7 @@ namespace Tests.Domain.Product
         public void Equals_ShouldBeTrue()
         {
             Assert.IsTrue(_product.Equals(
-                new global::Domain.Product.Product("P1", "Product 1", _taxRate))
+                new global::Domain.Assortment.Product("P1", "Product 1", _taxRate))
             );
         }
 
@@ -47,7 +47,7 @@ namespace Tests.Domain.Product
         public void Equals_ShouldBeFalse()
         {
             Assert.IsFalse(_product.Equals(
-                new global::Domain.Product.Product("P2", "Product 1", _taxRate))
+                new global::Domain.Assortment.Product("P2", "Product 1", _taxRate))
             );
         }
     }

@@ -1,9 +1,10 @@
 ﻿using System;
 using Domain.ProductMaps.Exceptions;
+using Shared;
 
 namespace Domain.ProductMaps.Route
 {
-    public class RouteProductMap : ProductMap
+    public class RouteProductMap : ProductMap, IAggregateRoot
     {
         public RouteProductMapType Type { get; private set; }
         public Domain.Route.Route Route { get; private set; }

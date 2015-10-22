@@ -5,7 +5,7 @@ using Shared.Structs;
 
 namespace Domain.Shop
 {
-    public class Shop : IEntity<Shop>, ISeller
+    public class Shop : IEntity<Shop>, ISeller, IAggregateRoot
     {
         public ShopCode Code { get; private set; }
         public string Name { get; set; }

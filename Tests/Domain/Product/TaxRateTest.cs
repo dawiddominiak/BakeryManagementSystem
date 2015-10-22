@@ -1,4 +1,4 @@
-﻿using Domain.Product;
+﻿using Domain.Assortment;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests.Domain.Product

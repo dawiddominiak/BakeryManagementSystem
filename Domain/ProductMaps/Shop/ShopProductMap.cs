@@ -1,9 +1,10 @@
 ﻿using System;
 using Domain.ProductMaps.Exceptions;
+using Shared;
 
 namespace Domain.ProductMaps.Shop
 {
-    public class ShopProductMap : ProductMap
+    public class ShopProductMap : ProductMap, IAggregateRoot
     {
         public ShopProductMapType Type { get; private set; }
         public Domain.Shop.Shop Shop { get; private set; }
