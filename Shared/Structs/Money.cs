@@ -7,17 +7,29 @@ namespace Shared.Structs
     public struct Money : IEquatable<Money>
     {
         public decimal Amount { get; private set; }
-        public Currency Currency { get; private set; }
+        public Currency? Currency { get; private set; }
 
-        public Money(decimal amount) : this(amount, Currency.Undefined)
+        public Money(decimal amount) : this()
         {
             if (amount != 0m)
             {
                 throw new NoCurrencySpecifiedException();
             }
+
+            Amount = amount;
         }
 
-        public Money(decimal amount, Currency currency) : this()
+        public Money(decimal amount, string currency) :this()
+        {
+            Currency enumerableCurrency;
+            Enum.TryParse(currency, out enumerableCurrency);
+
+            Amount = amount;
+            Currency = enumerableCurrency;
+
+        }
+
+        public Money(decimal amount, Currency? currency) : this()
         {
             Amount = amount;
             Currency = currency;
@@ -67,17 +79,17 @@ namespace Shared.Structs
             };
         }
 
-        private static Currency GetDefinedCurrency(Money money1, Money money2)
+        private static Currency? GetDefinedCurrency(Money money1, Money money2)
         {
 
-            if (money1.Currency == Currency.Undefined || money2.Currency == Currency.Undefined)
+            if (money1.Currency == null || money2.Currency == null)
             {
-                if (money1.Currency != Currency.Undefined)
+                if (money1.Currency != null)
                 {
                     return money1.Currency;
                 }
 
-                if (money2.Currency != Currency.Undefined)
+                if (money2.Currency != null)
                 {
                     return money2.Currency;
                 }
@@ -90,7 +102,7 @@ namespace Shared.Structs
                 throw new DifferentOperationCurrenciesException("Different currencies in addition.");
             }
 
-            return Currency.Undefined; //It shouldn't occur
+            return null;
         }
 
         public static bool operator ==(Money money1, Money money2)
