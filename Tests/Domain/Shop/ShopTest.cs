@@ -17,10 +17,6 @@ namespace Tests.Domain.Shop
         private Address _address;
         private Phone _phone;
 
-        private global::Domain.PriceLists.PriceList _priceList1;
-        private global::Domain.PriceLists.PriceList _priceList2;
-        private global::Domain.PriceLists.PriceList _priceList3;
-
         [TestInitialize]
         public void Initialization()
         {

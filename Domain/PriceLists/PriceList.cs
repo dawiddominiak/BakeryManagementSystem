@@ -4,10 +4,11 @@ using Shared.Structs;
 
 namespace Domain.PriceLists
 {
-    public class PriceList : IEntity<PriceList>, IAggregateRoot
+    public class PriceList<TK> 
+        : IEntity<PriceList<TK>>, IAggregateRoot
     {
         public PriceListId Id { get; private set; }
-        public ISeller Seller { get; set; }
+        public TK Seller { get; set; }
         public DateTimePeriod ApplicationPeriod { get; set; }
         public Dictionary<Assortment.Product, Money> Prices { get; set; }
 
@@ -17,7 +18,7 @@ namespace Domain.PriceLists
             Prices = new Dictionary<Assortment.Product, Money>();
         }
 
-        public static Money operator *(PriceList priceList, ProductMaps.ProductMap map)
+        public static Money operator *(PriceList<TK> priceList, ProductMaps.ProductMap map)
         {
             var money = new Money(0m);
          
@@ -42,12 +43,12 @@ namespace Domain.PriceLists
             return money;
         }
 
-        public static Money operator *(ProductMaps.ProductMap map, PriceList priceList)
+        public static Money operator *(ProductMaps.ProductMap map, PriceList<TK> priceList)
         {
             return priceList * map;
         }
 
-        public bool SameIdentityAs(PriceList other)
+        public bool SameIdentityAs(PriceList<TK> other)
         {
             return Id.Equals(other.Id);
         }

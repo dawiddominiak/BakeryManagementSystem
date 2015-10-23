@@ -2,11 +2,11 @@
 
 namespace Domain.PriceLists
 {
-    public interface IPriceListRepository
+    public interface IPriceListRepository<TK>
     {
-        PriceList Get(PriceListId id);
-        List<PriceList> GetAll();
-        void Save(PriceList priceList);
+        PriceList<TK> Get(PriceListId id);
+        List<PriceList<TK>> GetAll();
+        void Save(PriceList<TK> priceList);
         PriceListId GetNextId();
     }
 }

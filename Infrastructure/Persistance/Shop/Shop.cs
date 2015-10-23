@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 
 namespace Infrastructure.Persistance.Shop
 {
@@ -12,6 +13,8 @@ namespace Infrastructure.Persistance.Shop
         public Owner Owner { get; set; }
         public ICollection<Payment.Payment> Payments { get; set; }
         public ShopAddress ShopAddress { get; set; }
-        public ICollection<ShopPhone> ShopPhones { get; set; } 
+        public ICollection<ShopPhone> ShopPhones { get; set; }
+        public ICollection<RouteShop.RouteShop> RouteShops { get; set; }
+        public ICollection<ShopProductMap.ShopProductMap> ShopProductMaps { get; set; }
     }
 }

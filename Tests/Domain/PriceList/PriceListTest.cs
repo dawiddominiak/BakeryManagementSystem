@@ -19,7 +19,7 @@ namespace Tests.Domain.PriceList
     [TestClass]
     public class PriceListTest
     {
-        private global::Domain.PriceLists.PriceList _priceList;
+        private global::Domain.PriceLists.PriceList<global::Domain.Route.Route> _priceList;
         private global::Domain.ProductMaps.ProductMap _productMap;
         private global::Domain.Assortment.Product _product1;
         private global::Domain.Assortment.Product _product2;
@@ -38,7 +38,7 @@ namespace Tests.Domain.PriceList
                 }
             };
 
-            _priceList = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
+            _priceList = new global::Domain.PriceLists.PriceList<global::Domain.Route.Route>(new PriceListId(Guid.NewGuid()))
             {
                 Prices = new Dictionary<global::Domain.Assortment.Product, Money>()
                 {
@@ -60,7 +60,7 @@ namespace Tests.Domain.PriceList
         [TestMethod]
         public void Equals_OfPriceListsWithHigherLength_ShouldBeFalse()
         {
-            var priceListToCompare = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
+            var priceListToCompare = new global::Domain.PriceLists.PriceList<global::Domain.Route.Route>(new PriceListId(Guid.NewGuid()))
             {
                 Prices = new Dictionary<global::Domain.Assortment.Product, Money>()
                 {
@@ -79,7 +79,7 @@ namespace Tests.Domain.PriceList
         public void SameIdentityAs_OfPriceListsWithDifferentIds_ShouldBeFalse()
         {
             var priceListsToCompare =
-                new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()));
+                new global::Domain.PriceLists.PriceList<global::Domain.Route.Route>(new PriceListId(Guid.NewGuid()));
             
             Assert.IsFalse(
                 _priceList.SameIdentityAs(priceListsToCompare)
@@ -89,7 +89,7 @@ namespace Tests.Domain.PriceList
         [TestMethod]
         public void SameIdentityAs_OfTwoMapsWithSameId_ShouldBeTrue()
         {
-            var priceListsToCompare = new global::Domain.PriceLists.PriceList(_priceList.Id);            
+            var priceListsToCompare = new global::Domain.PriceLists.PriceList<global::Domain.Route.Route>(_priceList.Id);            
 
             Assert.IsTrue(
                 _priceList.SameIdentityAs(priceListsToCompare)
@@ -101,7 +101,7 @@ namespace Tests.Domain.PriceList
         {
             try
             {
-                var testPriceList = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid()))
+                var testPriceList = new global::Domain.PriceLists.PriceList<global::Domain.Route.Route>(new PriceListId(Guid.NewGuid()))
                 {
                     Prices = new Dictionary<global::Domain.Assortment.Product, Money>()
                     {
@@ -123,7 +123,7 @@ namespace Tests.Domain.PriceList
         [TestMethod]
         public void MultiplyOperator_OfEmptyProductMap_ShouldReturnZeroMoney()
         {
-            var money = new global::Domain.PriceLists.PriceList(new PriceListId(Guid.NewGuid())) * new RealProductMap(new ProductMapId(Guid.NewGuid()));
+            var money = new global::Domain.PriceLists.PriceList<global::Domain.Route.Route>(new PriceListId(Guid.NewGuid())) * new RealProductMap(new ProductMapId(Guid.NewGuid()));
 
             Assert.IsTrue(
                 money.Equals(new Money(0m))    
