@@ -1,4 +1,9 @@
 ﻿using System.Data.Entity;
+using Infrastructure.Persistance.PriceList;
+using Infrastructure.Persistance.PriceList.Route;
+using Infrastructure.Persistance.PriceList.Shop;
+using Infrastructure.Persistance.ProductMap.Route;
+using Infrastructure.Persistance.ProductMap.Shop;
 
 namespace Infrastructure.Persistance
 {
@@ -22,10 +27,16 @@ namespace Infrastructure.Persistance
         public DbSet<Product.Product> Products { get; set; }
 
         //RouteProductMap
-        public DbSet<RouteProductMap.RouteProductMap> RouteProductMaps { get; set; }
+        public DbSet<RouteProductMap> RouteProductMaps { get; set; }
 
         //ShopProductMap
-        public DbSet<ShopProductMap.ShopProductMap> ShopProductMaps { get; set; }
+        public DbSet<ShopProductMap> ShopProductMaps { get; set; }
+
+        //RoutePriceList
+        public DbSet<RoutePriceList> RoutePriceLists { get; set; }
+
+        //ShopPriceList
+        public DbSet<ShopPriceList> ShopPriceLists { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

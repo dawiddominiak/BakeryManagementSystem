@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Infrastructure.Persistance.PriceList.Route;
+using Infrastructure.Persistance.ProductMap.Route;
 
 namespace Infrastructure.Persistance.Route
 {
@@ -12,6 +10,7 @@ namespace Infrastructure.Persistance.Route
         [Key]
         public string Name { get; set; }
         public ICollection<RouteShop.RouteShop> RouteShops { get; set; }
-        public ICollection<RouteProductMap.RouteProductMap> RouteProductMaps { get; set; } 
+        public ICollection<RouteProductMap> RouteProductMaps { get; set; }
+        public ICollection<RoutePriceList> PriceLists { get; set; }
     }
 }

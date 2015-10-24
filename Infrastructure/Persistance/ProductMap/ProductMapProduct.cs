@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Infrastructure.Persistance.RouteProductMap
+namespace Infrastructure.Persistance.ProductMap
 {
-    public class RouteProductMapProduct
+    public class ProductMapProduct<TK>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -13,6 +13,6 @@ namespace Infrastructure.Persistance.RouteProductMap
         public string Name { get; set; }
         public decimal TaxRate { get; set; }
         public int Count { get; set; }
-        public RouteProductMap RouteProductMap { get; set; }
+        public TK ProductMap { get; set; }
     }
 }

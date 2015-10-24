@@ -82,13 +82,21 @@
     <Compile Include="Languages\PolishPLLanguageStrategy.cs" />
     <Compile Include="Persistance\BakeryContext.cs" />
     <Compile Include="Persistance\Payment\Payment.cs" />
+    <Compile Include="Persistance\PriceList\PriceList.cs" />
+    <Compile Include="Persistance\PriceList\PriceListProducts.cs" />
+    <Compile Include="Persistance\PriceList\Shop\ShopPriceList.cs" />
+    <Compile Include="Persistance\PriceList\Route\RoutePriceList.cs" />
+    <Compile Include="Persistance\PriceList\Shop\ShopPriceListProduct.cs" />
+    <Compile Include="Persistance\PriceList\Route\RoutePriceListProduct.cs" />
+    <Compile Include="Persistance\ProductMap\ProductMap.cs" />
+    <Compile Include="Persistance\ProductMap\ProductMapProduct.cs" />
     <Compile Include="Persistance\Product\Product.cs" />
-    <Compile Include="Persistance\RouteProductMap\RouteProductMapProduct.cs" />
-    <Compile Include="Persistance\RouteProductMap\RouteProductMap.cs" />
+    <Compile Include="Persistance\ProductMap\Route\RouteProductMapProduct.cs" />
+    <Compile Include="Persistance\ProductMap\Route\RouteProductMap.cs" />
     <Compile Include="Persistance\RouteShop\RouteShop.cs" />
     <Compile Include="Persistance\Route\Route.cs" />
-    <Compile Include="Persistance\ShopProductMap\ShopProductMap.cs" />
-    <Compile Include="Persistance\ShopProductMap\ShopProductMapProduct.cs" />
+    <Compile Include="Persistance\ProductMap\Shop\ShopProductMap.cs" />
+    <Compile Include="Persistance\ProductMap\Shop\ShopProductMapProduct.cs" />
     <Compile Include="Persistance\Shop\Owner.cs" />
     <Compile Include="Persistance\Shop\OwnerAddress.cs" />
     <Compile Include="Persistance\Shop\OwnerPhone.cs" />
@@ -145,6 +153,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
