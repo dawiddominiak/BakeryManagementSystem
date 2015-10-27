@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace BakeryManagementSystem
@@ -11,15 +10,16 @@ namespace BakeryManagementSystem
             InitializeComponent();
         }
 
-        private void newWorkingDayToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void assortmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var assortmentWindow = new Assortment();
             assortmentWindow.ShowDialog(this);
+        }
+
+        private void shopsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var shopsWindow = new Shops();
+            shopsWindow.ShowDialog(this);
         }
 
     }

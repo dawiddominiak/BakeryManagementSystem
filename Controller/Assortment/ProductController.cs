@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Domain.Assortment;
 using Infrastructure.Persistance.Repository;
-using System.Windows.Forms;
 
 
 namespace Controller.Assortment
@@ -20,18 +15,14 @@ namespace Controller.Assortment
             AssortmentRepository = new AssortmentRepository();
         }
 
-        public void Edit(string code, Product product)
+        public void Save(Product product)
         {
-            EnsureAssortment();
-            Assortment.Products.RemoveAll(p => p.Code == code);
-            Add(product);
+            AssortmentRepository.Save(product);            
         }
 
-        public void Add(Product product)
+        public void Remove(Product product)
         {
-            EnsureAssortment();
-            Assortment.Products.Add(product);
-            AssortmentRepository.Save(Assortment);            
+            AssortmentRepository.Remove(product);
         }
 
         public void EnsureAssortment()

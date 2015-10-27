@@ -32,18 +32,24 @@ namespace Infrastructure.Persistance.Repository
             return new Assortment(products);
         }
 
-        public void Save(Assortment assortment)
+        public void Save(Product product)
         {
             using (var context = new BakeryContext())
             {
-                foreach (var product in assortment.Products)
-                {
-                    var mapper = new ProductMapper();
-                    var dto = mapper.ToDto(product);
+                var mapper = new ProductMapper();
+                var dto = mapper.ToDto(product);
+                context.Set<Context.Product.Product>().AddOrUpdate(dto);
+                context.SaveChanges();
+            }
+        }
 
-                    context.Set<Context.Product.Product>().AddOrUpdate(dto);
-
-                }
+        public void Remove(Product product)
+        {
+            using (var context = new BakeryContext())
+            {
+                context.Products.Remove(
+                    context.Products.Find(product.Code)
+                );
 
                 context.SaveChanges();
             }

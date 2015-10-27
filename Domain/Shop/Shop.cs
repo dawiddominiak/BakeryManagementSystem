@@ -13,6 +13,7 @@ namespace Domain.Shop
         public SortedList<DateTime, Payment.Payment> Payments { get; set; }
         public Address Address { get; set; }
         public List<Phone> Phones { get; set; }
+        public SortedList<DateTimePeriod, PriceLists.PriceList<Shop>> PriceLists { get; set; }
 
         public Shop(ShopCode code)
         {

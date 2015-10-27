@@ -50,16 +50,7 @@ namespace BakeryManagementSystem
                 new TaxRate(taxRate)
             );
 
-            if (CurrentProduct != null)
-            {
-                Controller.Edit(CurrentProduct.Value.Code, product);
-            }
-            else
-            {
-                Controller.Add(product);
-                CurrentProduct = product;
-            }
-
+            Controller.Save(product);
             ReloadProducts(product);
         }
 
@@ -76,6 +67,19 @@ namespace BakeryManagementSystem
             codeTextBox.Text = CurrentProduct.Value.Code;
             nameTextBox.Text = CurrentProduct.Value.Name;
             taxRateTextBox.Text = CurrentProduct.Value.TaxRate.Rate.ToString(CultureInfo.CurrentCulture);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            productListBox.ClearSelected();
+            if (CurrentProduct == null)
+            {
+                return;
+            }
+
+            Controller.Remove(CurrentProduct.Value);
+            CurrentProduct = null;
+            ReloadProducts();
         }
         #endregion
 
@@ -98,11 +102,13 @@ namespace BakeryManagementSystem
         private void SwitchButtons(bool enabled)
         {
             saveButton.Enabled = enabled;
+            deleteButton.Enabled = enabled;
             foreach (var textBox in TextBoxes)
             {
                 textBox.Enabled = enabled;
             }
         }
         #endregion
+
     }
 }
