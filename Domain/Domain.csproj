@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assortment\Assortment.cs" />
-    <Compile Include="Assortment\AssortmentId.cs" />
     <Compile Include="Assortment\IAssortmentRepository.cs" />
     <Compile Include="ISeller.cs" />
     <Compile Include="Payment\IPaymentRepository.cs" />

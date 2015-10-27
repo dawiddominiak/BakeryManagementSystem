@@ -6,8 +6,8 @@ namespace Domain.ProductMaps.Route
 {
     public class RouteProductMap : ProductMap, IAggregateRoot
     {
-        public RouteProductMapType Type { get; private set; }
-        public Domain.Route.Route Route { get; private set; }
+        public RouteProductMapType Type { get; set; }
+        public Domain.Route.Route Route { get; set; }
         public DateTime ApplicationDate { get; set; }
 
         public RouteProductMap(ProductMapId id, Domain.Route.Route route, RouteProductMapType type) : base(id)

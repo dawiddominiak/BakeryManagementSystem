@@ -2,11 +2,11 @@
 
 namespace Domain.Assortment
 {
-    public struct Product : IEquatable<Product>
+    public struct Product : IEquatable<Product>, IComparable<Product>
     {
-        public string Code { get; private set; }
-        public string Name { get; private set; }
-        public TaxRate TaxRate { get; private set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public TaxRate TaxRate { get; set; }
 
         public Product(string code, string name, TaxRate taxRate) : this()
         {
@@ -20,6 +20,16 @@ namespace Domain.Assortment
             return Code == other.Code &&
                 Name == other.Name &&
                 TaxRate.Equals(other.TaxRate);
+        }
+
+        public int CompareTo(Product other)
+        {
+            return string.Compare(ToString(), other.ToString(), StringComparison.Ordinal);
+        }
+
+        public override string ToString()
+        {
+            return Code + " " + Name + " " + TaxRate;
         }
     }
 }

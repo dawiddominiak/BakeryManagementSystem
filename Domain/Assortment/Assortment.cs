@@ -1,23 +1,31 @@
-﻿using System.Collections.Generic;
-using Shared;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
 
 namespace Domain.Assortment
 {
-    public class Assortment : IEntity<Assortment>, IAggregateRoot
+    public class Assortment : IEquatable<Assortment>
     {
-        public AssortmentId AssortmentId { get; private set; }
-        public List<Product> Products { get; private set; }
+        public List<Product> Products { get; set; }
 
-        public Assortment(AssortmentId id)
+        public Assortment()
         {
-            AssortmentId = id;
-
             Products = new List<Product>();
         }
 
-        public bool SameIdentityAs(Assortment other)
+        public Assortment(List<Product> products)
         {
-            return AssortmentId.Equals(other.AssortmentId);
+            Products = products;
+        }
+
+        public bool Equals(Assortment other)
+        {
+            var sortedProducts = Products.ToImmutableSortedSet();
+            var otherSortedProducts = other.Products.ToImmutableSortedSet();
+            
+            return sortedProducts.Count == otherSortedProducts.Count &&
+                sortedProducts.SequenceEqual(otherSortedProducts);
         }
     }
 }

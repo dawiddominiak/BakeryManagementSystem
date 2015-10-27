@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Domain.Assortment;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,21 +11,11 @@ namespace Tests.Domain.Product
     public class AssortmentTest
     {
         private Assortment _assortment;
-        private AssortmentId _assortmentId;
 
         [TestInitialize]
         public void OnTestInitialize()
         {
-            _assortmentId = new AssortmentId(Guid.NewGuid());
-            _assortment = new Assortment(_assortmentId);
-        }
-
-        [TestMethod]
-        public void HasAssortmentId()
-        {
-            Assert.IsTrue(
-                _assortmentId.Equals(_assortment.AssortmentId)    
-            );
+            _assortment = new Assortment();
         }
 
         [TestMethod]
@@ -39,18 +28,51 @@ namespace Tests.Domain.Product
         }
 
         [TestMethod]
-        public void SameIdentityAs_WithDifferentEntity_ShouldBeFalse()
+        public void Equals_ShouldBeFalse()
         {
+            var assortment1 = new Assortment(
+                new List<global::Domain.Assortment.Product>
+                {
+                    new global::Domain.Assortment.Product("P1", "Big bread", new TaxRate(0.23m)),
+                    new global::Domain.Assortment.Product("P2", "Small bread", new TaxRate(0.23m))
+                }
+            );
+
+            var assortment2 = new Assortment(
+                new List<global::Domain.Assortment.Product>
+                {
+                    new global::Domain.Assortment.Product("P1", "Big bread", new TaxRate(0.23m)),
+                    new global::Domain.Assortment.Product("P3", "Other bread", new TaxRate(0.23m)),
+                    new global::Domain.Assortment.Product("P2", "Small bread", new TaxRate(0.23m))            
+                }
+            );
+
             Assert.IsFalse(
-                _assortment.SameIdentityAs(new Assortment(new AssortmentId(Guid.NewGuid())))
+                assortment1.Equals(assortment2)
             );
         }
 
         [TestMethod]
-        public void SameIdentityAs_WithSameEntity_ShouldBeTrue()
+        public void Equals_ShouldBeTrue()
         {
+            var assortment1 = new Assortment(
+                new List<global::Domain.Assortment.Product>
+                {
+                    new global::Domain.Assortment.Product("P1", "Big bread", new TaxRate(0.23m)),
+                    new global::Domain.Assortment.Product("P2", "Small bread", new TaxRate(0.23m))
+                }
+            );
+
+            var assortment2 = new Assortment(
+                new List<global::Domain.Assortment.Product>
+                {
+                    new global::Domain.Assortment.Product("P2", "Small bread", new TaxRate(0.23m)),
+                    new global::Domain.Assortment.Product("P1", "Big bread", new TaxRate(0.23m))
+                }
+            );
+
             Assert.IsTrue(
-                _assortment.SameIdentityAs(new Assortment(_assortmentId))    
+                assortment1.Equals(assortment2)
             );
         }
     }

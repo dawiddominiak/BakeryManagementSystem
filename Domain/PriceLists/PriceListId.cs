@@ -4,7 +4,7 @@ namespace Domain.PriceLists
 {
     public struct PriceListId : IEquatable<PriceListId>
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         public PriceListId(Guid id)
             : this()

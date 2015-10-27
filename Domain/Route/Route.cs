@@ -6,8 +6,8 @@ namespace Domain.Route
 {
     public class Route : IEntity<Route>, ISeller, IAggregateRoot
     {
-        public RouteName RouteName { get; private set; }
-        public SortedList<DateTimePeriod, Shop.Shop> Shops { get; private set; } 
+        public RouteName RouteName { get; set; }
+        public SortedList<DateTimePeriod, Shop.Shop> Shops { get; set; } 
 
         public Route(RouteName routeName)
         {

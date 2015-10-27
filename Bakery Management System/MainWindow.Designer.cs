@@ -31,24 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newWorkingDayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openWorkingDayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assortmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shopsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.priceListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.othersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vatRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,46 +57,9 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newWorkingDayToolStripMenuItem,
-            this.openWorkingDayToolStripMenuItem,
-            this.recentToolStripMenuItem,
-            this.importDataToolStripMenuItem,
-            this.exportDataToolStripMenuItem,
-            this.resetDataToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
-            // 
-            // newWorkingDayToolStripMenuItem
-            // 
-            this.newWorkingDayToolStripMenuItem.Name = "newWorkingDayToolStripMenuItem";
-            resources.ApplyResources(this.newWorkingDayToolStripMenuItem, "newWorkingDayToolStripMenuItem");
-            this.newWorkingDayToolStripMenuItem.Click += new System.EventHandler(this.newWorkingDayToolStripMenuItem_Click);
-            // 
-            // openWorkingDayToolStripMenuItem
-            // 
-            this.openWorkingDayToolStripMenuItem.Name = "openWorkingDayToolStripMenuItem";
-            resources.ApplyResources(this.openWorkingDayToolStripMenuItem, "openWorkingDayToolStripMenuItem");
-            // 
-            // recentToolStripMenuItem
-            // 
-            this.recentToolStripMenuItem.Name = "recentToolStripMenuItem";
-            resources.ApplyResources(this.recentToolStripMenuItem, "recentToolStripMenuItem");
-            // 
-            // importDataToolStripMenuItem
-            // 
-            this.importDataToolStripMenuItem.Name = "importDataToolStripMenuItem";
-            resources.ApplyResources(this.importDataToolStripMenuItem, "importDataToolStripMenuItem");
-            // 
-            // exportDataToolStripMenuItem
-            // 
-            this.exportDataToolStripMenuItem.Name = "exportDataToolStripMenuItem";
-            resources.ApplyResources(this.exportDataToolStripMenuItem, "exportDataToolStripMenuItem");
-            // 
-            // resetDataToolStripMenuItem
-            // 
-            this.resetDataToolStripMenuItem.Name = "resetDataToolStripMenuItem";
-            resources.ApplyResources(this.resetDataToolStripMenuItem, "resetDataToolStripMenuItem");
             // 
             // exitToolStripMenuItem
             // 
@@ -124,26 +78,12 @@
             this.openSettingsToolStripMenuItem.Name = "openSettingsToolStripMenuItem";
             resources.ApplyResources(this.openSettingsToolStripMenuItem, "openSettingsToolStripMenuItem");
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            // 
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assortmentToolStripMenuItem,
             this.shopsToolStripMenuItem,
-            this.routesToolStripMenuItem,
-            this.priceListsToolStripMenuItem,
-            this.othersToolStripMenuItem});
+            this.routesToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             resources.ApplyResources(this.managementToolStripMenuItem, "managementToolStripMenuItem");
             // 
@@ -163,22 +103,17 @@
             this.routesToolStripMenuItem.Name = "routesToolStripMenuItem";
             resources.ApplyResources(this.routesToolStripMenuItem, "routesToolStripMenuItem");
             // 
-            // priceListsToolStripMenuItem
+            // dataGridView1
             // 
-            this.priceListsToolStripMenuItem.Name = "priceListsToolStripMenuItem";
-            resources.ApplyResources(this.priceListsToolStripMenuItem, "priceListsToolStripMenuItem");
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
             // 
-            // othersToolStripMenuItem
+            // textBox1
             // 
-            this.othersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vatRatesToolStripMenuItem});
-            this.othersToolStripMenuItem.Name = "othersToolStripMenuItem";
-            resources.ApplyResources(this.othersToolStripMenuItem, "othersToolStripMenuItem");
-            // 
-            // vatRatesToolStripMenuItem
-            // 
-            this.vatRatesToolStripMenuItem.Name = "vatRatesToolStripMenuItem";
-            resources.ApplyResources(this.vatRatesToolStripMenuItem, "vatRatesToolStripMenuItem");
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
             // 
             // MainWindow
             // 
@@ -201,12 +136,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newWorkingDayToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openWorkingDayToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importDataToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportDataToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resetDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openSettingsToolStripMenuItem;
@@ -216,8 +145,5 @@
         private System.Windows.Forms.ToolStripMenuItem assortmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shopsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem routesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem priceListsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem othersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vatRatesToolStripMenuItem;
     }
 }

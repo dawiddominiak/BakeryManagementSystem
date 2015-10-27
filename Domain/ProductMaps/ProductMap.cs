@@ -7,7 +7,7 @@ namespace Domain.ProductMaps
 {
     public abstract class ProductMap : IEntity<ProductMap>
     {
-        public ProductMapId Id { get; private set; }
+        public ProductMapId Id { get; set; }
         public Dictionary<Assortment.Product, int> Products { get; set; }
 
         protected ProductMap(ProductMapId id)

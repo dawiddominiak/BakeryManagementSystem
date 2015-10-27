@@ -6,8 +6,8 @@ namespace Domain.ProductMaps.Shop
 {
     public class ShopProductMap : ProductMap, IAggregateRoot
     {
-        public ShopProductMapType Type { get; private set; }
-        public Domain.Shop.Shop Shop { get; private set; }
+        public ShopProductMapType Type { get; set; }
+        public Domain.Shop.Shop Shop { get; set; }
         public DateTime ApplicationDate { get; set; }
 
         public ShopProductMap(ProductMapId id, Domain.Shop.Shop shop, ShopProductMapType type) : base(id)

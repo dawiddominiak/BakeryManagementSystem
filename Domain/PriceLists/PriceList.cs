@@ -7,7 +7,7 @@ namespace Domain.PriceLists
     public class PriceList<TK> 
         : IEntity<PriceList<TK>>, IAggregateRoot
     {
-        public PriceListId Id { get; private set; }
+        public PriceListId Id { get; set; }
         public TK Seller { get; set; }
         public DateTimePeriod ApplicationPeriod { get; set; }
         public Dictionary<Assortment.Product, Money> Prices { get; set; }

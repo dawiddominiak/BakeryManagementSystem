@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{AD36F6DE-A6FE-48F0-88D9-A9F7C71DF1DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,16 @@ Global
 		{AD36F6DE-A6FE-48F0-88D9-A9F7C71DF1DB}.Release|ARM.ActiveCfg = Release|Any CPU
 		{AD36F6DE-A6FE-48F0-88D9-A9F7C71DF1DB}.Release|x64.ActiveCfg = Release|Any CPU
 		{AD36F6DE-A6FE-48F0-88D9-A9F7C71DF1DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Release|ARM.ActiveCfg = Release|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Release|x64.ActiveCfg = Release|Any CPU
+		{BD10254E-9EBB-4F68-9CFE-E62E167B6EAC}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

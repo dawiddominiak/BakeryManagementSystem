@@ -7,10 +7,10 @@ namespace Domain.Shop
 {
     public class Shop : IEntity<Shop>, ISeller, IAggregateRoot
     {
-        public ShopCode Code { get; private set; }
+        public ShopCode Code { get; set; }
         public string Name { get; set; }
         public Owner Owner { get; set; }
-        public SortedList<DateTime, Payment.Payment> Payments { get; private set; }
+        public SortedList<DateTime, Payment.Payment> Payments { get; set; }
         public Address Address { get; set; }
         public List<Phone> Phones { get; set; }
 

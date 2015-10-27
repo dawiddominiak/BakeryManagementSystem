@@ -6,7 +6,7 @@ namespace Domain.Shop
 {
     public class Owner : IEntity<Owner>
     {
-        public OwnerCode Code { get; private set; }
+        public OwnerCode Code { get; set; }
         public string Name { get; set; }
         public string TaxIdentificationNumber { get; set; }
         public string NationalEconomyRegister { get; set; }
