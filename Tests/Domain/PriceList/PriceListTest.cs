@@ -27,8 +27,8 @@ namespace Tests.Domain.PriceList
         [TestInitialize]
         public void Initialization()
         {
-            _product1 = new global::Domain.Assortment.Product("P1", "Product 1", new TaxRate(0.23m));
-            _product2 = new global::Domain.Assortment.Product("P2", "Product 2", new TaxRate(0.08m));
+            _product1 = new global::Domain.Assortment.Product(new ProductId(Guid.NewGuid()), "P1", "Product 1", new TaxRate(0.23m));
+            _product2 = new global::Domain.Assortment.Product(new ProductId(Guid.NewGuid()), "P2", "Product 2", new TaxRate(0.08m));
             _productMap = new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()
@@ -66,7 +66,7 @@ namespace Tests.Domain.PriceList
                 {
                     {_product1, Money.FromNative(2.35m, "Pln")},
                     {_product2, Money.FromNative(0.45m, "Pln")},
-                    {new global::Domain.Assortment.Product("P3", "Product 3", new TaxRate(0.23m)), Money.FromNative(0.10m, "Pln")}
+                    {new global::Domain.Assortment.Product(new ProductId(Guid.NewGuid()), "P3", "Product 3", new TaxRate(0.23m)), Money.FromNative(0.10m, "Pln")}
                 }
             };
 

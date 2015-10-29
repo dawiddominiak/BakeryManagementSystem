@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Domain.Shop;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shared.Structs;
@@ -9,6 +10,7 @@ namespace Tests.Domain.Shop
     public class OwnerTest
     {
         private Owner _owner;
+        private OwnerId _ownerId;
         private Address _address;
         private string _name;
         private string _nationalEconomyRegister;
@@ -23,8 +25,9 @@ namespace Tests.Domain.Shop
             _nationalEconomyRegister = "123456789";
             _taxIdentificationNumber = "987654321";
             _phone = new Phone("48", "22", "1234567");
+            _ownerId = new OwnerId(Guid.NewGuid());
 
-            _owner = new Owner(new OwnerCode("OC"))
+            _owner = new Owner(_ownerId)
             {
                 Address = _address,
                 Name = _name,
@@ -74,7 +77,7 @@ namespace Tests.Domain.Shop
         {
             Assert.IsFalse(
                 _owner.SameIdentityAs(
-                    new Owner(new OwnerCode("OD"))
+                    new Owner(new OwnerId(Guid.NewGuid()))
                 )
             );
         }
@@ -84,7 +87,7 @@ namespace Tests.Domain.Shop
         {
             Assert.IsTrue(
                 _owner.SameIdentityAs(
-                    new Owner(new OwnerCode("OC"))
+                    new Owner(_ownerId)
                 )
             );
         }

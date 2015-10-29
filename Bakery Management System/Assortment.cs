@@ -10,7 +10,7 @@ namespace BakeryManagementSystem
 {
     public partial class Assortment : Form
     {
-        public Product? CurrentProduct { get; set; }
+        public Product CurrentProduct { get; set; }
         public List<TextBox> TextBoxes { get; set; }
         public ProductController Controller { get; set; }
         public List<Product> Products { get; set; } 
@@ -44,14 +44,20 @@ namespace BakeryManagementSystem
             decimal taxRate;
             decimal.TryParse(taxRateTextBox.Text, out taxRate);
 
-            var product = new Product(
-                codeTextBox.Text,
-                nameTextBox.Text,
-                new TaxRate(taxRate)
-            );
+            if (CurrentProduct == null)
+            {
+                CurrentProduct = new Product
+                {
+                    Id = Controller.NextProductId()
+                };
+            }
 
-            Controller.Save(product);
-            ReloadProducts(product);
+            CurrentProduct.Code = codeTextBox.Text;
+            CurrentProduct.Name = nameTextBox.Text;
+            CurrentProduct.TaxRate = new TaxRate(taxRate);
+
+            Controller.Save(CurrentProduct);
+            ReloadProducts(CurrentProduct);
         }
 
         private void productListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,9 +70,9 @@ namespace BakeryManagementSystem
             var current = (KeyValuePair<string, string>)productListBox.SelectedItem;
             CurrentProduct = Products.Find(q => q.Code == current.Key);
             SwitchButtons(true);
-            codeTextBox.Text = CurrentProduct.Value.Code;
-            nameTextBox.Text = CurrentProduct.Value.Name;
-            taxRateTextBox.Text = CurrentProduct.Value.TaxRate.Rate.ToString(CultureInfo.CurrentCulture);
+            codeTextBox.Text = CurrentProduct.Code;
+            nameTextBox.Text = CurrentProduct.Name;
+            taxRateTextBox.Text = CurrentProduct.TaxRate.Rate.ToString(CultureInfo.CurrentCulture);
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -77,26 +83,28 @@ namespace BakeryManagementSystem
                 return;
             }
 
-            Controller.Remove(CurrentProduct.Value);
+            Controller.Remove(CurrentProduct);
             CurrentProduct = null;
             ReloadProducts();
         }
         #endregion
 
         #region Helpers
-        private void ReloadProducts(Product? selected = null)
+        private void ReloadProducts(Product selected = null)
         {
-            Products = Controller.Get().Products;
+            Products = Controller.GetAll();
             productListBox.DataSource = Products
                 .Select(e => new KeyValuePair<string, string>(e.Code, e.Name))
                 .ToList();
-            
-            if (selected != null)
+
+            if (selected == null)
             {
-                var index = Products.FindIndex(el => el.Code == selected.Value.Code);
-                
-                productListBox.SetSelected(index, true);
+                return;
             }
+            
+            var index = Products.FindIndex(el => el.Code == selected.Code);
+                
+            productListBox.SetSelected(index, true);
         }
 
         private void SwitchButtons(bool enabled)

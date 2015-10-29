@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using Domain.Assortment;
 using Infrastructure.Persistance.Context;
@@ -8,36 +9,51 @@ namespace Infrastructure.Persistance.Repository
 {
     public class AssortmentRepository : IAssortmentRepository
     {
-        public Assortment Get()
+        public ProductMapper Mapper { get; set; }
+
+        public AssortmentRepository()
         {
-            var mapper = new ProductMapper();
-            var products = new List<Product>();
+            Mapper = new ProductMapper();
+        }
+
+        public List<Product> GetAll()
+        {
             using (var context = new BakeryContext())
             {
-                var dtos = context.Products;
-                var domainProducts = new List<Product>();
+                var products = context
+                    .Products;
 
-                foreach (var dto in dtos)
+                var list = new List<Product>();
+                
+                foreach (var product in products)
                 {
-                    domainProducts.Add(
-                        mapper.ToDomainObject(dto)
-                    );
+                    list.Add(Mapper.ToDomainObject(product));
                 }
 
-                products.AddRange(
-                    domainProducts
-                );
+                return list;
             }
+        }
 
-            return new Assortment(products);
+        public Product Get(ProductId productId)
+        {
+            using (var context = new BakeryContext())
+            {
+                var dto = context
+                    .Products
+                    .Find(productId.ToString());
+
+                return dto == null ? null : Mapper.ToDomainObject(dto);
+            }
         }
 
         public void Save(Product product)
         {
             using (var context = new BakeryContext())
             {
-                var mapper = new ProductMapper();
-                var dto = mapper.ToDto(product);
+                var dto = context.Products.Find(product.Id.Id) ?? new Context.Product.Product();
+                
+                Mapper.MapToDto(product, dto);
+
                 context.Set<Context.Product.Product>().AddOrUpdate(dto);
                 context.SaveChanges();
             }
@@ -48,11 +64,16 @@ namespace Infrastructure.Persistance.Repository
             using (var context = new BakeryContext())
             {
                 context.Products.Remove(
-                    context.Products.Find(product.Code)
+                    context.Products.Find(product.Id.Id)
                 );
 
                 context.SaveChanges();
             }
+        }
+
+        public ProductId NextProductId()
+        {
+            return new ProductId(Guid.NewGuid());
         }
     }
 }

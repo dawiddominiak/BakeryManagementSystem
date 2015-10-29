@@ -6,7 +6,8 @@ namespace Domain.Shop
 {
     public class Owner : IEntity<Owner>
     {
-        public OwnerCode Code { get; set; }
+        public OwnerId Id { get; set; }
+        public string Code { get; set; }
         public string Name { get; set; }
         public string TaxIdentificationNumber { get; set; }
         public string NationalEconomyRegister { get; set; }
@@ -14,16 +15,16 @@ namespace Domain.Shop
         public List<Phone> Phones { get; set; }
         public List<Shop> Shops { get; set; } 
 
-        public Owner(OwnerCode code)
+        public Owner(OwnerId id)
         {
-            Code = code;
+            Id = id;
             Phones = new List<Phone>();
             Shops = new List<Shop>();
         }
 
         public bool SameIdentityAs(Owner other)
         {
-            return Code.Equals(other.Code);
+            return Id.Equals(other.Id);
         }
     }
 }

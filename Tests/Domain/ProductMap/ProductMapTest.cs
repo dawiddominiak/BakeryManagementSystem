@@ -25,8 +25,8 @@ namespace Tests.Domain.ProductMap
         public void Initialization()
         {
 
-            _product1 = new global::Domain.Assortment.Product("P1", "Product 1", new TaxRate(0.23m));
-            _product2 = new global::Domain.Assortment.Product("P2", "Product 2", new TaxRate(0.23m));
+            _product1 = new global::Domain.Assortment.Product(new ProductId(Guid.NewGuid()), "P1", "Product 1", new TaxRate(0.23m));
+            _product2 = new global::Domain.Assortment.Product(new ProductId(Guid.NewGuid()), "P2", "Product 2", new TaxRate(0.23m));
             _productMap = new RealProductMap(new ProductMapId(Guid.NewGuid()))
             {
                 Products = new Dictionary<global::Domain.Assortment.Product, int>()

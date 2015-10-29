@@ -107,10 +107,8 @@
     <Compile Include="Persistance\Context\Shop\ShopAddress.cs" />
     <Compile Include="Persistance\Context\Shop\ShopPhone.cs" />
     <Compile Include="Persistance\Mapper\Assortment\ProductMapper.cs" />
-    <Compile Include="Persistance\Mapper\IMapper.cs" />
-    <Compile Include="Persistance\Mapper\Payment\PaymentMapper.cs" />
+    <Compile Include="Persistance\Mapper\Mapper.cs" />
     <Compile Include="Persistance\Mapper\Shop\OwnerMapper.cs" />
-    <Compile Include="Persistance\Mapper\Shop\ShopMapper.cs" />
     <Compile Include="Persistance\Repository\AssortmentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Domain.Assortment;
 using Infrastructure.Persistance.Repository;
 
@@ -8,7 +8,6 @@ namespace Controller.Assortment
     public class ProductController
     {
         public IAssortmentRepository AssortmentRepository { get; set; }
-        public Domain.Assortment.Assortment Assortment { get; set; }
 
         public ProductController()
         {
@@ -25,19 +24,19 @@ namespace Controller.Assortment
             AssortmentRepository.Remove(product);
         }
 
-        public void EnsureAssortment()
+        public List<Product> GetAll()
         {
-            if (Assortment == null)
-            {
-                Get();
-            }
+            return AssortmentRepository.GetAll();
         }
 
-        public Domain.Assortment.Assortment Get()
+        public Product Get(ProductId productId)
         {
-            var assortment = AssortmentRepository.Get();
-            Assortment = assortment;
-            return assortment;
+            return AssortmentRepository.Get(productId);
+        }
+
+        public ProductId NextProductId()
+        {
+            return AssortmentRepository.NextProductId();
         }
     }
 }

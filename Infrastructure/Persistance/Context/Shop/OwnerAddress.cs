@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Infrastructure.Persistance.Context.Shop
@@ -6,7 +7,7 @@ namespace Infrastructure.Persistance.Context.Shop
     public class OwnerAddress
     {
         [Key, ForeignKey("Owner")]
-        public string OwnerCode { get; set; }
+        public Guid OwnerId { get; set; }
         
         public Owner Owner { get; set; }
         public string Street { get; set; }

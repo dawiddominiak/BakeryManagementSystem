@@ -21,7 +21,7 @@ namespace Tests.Domain.Shop
         public void Initialization()
         {
             _name = "Example Shop Name";
-            _owner = new Owner(new OwnerCode("OC"));
+            _owner = new Owner(new OwnerId(Guid.NewGuid()));
             _payment = new global::Domain.Payment.Payment(
                 new PaymentId(Guid.NewGuid())
             );

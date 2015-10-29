@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assortment\Assortment.cs" />
     <Compile Include="Assortment\IAssortmentRepository.cs" />
+    <Compile Include="Assortment\ProductId.cs" />
     <Compile Include="ISeller.cs" />
     <Compile Include="Payment\IPaymentRepository.cs" />
     <Compile Include="Payment\Payment.cs" />
@@ -71,9 +71,10 @@
     <Compile Include="Route\IRouteRepository.cs" />
     <Compile Include="Route\Route.cs" />
     <Compile Include="Route\RouteName.cs" />
+    <Compile Include="Shop\IOwnerRepository.cs" />
     <Compile Include="Shop\IShopRepository.cs" />
-    <Compile Include="Shop\OwnerCode.cs" />
     <Compile Include="Shop\Owner.cs" />
+    <Compile Include="Shop\OwnerId.cs" />
     <Compile Include="Shop\Shop.cs" />
     <Compile Include="Shop\ShopCode.cs" />
   </ItemGroup>

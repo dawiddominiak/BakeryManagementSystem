@@ -38,7 +38,7 @@ namespace Tests.Domain.Payment
         [TestMethod]
         public void FromString_ShouldReturnsCorrectString()
         {
-            Assert.AreEqual(PaymentId.FromString(_id.ToString()), _paymentId);
+            Assert.IsTrue(new PaymentId(_id.ToString()).Equals(_paymentId));
         }
 
         [TestMethod]
