@@ -40,7 +40,7 @@ namespace Infrastructure.Persistance.Repository
             {
                 var dto = context
                     .Products
-                    .Find(productId.ToString());
+                    .Find(productId.Id);
 
                 return dto == null ? null : Mapper.ToDomainObject(dto);
             }

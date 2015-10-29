@@ -110,6 +110,7 @@
     <Compile Include="Persistance\Mapper\Mapper.cs" />
     <Compile Include="Persistance\Mapper\Shop\OwnerMapper.cs" />
     <Compile Include="Persistance\Repository\AssortmentRepository.cs" />
+    <Compile Include="Persistance\Repository\OwnerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

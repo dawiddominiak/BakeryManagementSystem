@@ -37,43 +37,43 @@
             this.ownerPage = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addNewOwner = new System.Windows.Forms.Button();
             this.ownerListBox = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.codeTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.taxIdentificationNumberTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nationalEconomyRegisterTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.streetTextBox = new System.Windows.Forms.TextBox();
             this.postalCodeTextBox = new System.Windows.Forms.TextBox();
             this.cityTextBox = new System.Windows.Forms.TextBox();
             this.countryTextBox = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.ownerPhonesListBox = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addNewPhoneButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.areaPartTextBox = new System.Windows.Forms.TextBox();
+            this.countryPartTextBox = new System.Windows.Forms.TextBox();
+            this.addPhoneButton = new System.Windows.Forms.Button();
+            this.removePhoneButton = new System.Windows.Forms.Button();
+            this.numberTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.removeOwnerButton = new System.Windows.Forms.Button();
+            this.saveOwnerButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -86,10 +86,10 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -106,8 +106,8 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1051, 614);
-            this.splitContainer1.SplitterDistance = 348;
+            this.splitContainer1.Size = new System.Drawing.Size(1358, 989);
+            this.splitContainer1.SplitterDistance = 449;
             this.splitContainer1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -122,16 +122,16 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(348, 614);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(449, 989);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // addNewShopButton
             // 
             this.addNewShopButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addNewShopButton.Location = new System.Drawing.Point(5, 569);
+            this.addNewShopButton.Location = new System.Drawing.Point(5, 944);
             this.addNewShopButton.Margin = new System.Windows.Forms.Padding(5);
             this.addNewShopButton.Name = "addNewShopButton";
-            this.addNewShopButton.Size = new System.Drawing.Size(338, 40);
+            this.addNewShopButton.Size = new System.Drawing.Size(439, 40);
             this.addNewShopButton.TabIndex = 0;
             this.addNewShopButton.Text = "Add new";
             this.addNewShopButton.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@
             this.shopListBox.Location = new System.Drawing.Point(5, 5);
             this.shopListBox.Margin = new System.Windows.Forms.Padding(5);
             this.shopListBox.Name = "shopListBox";
-            this.shopListBox.Size = new System.Drawing.Size(338, 554);
+            this.shopListBox.Size = new System.Drawing.Size(439, 929);
             this.shopListBox.TabIndex = 1;
             // 
             // tabControl1
@@ -164,7 +164,7 @@
             this.shopPage.Location = new System.Drawing.Point(4, 29);
             this.shopPage.Name = "shopPage";
             this.shopPage.Padding = new System.Windows.Forms.Padding(3);
-            this.shopPage.Size = new System.Drawing.Size(1057, 620);
+            this.shopPage.Size = new System.Drawing.Size(1364, 995);
             this.shopPage.TabIndex = 0;
             this.shopPage.Text = "Shops";
             this.shopPage.UseVisualStyleBackColor = true;
@@ -201,7 +201,7 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.addNewOwner, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.ownerListBox, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
@@ -212,16 +212,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(452, 989);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // button1
+            // addNewOwner
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(5, 944);
-            this.button1.Margin = new System.Windows.Forms.Padding(5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(442, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add new owner";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addNewOwner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addNewOwner.Location = new System.Drawing.Point(5, 944);
+            this.addNewOwner.Margin = new System.Windows.Forms.Padding(5);
+            this.addNewOwner.Name = "addNewOwner";
+            this.addNewOwner.Size = new System.Drawing.Size(442, 40);
+            this.addNewOwner.TabIndex = 1;
+            this.addNewOwner.Text = "Add new owner";
+            this.addNewOwner.UseVisualStyleBackColor = true;
+            this.addNewOwner.Click += new System.EventHandler(this.addNewOwner_Click);
             // 
             // ownerListBox
             // 
@@ -233,6 +234,35 @@
             this.ownerListBox.Name = "ownerListBox";
             this.ownerListBox.Size = new System.Drawing.Size(442, 929);
             this.ownerListBox.TabIndex = 2;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel9, 0, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(902, 989);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(10, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(882, 449);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Basic data";
             // 
             // tableLayoutPanel3
             // 
@@ -261,6 +291,40 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(876, 424);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(172, 328);
+            this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Address";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nameTextBox.Enabled = false;
+            this.nameTextBox.Location = new System.Drawing.Point(260, 81);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(606, 26);
+            this.nameTextBox.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(189, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Name";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -276,32 +340,12 @@
             // codeTextBox
             // 
             this.codeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.codeTextBox.Enabled = false;
             this.codeTextBox.Location = new System.Drawing.Point(260, 18);
             this.codeTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.Size = new System.Drawing.Size(606, 26);
             this.codeTextBox.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Name";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameTextBox.Location = new System.Drawing.Point(260, 81);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(606, 26);
-            this.nameTextBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -318,6 +362,7 @@
             // taxIdentificationNumberTextBox
             // 
             this.taxIdentificationNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.taxIdentificationNumberTextBox.Enabled = false;
             this.taxIdentificationNumberTextBox.Location = new System.Drawing.Point(260, 144);
             this.taxIdentificationNumberTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.taxIdentificationNumberTextBox.Name = "taxIdentificationNumberTextBox";
@@ -339,23 +384,12 @@
             // nationalEconomyRegisterTextBox
             // 
             this.nationalEconomyRegisterTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nationalEconomyRegisterTextBox.Enabled = false;
             this.nationalEconomyRegisterTextBox.Location = new System.Drawing.Point(260, 207);
             this.nationalEconomyRegisterTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.nationalEconomyRegisterTextBox.Name = "nationalEconomyRegisterTextBox";
             this.nationalEconomyRegisterTextBox.Size = new System.Drawing.Size(606, 26);
             this.nationalEconomyRegisterTextBox.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(172, 328);
-            this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Address";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel4
             // 
@@ -380,6 +414,18 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(620, 166);
             this.tableLayoutPanel4.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(116, 134);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 20);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Country";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -417,21 +463,10 @@
             this.label8.Text = "City";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(116, 134);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 20);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Country";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // streetTextBox
             // 
             this.streetTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.streetTextBox.Enabled = false;
             this.streetTextBox.Location = new System.Drawing.Point(200, 7);
             this.streetTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.streetTextBox.Name = "streetTextBox";
@@ -441,6 +476,7 @@
             // postalCodeTextBox
             // 
             this.postalCodeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.postalCodeTextBox.Enabled = false;
             this.postalCodeTextBox.Location = new System.Drawing.Point(200, 48);
             this.postalCodeTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.postalCodeTextBox.Name = "postalCodeTextBox";
@@ -450,6 +486,7 @@
             // cityTextBox
             // 
             this.cityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cityTextBox.Enabled = false;
             this.cityTextBox.Location = new System.Drawing.Point(200, 89);
             this.cityTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.cityTextBox.Name = "cityTextBox";
@@ -459,40 +496,12 @@
             // countryTextBox
             // 
             this.countryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.countryTextBox.Enabled = false;
             this.countryTextBox.Location = new System.Drawing.Point(200, 131);
             this.countryTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.countryTextBox.Name = "countryTextBox";
             this.countryTextBox.Size = new System.Drawing.Size(410, 26);
             this.countryTextBox.TabIndex = 9;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox2, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel9, 0, 2);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(902, 989);
-            this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(10, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(882, 449);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Basic data";
             // 
             // groupBox2
             // 
@@ -526,7 +535,7 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.ownerPhonesListBox, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.button2, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.addNewPhoneButton, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 53);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -547,16 +556,18 @@
             this.ownerPhonesListBox.Size = new System.Drawing.Size(860, 308);
             this.ownerPhonesListBox.TabIndex = 3;
             // 
-            // button2
+            // addNewPhoneButton
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(5, 323);
-            this.button2.Margin = new System.Windows.Forms.Padding(5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(860, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Add new phone";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addNewPhoneButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addNewPhoneButton.Enabled = false;
+            this.addNewPhoneButton.Location = new System.Drawing.Point(5, 323);
+            this.addNewPhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.addNewPhoneButton.Name = "addNewPhoneButton";
+            this.addNewPhoneButton.Size = new System.Drawing.Size(860, 40);
+            this.addNewPhoneButton.TabIndex = 2;
+            this.addNewPhoneButton.Text = "Add new phone";
+            this.addNewPhoneButton.UseVisualStyleBackColor = true;
+            this.addNewPhoneButton.Click += new System.EventHandler(this.addNewPhoneButton_Click);
             // 
             // tableLayoutPanel8
             // 
@@ -566,11 +577,11 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel8.Controls.Add(this.textBox2, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.button3, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.button4, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBox3, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.areaPartTextBox, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.countryPartTextBox, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.addPhoneButton, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.removePhoneButton, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.numberTextBox, 2, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -579,64 +590,70 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(870, 44);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
-            // textBox1
+            // areaPartTextBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(10, 9);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 26);
-            this.textBox1.TabIndex = 9;
+            this.areaPartTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.areaPartTextBox.Enabled = false;
+            this.areaPartTextBox.Location = new System.Drawing.Point(140, 9);
+            this.areaPartTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.areaPartTextBox.Name = "areaPartTextBox";
+            this.areaPartTextBox.Size = new System.Drawing.Size(110, 26);
+            this.areaPartTextBox.TabIndex = 10;
             // 
-            // textBox2
+            // countryPartTextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(140, 9);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(110, 26);
-            this.textBox2.TabIndex = 10;
+            this.countryPartTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.countryPartTextBox.Enabled = false;
+            this.countryPartTextBox.Location = new System.Drawing.Point(10, 9);
+            this.countryPartTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.countryPartTextBox.Name = "countryPartTextBox";
+            this.countryPartTextBox.Size = new System.Drawing.Size(110, 26);
+            this.countryPartTextBox.TabIndex = 9;
             // 
-            // textBox3
+            // addPhoneButton
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(270, 9);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(328, 26);
-            this.textBox3.TabIndex = 11;
+            this.addPhoneButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addPhoneButton.Enabled = false;
+            this.addPhoneButton.Location = new System.Drawing.Point(613, 5);
+            this.addPhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.addPhoneButton.Name = "addPhoneButton";
+            this.addPhoneButton.Size = new System.Drawing.Size(120, 34);
+            this.addPhoneButton.TabIndex = 12;
+            this.addPhoneButton.Text = "Add";
+            this.addPhoneButton.UseVisualStyleBackColor = true;
+            this.addPhoneButton.Click += new System.EventHandler(this.addPhoneButton_Click);
             // 
-            // button3
+            // removePhoneButton
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(613, 5);
-            this.button3.Margin = new System.Windows.Forms.Padding(5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 34);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Save";
-            this.button3.UseVisualStyleBackColor = true;
+            this.removePhoneButton.BackColor = System.Drawing.Color.MistyRose;
+            this.removePhoneButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.removePhoneButton.Enabled = false;
+            this.removePhoneButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.removePhoneButton.Location = new System.Drawing.Point(743, 5);
+            this.removePhoneButton.Margin = new System.Windows.Forms.Padding(5);
+            this.removePhoneButton.Name = "removePhoneButton";
+            this.removePhoneButton.Size = new System.Drawing.Size(122, 34);
+            this.removePhoneButton.TabIndex = 13;
+            this.removePhoneButton.Text = "Remove";
+            this.removePhoneButton.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // numberTextBox
             // 
-            this.button4.BackColor = System.Drawing.Color.MistyRose;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button4.Location = new System.Drawing.Point(743, 5);
-            this.button4.Margin = new System.Windows.Forms.Padding(5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(122, 34);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Remove";
-            this.button4.UseVisualStyleBackColor = false;
+            this.numberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numberTextBox.Enabled = false;
+            this.numberTextBox.Location = new System.Drawing.Point(270, 9);
+            this.numberTextBox.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.numberTextBox.Name = "numberTextBox";
+            this.numberTextBox.Size = new System.Drawing.Size(328, 26);
+            this.numberTextBox.TabIndex = 11;
             // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 2;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.button6, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.button5, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.removeOwnerButton, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.saveOwnerButton, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 941);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -645,29 +662,31 @@
             this.tableLayoutPanel9.Size = new System.Drawing.Size(896, 45);
             this.tableLayoutPanel9.TabIndex = 3;
             // 
-            // button5
+            // removeOwnerButton
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button5.Location = new System.Drawing.Point(5, 5);
-            this.button5.Margin = new System.Windows.Forms.Padding(5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(438, 35);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Save owner";
-            this.button5.UseVisualStyleBackColor = true;
+            this.removeOwnerButton.BackColor = System.Drawing.Color.MistyRose;
+            this.removeOwnerButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.removeOwnerButton.Enabled = false;
+            this.removeOwnerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.removeOwnerButton.Location = new System.Drawing.Point(453, 5);
+            this.removeOwnerButton.Margin = new System.Windows.Forms.Padding(5);
+            this.removeOwnerButton.Name = "removeOwnerButton";
+            this.removeOwnerButton.Size = new System.Drawing.Size(438, 35);
+            this.removeOwnerButton.TabIndex = 14;
+            this.removeOwnerButton.Text = "Remove owner";
+            this.removeOwnerButton.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // saveOwnerButton
             // 
-            this.button6.BackColor = System.Drawing.Color.MistyRose;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button6.Location = new System.Drawing.Point(453, 5);
-            this.button6.Margin = new System.Windows.Forms.Padding(5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(438, 35);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Remove owner";
-            this.button6.UseVisualStyleBackColor = false;
+            this.saveOwnerButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saveOwnerButton.Enabled = false;
+            this.saveOwnerButton.Location = new System.Drawing.Point(5, 5);
+            this.saveOwnerButton.Margin = new System.Windows.Forms.Padding(5);
+            this.saveOwnerButton.Name = "saveOwnerButton";
+            this.saveOwnerButton.Size = new System.Drawing.Size(438, 35);
+            this.saveOwnerButton.TabIndex = 13;
+            this.saveOwnerButton.Text = "Save owner";
+            this.saveOwnerButton.UseVisualStyleBackColor = true;
             // 
             // Shops
             // 
@@ -691,12 +710,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -718,7 +737,7 @@
         private System.Windows.Forms.TabPage ownerPage;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addNewOwner;
         private System.Windows.Forms.ListBox ownerListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label1;
@@ -745,15 +764,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.ListBox ownerPhonesListBox;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addNewPhoneButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox areaPartTextBox;
+        private System.Windows.Forms.TextBox countryPartTextBox;
+        private System.Windows.Forms.Button addPhoneButton;
+        private System.Windows.Forms.Button removePhoneButton;
+        private System.Windows.Forms.TextBox numberTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button removeOwnerButton;
+        private System.Windows.Forms.Button saveOwnerButton;
     }
 }

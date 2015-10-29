@@ -6,7 +6,7 @@ namespace Domain.Shop
     {
         List<Owner> GetAll();
         Owner Get(OwnerId ownerId);
-        Owner GetByCode(OwnerId code);
+        Owner GetByCode(string code);
         void Save(Owner owner);
         void Remove(Owner owner);
         OwnerId NextOwnerId();

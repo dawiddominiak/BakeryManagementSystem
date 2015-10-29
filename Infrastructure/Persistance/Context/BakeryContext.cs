@@ -3,6 +3,7 @@ using Infrastructure.Persistance.Context.PriceList.Route;
 using Infrastructure.Persistance.Context.PriceList.Shop;
 using Infrastructure.Persistance.Context.ProductMap.Route;
 using Infrastructure.Persistance.Context.ProductMap.Shop;
+using Infrastructure.Persistance.Context.Shop;
 
 namespace Infrastructure.Persistance.Context
 {
@@ -16,6 +17,9 @@ namespace Infrastructure.Persistance.Context
         //Payment
         public DbSet<Payment.Payment> Payments { get; set; }
         
+        //Owner
+        public DbSet<Owner> Owners { get; set; }
+
         //Shop
         public DbSet<Shop.Shop> Shops { get; set; }
 

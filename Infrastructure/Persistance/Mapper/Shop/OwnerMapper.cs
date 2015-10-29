@@ -1,5 +1,4 @@
-﻿using System;
-using Domain.Shop;
+﻿using Domain.Shop;
 
 namespace Infrastructure.Persistance.Mapper.Shop
 {
@@ -17,7 +16,9 @@ namespace Infrastructure.Persistance.Mapper.Shop
 
         public override void MapToDomainObject(Context.Shop.Owner dto, Owner domainObject)
         {
-            AutoMapper.Mapper.CreateMap<Owner, Context.Shop.Owner>()
+            AutoMapper.Mapper.CreateMap<Context.Shop.Owner, Owner>()
+                .ForMember(dest => dest.Address, opts => opts.MapFrom(src => src.OwnerAddress))
+                .ForMember(dest => dest.Shops, opts => opts.Ignore())
             ;
 
             AutoMapper.Mapper.Map(dto, domainObject);
