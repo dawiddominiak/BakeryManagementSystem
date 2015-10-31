@@ -76,7 +76,7 @@ namespace BakeryManagementSystem
 
         private void RefreshOwnerPhoneListBox()
         {
-            var list = CurrentOwner.Phones;
+            var list = new List<Phone>(CurrentOwner.Phones);
             ownerPhonesListBox.DataSource = list;
         }
 
@@ -122,6 +122,29 @@ namespace BakeryManagementSystem
 
             CurrentOwner.Phones.Add(newPhone);
             RefreshOwnerPhoneListBox();
+
+        }
+
+        private void ownerPhonesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ownerPhonesListBox.SelectedItem == null)
+            {
+                return;
+            }
+
+            CurrentOwnerPhone = (Phone) ownerPhonesListBox.SelectedItem;
+
+            countryPartTextBox.Text = CurrentOwnerPhone.Value.CountryCode;
+            areaPartTextBox.Text = CurrentOwnerPhone.Value.RegionalCode;
+            numberTextBox.Text = CurrentOwnerPhone.Value.Number;
+
+            SwitchButtons(OwnerPhoneTextBoxes, true);
+            SwitchButtons(OwnerPhoneButtons, true);
+        }
+
+        private void removePhoneButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

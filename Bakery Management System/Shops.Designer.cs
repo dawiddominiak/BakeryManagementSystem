@@ -555,6 +555,7 @@
             this.ownerPhonesListBox.Name = "ownerPhonesListBox";
             this.ownerPhonesListBox.Size = new System.Drawing.Size(860, 308);
             this.ownerPhonesListBox.TabIndex = 3;
+            this.ownerPhonesListBox.SelectedIndexChanged += new System.EventHandler(this.ownerPhonesListBox_SelectedIndexChanged);
             // 
             // addNewPhoneButton
             // 
@@ -619,7 +620,7 @@
             this.addPhoneButton.Name = "addPhoneButton";
             this.addPhoneButton.Size = new System.Drawing.Size(120, 34);
             this.addPhoneButton.TabIndex = 12;
-            this.addPhoneButton.Text = "Add";
+            this.addPhoneButton.Text = "Save";
             this.addPhoneButton.UseVisualStyleBackColor = true;
             this.addPhoneButton.Click += new System.EventHandler(this.addPhoneButton_Click);
             // 
@@ -636,6 +637,7 @@
             this.removePhoneButton.TabIndex = 13;
             this.removePhoneButton.Text = "Remove";
             this.removePhoneButton.UseVisualStyleBackColor = false;
+            this.removePhoneButton.Click += new System.EventHandler(this.removePhoneButton_Click);
             // 
             // numberTextBox
             // 
