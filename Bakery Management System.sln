@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BakeryManagementSystem", "Bakery Management System\BakeryManagementSystem.csproj", "{F2AABD8B-467B-452A-90AF-5881A926C07F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrum", "Bakery Management System\Metrum.csproj", "{F2AABD8B-467B-452A-90AF-5881A926C07F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{1550F145-1F56-48D2-ACD4-8FECC740D01D}"
 EndProject

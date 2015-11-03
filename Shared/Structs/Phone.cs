@@ -4,9 +4,9 @@ namespace Shared.Structs
 {
     public struct Phone : IEquatable<Phone>
     {
-        public string CountryCode { get; private set; }
-        public string RegionalCode { get; private set; }
-        public string Number { get; private set; }
+        public string CountryCode { get; set; }
+        public string RegionalCode { get; set; }
+        public string Number { get; set; }
 
         public Phone(string countryCode, string regionalCode, string number) : this()
         {

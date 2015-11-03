@@ -689,6 +689,7 @@
             this.saveOwnerButton.TabIndex = 13;
             this.saveOwnerButton.Text = "Save owner";
             this.saveOwnerButton.UseVisualStyleBackColor = true;
+            this.saveOwnerButton.Click += new System.EventHandler(this.saveOwnerButton_Click);
             // 
             // Shops
             // 

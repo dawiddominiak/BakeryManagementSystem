@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using AutoMapper;
 using Controller.Shop;
 using Domain.Shop;
 using Shared.Structs;
@@ -80,6 +81,19 @@ namespace BakeryManagementSystem
             ownerPhonesListBox.DataSource = list;
         }
 
+        private void NewCurrentOwner()
+        {
+            CurrentOwner = new Owner(OwnerController.NextOwnerId());            
+        }
+
+        private void EnsureCurrentOwner()
+        {
+            if (CurrentOwner == null)
+            {
+                NewCurrentOwner();
+            }    
+        }
+
         #endregion
 
         private void Shops_Load(object sender, EventArgs e)
@@ -87,13 +101,7 @@ namespace BakeryManagementSystem
 
         }
 
-        private void addNewOwner_Click(object sender, EventArgs e)
-        {
-            SwitchButtons(OwnerBasicTextBoxes, true);
-            SwitchButtons(OwnerBasicButtons, true);
-            EmptyButtons(OwnerBasicTextBoxes);
-            CurrentOwner = new Owner(OwnerController.NextOwnerId());
-        }
+        #region Owner phones management
 
         private void addNewPhoneButton_Click(object sender, EventArgs e)
         {
@@ -144,7 +152,44 @@ namespace BakeryManagementSystem
 
         private void removePhoneButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (CurrentOwnerPhone == null)
+            {
+                return;
+            }
+
+            CurrentOwner.Phones.Remove(CurrentOwnerPhone.Value);
+            RefreshOwnerPhoneListBox();
         }
+
+        #endregion
+
+        private void addNewOwner_Click(object sender, EventArgs e)
+        {
+            SwitchButtons(OwnerBasicTextBoxes, true);
+            SwitchButtons(OwnerBasicButtons, true);
+            EmptyButtons(OwnerBasicTextBoxes);
+            NewCurrentOwner();
+        }
+
+        private void saveOwnerButton_Click(object sender, EventArgs e)
+        {
+            EnsureCurrentOwner();
+
+            Mapper.CreateMap<Shops, Owner>()
+                .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.codeTextBox.Text))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.nameTextBox.Text))
+                .ForMember(dest => dest.TaxIdentificationNumber, opt => opt.MapFrom(src => src.taxIdentificationNumberTextBox.Text))
+                .ForMember(dest => dest.NationalEconomyRegister, opt => opt.MapFrom(src => src.nationalEconomyRegisterTextBox.Text))
+                .ForMember(dest => dest.Address, opt => opt.MapFrom(src => new Address(
+                    streetTextBox.Text, postalCodeTextBox.Text, cityTextBox.Text, countryTextBox.Text
+                )))
+                .ForMember(dest => dest.Phones, opt => opt.MapFrom(src => src.ownerPhonesListBox.Items.Cast<Phone>().ToList()))
+            ;
+
+            Mapper.Map(this, CurrentOwner);
+
+            OwnerController.Save(CurrentOwner);
+        }
+
     }
 }
