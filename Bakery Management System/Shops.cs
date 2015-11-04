@@ -55,6 +55,7 @@ namespace BakeryManagementSystem
             };
 
             OwnerController = new OwnerController();
+            RefreshOwnerList();
         }
 
         #region Helpers
@@ -75,6 +76,20 @@ namespace BakeryManagementSystem
             }
         }
 
+        private void FillButtons(Owner owner)
+        {
+            codeTextBox.Text = owner.Code;
+            nameTextBox.Text = owner.Name;
+            taxIdentificationNumberTextBox.Text = owner.TaxIdentificationNumber;
+            nationalEconomyRegisterTextBox.Text = owner.NationalEconomyRegister;
+            streetTextBox.Text = owner.Address.Street;
+            postalCodeTextBox.Text = owner.Address.PostalCode;
+            cityTextBox.Text = owner.Address.City;
+            countryTextBox.Text = owner.Address.Country;
+
+            RefreshOwnerPhoneListBox();
+        }
+
         private void RefreshOwnerPhoneListBox()
         {
             var list = new List<Phone>(CurrentOwner.Phones);
@@ -92,6 +107,11 @@ namespace BakeryManagementSystem
             {
                 NewCurrentOwner();
             }    
+        }
+
+        private void RefreshOwnerList()
+        {
+            ownerListBox.DataSource = OwnerController.GetAll();
         }
 
         #endregion
@@ -189,7 +209,15 @@ namespace BakeryManagementSystem
             Mapper.Map(this, CurrentOwner);
 
             OwnerController.Save(CurrentOwner);
+            RefreshOwnerList();
         }
 
+        private void ownerListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CurrentOwner = (Owner)ownerListBox.SelectedItem;
+            FillButtons(CurrentOwner);
+            SwitchButtons(OwnerBasicTextBoxes, true);
+            SwitchButtons(OwnerBasicButtons, true);
+        }
     }
 }

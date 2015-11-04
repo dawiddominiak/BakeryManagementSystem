@@ -16,7 +16,7 @@ namespace Infrastructure.Persistance.Mapper
 
         public TK ToDomainObject(TV dto)
         {
-            var domainObject = (TK) Activator.CreateInstance(typeof (TK), new object[] {});
+            var domainObject = (TK) Activator.CreateInstance(typeof (TK), new object[] { });
             MapToDomainObject(dto, domainObject);
             return domainObject;
         }

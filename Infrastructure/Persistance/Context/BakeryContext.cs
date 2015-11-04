@@ -7,6 +7,7 @@ using Infrastructure.Persistance.Context.Shop;
 
 namespace Infrastructure.Persistance.Context
 {
+
     public class BakeryContext : DbContext
     {
         public BakeryContext()
@@ -44,6 +45,22 @@ namespace Infrastructure.Persistance.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RouteShop.RouteShop>().HasKey(e => new {e.RouteName, e.ShopCode});
+
+            modelBuilder.Entity<OwnerAddress>()
+                .HasKey(e => e.OwnerId)
+            ;
+
+            modelBuilder.Entity<Owner>()
+                .HasOptional(o => o.OwnerAddress)
+                .WithRequired(ad => ad.Owner)
+            ;
+
+            modelBuilder.Entity<OwnerPhone>()
+                .HasRequired<Owner>(op => op.Owner)
+                .WithMany(o => o.Phones)
+                .HasForeignKey(o => o.OwnerId)
+            ;
+
         }
     }
 }

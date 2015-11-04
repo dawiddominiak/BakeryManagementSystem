@@ -15,16 +15,26 @@ namespace Domain.Shop
         public List<Phone> Phones { get; set; }
         public List<Shop> Shops { get; set; } 
 
-        public Owner(OwnerId id)
+        public Owner()
         {
-            Id = id;
             Phones = new List<Phone>();
             Shops = new List<Shop>();
+        }
+
+        public Owner(OwnerId id)
+            : base()
+        {
+            Id = id;
         }
 
         public bool SameIdentityAs(Owner other)
         {
             return Id.Equals(other.Id);
+        }
+
+        public override string ToString()
+        {
+            return Name + " [" + Code + "]";
         }
     }
 }

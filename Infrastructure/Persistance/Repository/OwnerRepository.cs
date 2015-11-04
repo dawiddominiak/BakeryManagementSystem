@@ -23,8 +23,14 @@ namespace Infrastructure.Persistance.Repository
             {
                 var owners = context.Owners;
                 var list = new List<Owner>();
-
-                foreach (var owner in owners)
+                
+                foreach (
+                    var owner 
+                        in 
+                    owners
+                        .Include("OwnerAddress")
+                        .Include("Phones")
+                    )
                 {
                     list.Add(Mapper.ToDomainObject(owner));
                 }
@@ -72,7 +78,7 @@ namespace Infrastructure.Persistance.Repository
 
                 Mapper.MapToDto(owner, dto);
 
-                context.Set<Context.Shop.Owner>().AddOrUpdate();
+                context.Set<Context.Shop.Owner>().AddOrUpdate(dto);
                 context.SaveChanges();
             }
         }

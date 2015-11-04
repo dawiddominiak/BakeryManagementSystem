@@ -16,7 +16,10 @@ namespace Infrastructure.Persistance.Context.Shop
         public string Name { get; set; }
         public string TaxIdentificationNumber { get; set; }
         public string NationalEconomyRegister { get; set; }
+
+        [Required]
         public OwnerAddress OwnerAddress { get; set; }
+
         public ICollection<OwnerPhone> Phones { get; set; }
         public ICollection<Shop> Shops { get; set; } 
     }

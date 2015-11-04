@@ -234,6 +234,7 @@
             this.ownerListBox.Name = "ownerListBox";
             this.ownerListBox.Size = new System.Drawing.Size(442, 929);
             this.ownerListBox.TabIndex = 2;
+            this.ownerListBox.SelectedIndexChanged += new System.EventHandler(this.ownerListBox_SelectedIndexChanged);
             // 
             // tableLayoutPanel5
             // 

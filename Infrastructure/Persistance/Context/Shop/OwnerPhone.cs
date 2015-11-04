@@ -1,11 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Infrastructure.Persistance.Context.Shop
 {
     public class OwnerPhone
     {
-        public Shop Owner { get; set; }
+        public Owner Owner { get; set; }
+
+        public Guid OwnerId { get; set; }
 
         [Key, Column(Order = 0)]
         public string Country { get; set; }
