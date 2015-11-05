@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.Migrations;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using Domain.Shop;
 using Infrastructure.Persistance.Context;
@@ -74,11 +75,60 @@ namespace Infrastructure.Persistance.Repository
         {
             using (var context = new BakeryContext())
             {
+                var manager = ((IObjectContextAdapter)context).ObjectContext.ObjectStateManager;
                 var dto = context.Owners.Find(owner.Id.Id) ?? new Context.Shop.Owner();
 
                 Mapper.MapToDto(owner, dto);
 
-                context.Set<Context.Shop.Owner>().AddOrUpdate(dto);
+                var id = dto.Id;
+
+                if (context.Owners.Any(e => e.Id == id))
+                {
+
+                    context.Owners.Attach(dto);
+                    context.OwnerAddresses.Attach(dto.OwnerAddress);
+
+                    //TODO: multiplying phones
+                    var phones = context.OwnerPhones.Where(p => p.OwnerId == id).ToList();
+
+                    //Check phones to delete
+                    foreach (var phone in phones)
+                    {
+                        if (
+                            !dto.Phones.Any(
+                                p => p.Country == phone.Country && p.Area == phone.Area && p.Number == phone.Number))
+                        {
+                            manager.ChangeObjectState(phone, EntityState.Deleted);
+                        }
+                    }
+                    
+                    //Check phones to add
+                    foreach (var ownerPhone in dto.Phones)
+                    {
+                        var phone = context.OwnerPhones.Where(
+                            p =>
+                                p.Country == ownerPhone.Country && p.Area == ownerPhone.Area &&
+                                p.Number == ownerPhone.Number);
+                        if (
+                            !phone.Any())
+                        {
+                            context.OwnerPhones.Add(ownerPhone);
+                        }
+                        else
+                        {
+                            context.Entry(phone.FirstOrDefault()).CurrentValues.SetValues(ownerPhone);
+                        }
+
+                    }
+
+                    manager.ChangeObjectState(dto, EntityState.Modified);
+                    manager.ChangeObjectState(dto.OwnerAddress, EntityState.Modified);
+                }
+                else
+                {
+                    context.Owners.Add(dto);
+                }
+                
                 context.SaveChanges();
             }
         }

@@ -21,6 +21,12 @@ namespace Infrastructure.Persistance.Context
         //Owner
         public DbSet<Owner> Owners { get; set; }
 
+        //OwnerAddresses
+        public DbSet<OwnerAddress> OwnerAddresses { get; set; }
+
+        //OwnerPhones
+        public DbSet<OwnerPhone> OwnerPhones { get; set; }
+
         //Shop
         public DbSet<Shop.Shop> Shops { get; set; }
 
