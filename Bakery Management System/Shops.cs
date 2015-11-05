@@ -92,7 +92,7 @@ namespace BakeryManagementSystem
 
         private void RefreshOwnerPhoneListBox()
         {
-            var list = new List<Phone>(CurrentOwner.Phones);
+            var list = CurrentOwner.Phones ?? new List<Phone>();
             ownerPhonesListBox.DataSource = list;
         }
 
@@ -188,7 +188,9 @@ namespace BakeryManagementSystem
             SwitchButtons(OwnerBasicTextBoxes, true);
             SwitchButtons(OwnerBasicButtons, true);
             EmptyButtons(OwnerBasicTextBoxes);
+            EmptyButtons(OwnerPhoneTextBoxes);
             NewCurrentOwner();
+            RefreshOwnerPhoneListBox();
         }
 
         private void saveOwnerButton_Click(object sender, EventArgs e)

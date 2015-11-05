@@ -80,43 +80,37 @@ namespace Infrastructure.Persistance.Repository
                     .Include("OwnerAddress")
                     .FirstOrDefault(o => o.Id == owner.Id.Id) ?? new Context.Shop.Owner();
 
-                var existingPhones = existingDto.Phones.ToList();
                 var newDto = Mapper.ToDto(owner);
-                //TODO: to map
-                newDto.OwnerAddress.OwnerId = newDto.Id;
-                var updatedPhones = newDto.Phones.ToList();
-                updatedPhones.ForEach(phn => phn.OwnerId = newDto.Id);
-
-                var addedPhones = updatedPhones.Except(existingPhones).ToList();
-                var deletedPhones = existingPhones.Except(updatedPhones).ToList();
-                var modifiedPhones = updatedPhones.Except(addedPhones).ToList();
-
-                addedPhones.ForEach(phn => context.Entry(phn).State = EntityState.Added);
-                deletedPhones.ForEach(phn => context.Entry(phn).State = EntityState.Deleted);
-
-                foreach (var phone in modifiedPhones)
-                {
-                    var existingPhone = context.OwnerPhones
-                        .FirstOrDefault(
-                            phn => phn.Country == phone.Country &&
-                            phn.Area == phone.Area &&
-                            phn.Number == phone.Number
-                        );
-
-                    if (existingPhone != null)
-                    {
-                        var phoneEntry = context.Entry(existingPhone);
-                        phoneEntry.CurrentValues.SetValues(phone);
-                    }
-                }
 
                 var id = newDto.Id;
 
                 if (context.Owners.Any(e => e.Id == id))
                 {
+                    var updatedPhones = newDto.Phones.ToList();
+                    var existingPhones = existingDto.Phones.ToList();
+
+                    var addedPhones = updatedPhones.Except(existingPhones).ToList();
+                    var deletedPhones = existingPhones.Except(updatedPhones).ToList();
+                    var modifiedPhones = updatedPhones.Except(addedPhones).ToList();
+
+                    addedPhones.ForEach(phn => context.Entry(phn).State = EntityState.Added);
+                    deletedPhones.ForEach(phn => context.Entry(phn).State = EntityState.Deleted);
+
+                    foreach (var phone in modifiedPhones)
+                    {
+                        var existingPhone = context.OwnerPhones
+                            .FirstOrDefault(phn => phn.Equals(phone));
+
+                        if (existingPhone == null)
+                        {
+                            continue;
+                        }
+                        var phoneEntry = context.Entry(existingPhone);
+                        phoneEntry.CurrentValues.SetValues(phone);
+                    }
+
                     var ownerEntry = context.Entry(existingDto);
                     ownerEntry.CurrentValues.SetValues(newDto);
-
                     var ownerAddressEntry = context.Entry(existingDto.OwnerAddress);
                     ownerAddressEntry.CurrentValues.SetValues(newDto.OwnerAddress);
                 }

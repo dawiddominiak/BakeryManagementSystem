@@ -19,14 +19,19 @@ namespace Infrastructure.Persistance.Mapper.Shop
                 .ConvertUsing(id => id.Id)
             ;
 
-            AutoMapper.Mapper.CreateMap<Address, OwnerAddress>();
+            AutoMapper.Mapper.CreateMap<Address, OwnerAddress>()
+                .AfterMap((src, dest) =>
+                {
+                    dest.OwnerId = domainObject.Id.Id;
+                });
 
             AutoMapper.Mapper.CreateMap<Phone, OwnerPhone>()
                 .ConvertUsing(phone => new OwnerPhone
                 {
                     Country = phone.CountryCode,
                     Area = phone.RegionalCode,
-                    Number = phone.Number
+                    Number = phone.Number,
+                    OwnerId = domainObject.Id.Id
                 })
             ;
 
