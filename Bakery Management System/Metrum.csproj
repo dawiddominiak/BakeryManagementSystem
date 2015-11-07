@@ -69,6 +69,7 @@
     <Compile Include="Assortment.Designer.cs">
       <DependentUpon>Assortment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Loggers\WarningMessageBox.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +129,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{1550f145-1f56-48d2-acd4-8fecc740d01d}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{45A3B262-7756-4A4F-837F-38BE836C2CA4}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{eb997c6c-c488-4831-b9de-930d7a38dbba}</Project>

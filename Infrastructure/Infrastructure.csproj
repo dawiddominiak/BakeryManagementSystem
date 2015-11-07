@@ -83,6 +83,7 @@
       <DependentUpon>resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Languages\PolishPLLanguageStrategy.cs" />
+    <Compile Include="Logger\LoggerManager.cs" />
     <Compile Include="Persistance\Context\BakeryContext.cs" />
     <Compile Include="Persistance\Context\Payment\Payment.cs" />
     <Compile Include="Persistance\Context\PriceList\PriceList.cs" />

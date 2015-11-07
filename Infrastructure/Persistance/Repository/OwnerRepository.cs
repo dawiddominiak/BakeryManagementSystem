@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using Domain.Shop;
 using Infrastructure.Persistance.Context;
 using Infrastructure.Persistance.Mapper.Shop;
+using Shared.Exceptions;
 using Owner = Domain.Shop.Owner;
 
 namespace Infrastructure.Persistance.Repository
@@ -118,8 +120,16 @@ namespace Infrastructure.Persistance.Repository
                 {
                     context.Owners.Add(newDto);
                 }
-                
-                context.SaveChanges();
+
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (DbUpdateException e)
+                {
+                        
+                    throw new RepositoryException(e.Message, e);
+                }
             }
         }
 

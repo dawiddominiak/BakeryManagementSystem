@@ -4,7 +4,10 @@ using System.Linq;
 using System.Windows.Forms;
 using AutoMapper;
 using Controller.Shop;
+using Controller.Tools;
 using Domain.Shop;
+using Shared.Exceptions;
+using Shared.Logger;
 using Shared.Structs;
 
 namespace BakeryManagementSystem
@@ -15,7 +18,8 @@ namespace BakeryManagementSystem
         public List<Control> OwnerBasicButtons { get; set; }
         public List<Control> OwnerPhoneTextBoxes { get; set; }
         public List<Control> OwnerPhoneButtons { get; set; }
-        public OwnerController OwnerController { get; set; }
+        public OwnerController OwnerController { get; set; } = new OwnerController();
+        public LoggerController LoggerController { get; set; } = new LoggerController();
         public Owner CurrentOwner { get; set; }
         public Phone? CurrentOwnerPhone { get; set; }
 
@@ -54,7 +58,6 @@ namespace BakeryManagementSystem
                 removePhoneButton
             };
 
-            OwnerController = new OwnerController();
             RefreshOwnerList();
         }
 
@@ -93,7 +96,7 @@ namespace BakeryManagementSystem
         private void RefreshOwnerPhoneListBox()
         {
             var list = CurrentOwner.Phones ?? new List<Phone>();
-            ownerPhonesListBox.DataSource = list;
+            ownerPhonesListBox.DataSource = new List<Phone>(list);
         }
 
         private void NewCurrentOwner()
@@ -150,7 +153,7 @@ namespace BakeryManagementSystem
 
             CurrentOwner.Phones.Add(newPhone);
             RefreshOwnerPhoneListBox();
-
+            ownerPhonesListBox.SelectedItem = newPhone;
         }
 
         private void ownerPhonesListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -209,9 +212,32 @@ namespace BakeryManagementSystem
             ;
 
             Mapper.Map(this, CurrentOwner);
+            var newOwner = CurrentOwner;
 
-            OwnerController.Save(CurrentOwner);
+            try
+            {
+                OwnerController.Save(CurrentOwner);
+            }
+            catch (RepositoryException ex)
+            {
+                var logManager = LoggerController.Manager;
+                Exception last = ex;
+
+                while (last.InnerException != null)
+                {
+                    last = last.InnerException;
+                }
+
+                logManager.NewLog(
+                    new Warning("There is a problem with repository: " + last.Message, ex.StackTrace)
+                );
+            }
             RefreshOwnerList();
+            ownerListBox.SelectedItem = ownerListBox
+                .Items
+                .Cast<Owner>()
+                .ToList()
+                .FirstOrDefault(owner => owner.Id.Equals(newOwner.Id));
         }
 
         private void ownerListBox_SelectedIndexChanged(object sender, EventArgs e)

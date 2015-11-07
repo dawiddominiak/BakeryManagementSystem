@@ -59,5 +59,14 @@ namespace BakeryManagementSystem.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string WarningMessageBox_NewLogHandled_Warning {
+            get {
+                return ResourceManager.GetString("WarningMessageBox_NewLogHandled_Warning", resourceCulture);
+            }
+        }
     }
 }
