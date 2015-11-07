@@ -61,6 +61,24 @@ namespace BakeryManagementSystem.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure that you want to delete owner: .
+        /// </summary>
+        internal static string Shops_removeOwnerButton_Click_Are_you_sure_that_you_want_to_delete_owner__ {
+            get {
+                return ResourceManager.GetString("Shops_removeOwnerButton_Click_Are_you_sure_that_you_want_to_delete_owner__", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string Shops_removeOwnerButton_Click_Delete {
+            get {
+                return ResourceManager.GetString("Shops_removeOwnerButton_Click_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Warning.
         /// </summary>
         internal static string WarningMessageBox_NewLogHandled_Warning {

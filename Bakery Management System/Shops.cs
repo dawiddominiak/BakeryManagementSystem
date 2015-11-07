@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using AutoMapper;
+using BakeryManagementSystem.Properties;
 using Controller.Shop;
 using Controller.Tools;
 using Domain.Shop;
@@ -81,20 +82,24 @@ namespace BakeryManagementSystem
 
         private void FillButtons(Owner owner)
         {
-            codeTextBox.Text = owner.Code;
-            nameTextBox.Text = owner.Name;
-            taxIdentificationNumberTextBox.Text = owner.TaxIdentificationNumber;
-            nationalEconomyRegisterTextBox.Text = owner.NationalEconomyRegister;
-            streetTextBox.Text = owner.Address.Street;
-            postalCodeTextBox.Text = owner.Address.PostalCode;
-            cityTextBox.Text = owner.Address.City;
-            countryTextBox.Text = owner.Address.Country;
-
+            if (owner != null)
+            {
+                codeTextBox.Text = owner.Code;
+                nameTextBox.Text = owner.Name;
+                taxIdentificationNumberTextBox.Text = owner.TaxIdentificationNumber;
+                nationalEconomyRegisterTextBox.Text = owner.NationalEconomyRegister;
+                streetTextBox.Text = owner.Address.Street;
+                postalCodeTextBox.Text = owner.Address.PostalCode;
+                cityTextBox.Text = owner.Address.City;
+                countryTextBox.Text = owner.Address.Country;
+            }
+            
             RefreshOwnerPhoneListBox();
         }
 
         private void RefreshOwnerPhoneListBox()
         {
+            if (CurrentOwner == null) return;
             var list = CurrentOwner.Phones ?? new List<Phone>();
             ownerPhonesListBox.DataSource = new List<Phone>(list);
         }
@@ -190,6 +195,8 @@ namespace BakeryManagementSystem
         {
             SwitchButtons(OwnerBasicTextBoxes, true);
             SwitchButtons(OwnerBasicButtons, true);
+            SwitchButtons(OwnerPhoneTextBoxes, false);
+            SwitchButtons(OwnerPhoneButtons, false);
             EmptyButtons(OwnerBasicTextBoxes);
             EmptyButtons(OwnerPhoneTextBoxes);
             NewCurrentOwner();
@@ -217,6 +224,12 @@ namespace BakeryManagementSystem
             try
             {
                 OwnerController.Save(CurrentOwner);
+                RefreshOwnerList();
+                ownerListBox.SelectedItem = ownerListBox
+                    .Items
+                    .Cast<Owner>()
+                    .ToList()
+                    .FirstOrDefault(owner => owner.Id.Equals(newOwner.Id));
             }
             catch (RepositoryException ex)
             {
@@ -232,20 +245,50 @@ namespace BakeryManagementSystem
                     new Warning("There is a problem with repository: " + last.Message, ex.StackTrace)
                 );
             }
-            RefreshOwnerList();
-            ownerListBox.SelectedItem = ownerListBox
-                .Items
-                .Cast<Owner>()
-                .ToList()
-                .FirstOrDefault(owner => owner.Id.Equals(newOwner.Id));
         }
 
         private void ownerListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            EmptyButtons(OwnerPhoneTextBoxes);
+            SwitchButtons(OwnerPhoneTextBoxes, false);
+            SwitchButtons(OwnerPhoneButtons, false);
             CurrentOwner = (Owner)ownerListBox.SelectedItem;
             FillButtons(CurrentOwner);
             SwitchButtons(OwnerBasicTextBoxes, true);
             SwitchButtons(OwnerBasicButtons, true);
+        }
+
+        private void removeOwnerButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(
+                Resources.Shops_removeOwnerButton_Click_Are_you_sure_that_you_want_to_delete_owner__ + @" " + CurrentOwner.Name,
+                Resources.Shops_removeOwnerButton_Click_Delete + @" " + CurrentOwner.Name,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2
+                ) == DialogResult.Yes)
+            {
+                try
+                {
+                    OwnerController.Remove(CurrentOwner);
+                    RefreshOwnerList();
+                }
+                catch (RepositoryException ex)
+                {
+                    //TODO: upgrade this code
+                    var logManager = LoggerController.Manager;
+                    Exception last = ex;
+
+                    while (last.InnerException != null)
+                    {
+                        last = last.InnerException;
+                    }
+
+                    logManager.NewLog(
+                        new Warning("There is a problem with repository: " + last.Message, ex.StackTrace)
+                    );
+                }
+            }
         }
     }
 }

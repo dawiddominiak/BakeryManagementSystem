@@ -59,13 +59,22 @@ namespace Infrastructure.Persistance.Context
             modelBuilder.Entity<Owner>()
                 .HasOptional(o => o.OwnerAddress)
                 .WithRequired(ad => ad.Owner)
+                .WillCascadeOnDelete(true)
             ;
 
-            modelBuilder.Entity<OwnerPhone>()
-                .HasRequired<Owner>(op => op.Owner)
-                .WithMany(o => o.Phones)
+            modelBuilder.Entity<Owner>()
+                .HasMany(phn => phn.Phones)
+                .WithRequired(o => o.Owner)
                 .HasForeignKey(o => o.OwnerId)
+                .WillCascadeOnDelete(true)
             ;
+                    
+
+//            modelBuilder.Entity<OwnerPhone>()
+//                .HasRequired<Owner>(op => op.Owner)
+//                .WithMany(o => o.Phones)
+//                .HasForeignKey(o => o.OwnerId)
+//            ;
 
         }
     }

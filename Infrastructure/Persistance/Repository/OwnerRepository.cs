@@ -140,6 +140,16 @@ namespace Infrastructure.Persistance.Repository
                 context.Owners.Remove(
                     context.Owners.Find(owner.Id.Id)
                 );
+
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (DbUpdateException e)
+                {
+
+                    throw new RepositoryException(e.Message, e);
+                }
             }
         }
 

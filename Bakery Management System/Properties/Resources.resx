@@ -117,4 +117,10 @@
   <data name="WarningMessageBox_NewLogHandled_Warning" xml:space="preserve">
     <value>Warning</value>
   </data>
+  <data name="Shops_removeOwnerButton_Click_Are_you_sure_that_you_want_to_delete_owner__" xml:space="preserve">
+    <value>Are you sure that you want to delete owner: </value>
+  </data>
+  <data name="Shops_removeOwnerButton_Click_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
 </root>

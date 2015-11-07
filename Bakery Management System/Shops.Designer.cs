@@ -678,6 +678,7 @@
             this.removeOwnerButton.TabIndex = 14;
             this.removeOwnerButton.Text = "Remove owner";
             this.removeOwnerButton.UseVisualStyleBackColor = false;
+            this.removeOwnerButton.Click += new System.EventHandler(this.removeOwnerButton_Click);
             // 
             // saveOwnerButton
             // 
