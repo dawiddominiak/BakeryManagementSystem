@@ -5,7 +5,7 @@ using Shared.Structs;
 
 namespace Domain.Payment
 {
-    public class Payment : IEntity<Payment>, IAggregateRoot
+    public class Payment : IEntity<Payment>
     {
         public PaymentId PaymentId { get; set; }
         public Money? Money { get; set; }

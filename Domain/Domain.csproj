@@ -76,7 +76,7 @@
     <Compile Include="Shop\Owner.cs" />
     <Compile Include="Shop\OwnerId.cs" />
     <Compile Include="Shop\Shop.cs" />
-    <Compile Include="Shop\ShopCode.cs" />
+    <Compile Include="Shop\ShopId.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">

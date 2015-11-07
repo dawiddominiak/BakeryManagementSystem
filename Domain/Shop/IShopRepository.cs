@@ -4,9 +4,10 @@ namespace Domain.Shop
 {
     public interface IShopRepository
     {
-        Shop Get(ShopCode code);
+        Shop Get(ShopId id);
+        Shop GetByCode(string code);
         List<Shop> GetAll();
         void Save(Shop shop);
-        ShopCode GetUniqueShopCode(string proposition);
+        ShopId GetNextId();
     }
 }

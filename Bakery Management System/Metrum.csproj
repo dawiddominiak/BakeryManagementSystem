@@ -84,6 +84,12 @@
     <Compile Include="Owners.Designer.cs">
       <DependentUpon>Owners.cs</DependentUpon>
     </Compile>
+    <Compile Include="Shops.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shops.Designer.cs">
+      <DependentUpon>Shops.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Assortment.resx">
       <DependentUpon>Assortment.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="Owners.resx">
       <DependentUpon>Owners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shops.resx">
+      <DependentUpon>Shops.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Controller.LanguageController.datasource" />

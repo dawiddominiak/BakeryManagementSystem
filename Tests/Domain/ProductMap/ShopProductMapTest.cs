@@ -21,7 +21,7 @@ namespace Tests.Domain.ProductMap
         public void OnTestInitialize()
         {
             _productMapId = new ProductMapId(Guid.NewGuid());
-            _shop = new global::Domain.Shop.Shop(new ShopCode("SC"));
+            _shop = new global::Domain.Shop.Shop(new ShopId(Guid.NewGuid()));
 
             _shopProductMap = new ShopProductMap(
                 _productMapId,

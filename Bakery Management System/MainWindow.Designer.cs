@@ -35,6 +35,7 @@
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assortmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ownersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shopsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assortmentToolStripMenuItem,
             this.ownersToolStripMenuItem,
+            this.shopsToolStripMenuItem,
             this.routesToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             resources.ApplyResources(this.managementToolStripMenuItem, "managementToolStripMenuItem");
@@ -80,6 +82,12 @@
             this.ownersToolStripMenuItem.Name = "ownersToolStripMenuItem";
             resources.ApplyResources(this.ownersToolStripMenuItem, "ownersToolStripMenuItem");
             this.ownersToolStripMenuItem.Click += new System.EventHandler(this.ownersToolStripMenuItem_Click);
+            // 
+            // shopsToolStripMenuItem
+            // 
+            this.shopsToolStripMenuItem.Name = "shopsToolStripMenuItem";
+            resources.ApplyResources(this.shopsToolStripMenuItem, "shopsToolStripMenuItem");
+            this.shopsToolStripMenuItem.Click += new System.EventHandler(this.shopsToolStripMenuItem_Click);
             // 
             // routesToolStripMenuItem
             // 
@@ -110,5 +118,6 @@
         private System.Windows.Forms.ToolStripMenuItem assortmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ownersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem routesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shopsToolStripMenuItem;
     }
 }

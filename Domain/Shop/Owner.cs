@@ -12,17 +12,13 @@ namespace Domain.Shop
         public string TaxIdentificationNumber { get; set; }
         public string NationalEconomyRegister { get; set; }
         public Address Address { get; set; }
-        public List<Phone> Phones { get; set; }
-        public List<Shop> Shops { get; set; } 
+        public List<Phone> Phones { get; set; } = new List<Phone>();
+        public List<Shop> Shops { get; set; } = new List<Shop>();
 
         public Owner()
-        {
-            Phones = new List<Phone>();
-            Shops = new List<Shop>();
-        }
+        {}
 
         public Owner(OwnerId id)
-            : base()
         {
             Id = id;
         }

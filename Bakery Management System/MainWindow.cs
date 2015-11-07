@@ -18,7 +18,13 @@ namespace BakeryManagementSystem
         
         private void ownersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var shopsWindow = new Owners();
+            var ownersWindow = new Owners();
+            ownersWindow.ShowDialog(this);
+        }
+
+        private void shopsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var shopsWindow = new Shops();
             shopsWindow.ShowDialog(this);
         }
     }

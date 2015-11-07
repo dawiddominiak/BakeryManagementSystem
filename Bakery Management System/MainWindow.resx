@@ -121,6 +121,12 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 30</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 29</value>
   </data>
@@ -138,6 +144,12 @@
   </data>
   <data name="ownersToolStripMenuItem.Text" xml:space="preserve">
     <value>Owners</value>
+  </data>
+  <data name="shopsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 30</value>
+  </data>
+  <data name="shopsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Shops</value>
   </data>
   <data name="routesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 30</value>
@@ -175,12 +187,6 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 30</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -225,6 +231,12 @@
     <value>ownersToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;ownersToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;shopsToolStripMenuItem.Name" xml:space="preserve">
+    <value>shopsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;shopsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;routesToolStripMenuItem.Name" xml:space="preserve">

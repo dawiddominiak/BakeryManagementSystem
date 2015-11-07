@@ -28,7 +28,7 @@ namespace Tests.Domain.Shop
             _address = new Address("Example street", "00-000", "Warsaw", "PL");
             _phone = new Phone("48", "22", "1234567");
 
-            _shop = new global::Domain.Shop.Shop(new ShopCode("SC"))
+            _shop = new global::Domain.Shop.Shop(new ShopId(Guid.NewGuid()))
             {
                 Name = _name,
                 Owner = _owner,
@@ -38,16 +38,6 @@ namespace Tests.Domain.Shop
             _shop.Payments.Add(new DateTime(2000, 1, 1), _payment);
             _shop.Phones.Add(_phone);
 
-        }
-
-        [TestMethod]
-        public void HasCode()
-        {
-            Assert.IsTrue(
-                _shop.Code.Equals(
-                    new ShopCode("SC")
-                )
-            );
         }
 
         [TestMethod]
@@ -87,22 +77,6 @@ namespace Tests.Domain.Shop
         {
             Assert.IsTrue(
                 _shop.Phones.First().Equals(_phone)    
-            );
-        }
-
-        [TestMethod]
-        public void SameIdentityAs_ShouldBeFalse()
-        {
-            Assert.IsFalse(
-                _shop.SameIdentityAs(new global::Domain.Shop.Shop(new ShopCode("OCS")))
-            );
-        }
-
-        [TestMethod]
-        public void SameIdentityAs_ShoudBeTrue()
-        {
-            Assert.IsTrue(
-                _shop.SameIdentityAs(new global::Domain.Shop.Shop(new ShopCode("SC")))
             );
         }
     }
