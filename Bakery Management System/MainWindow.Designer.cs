@@ -32,11 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assortmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shopsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ownersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.routesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +44,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.settingsToolStripMenuItem,
             this.managementToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
@@ -63,23 +60,11 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openSettingsToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            // 
-            // openSettingsToolStripMenuItem
-            // 
-            this.openSettingsToolStripMenuItem.Name = "openSettingsToolStripMenuItem";
-            resources.ApplyResources(this.openSettingsToolStripMenuItem, "openSettingsToolStripMenuItem");
-            // 
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.assortmentToolStripMenuItem,
-            this.shopsToolStripMenuItem,
+            this.ownersToolStripMenuItem,
             this.routesToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             resources.ApplyResources(this.managementToolStripMenuItem, "managementToolStripMenuItem");
@@ -90,11 +75,11 @@
             resources.ApplyResources(this.assortmentToolStripMenuItem, "assortmentToolStripMenuItem");
             this.assortmentToolStripMenuItem.Click += new System.EventHandler(this.assortmentToolStripMenuItem_Click);
             // 
-            // shopsToolStripMenuItem
+            // ownersToolStripMenuItem
             // 
-            this.shopsToolStripMenuItem.Name = "shopsToolStripMenuItem";
-            resources.ApplyResources(this.shopsToolStripMenuItem, "shopsToolStripMenuItem");
-            this.shopsToolStripMenuItem.Click += new System.EventHandler(this.shopsToolStripMenuItem_Click);
+            this.ownersToolStripMenuItem.Name = "ownersToolStripMenuItem";
+            resources.ApplyResources(this.ownersToolStripMenuItem, "ownersToolStripMenuItem");
+            this.ownersToolStripMenuItem.Click += new System.EventHandler(this.ownersToolStripMenuItem_Click);
             // 
             // routesToolStripMenuItem
             // 
@@ -121,11 +106,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assortmentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shopsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ownersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem routesToolStripMenuItem;
     }
 }

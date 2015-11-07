@@ -15,12 +15,11 @@ namespace BakeryManagementSystem
             var assortmentWindow = new Assortment();
             assortmentWindow.ShowDialog(this);
         }
-
-        private void shopsToolStripMenuItem_Click(object sender, EventArgs e)
+        
+        private void ownersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var shopsWindow = new Shops();
+            var shopsWindow = new Owners();
             shopsWindow.ShowDialog(this);
         }
-
     }
 }

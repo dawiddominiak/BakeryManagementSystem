@@ -127,23 +127,17 @@
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 29</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
   <data name="assortmentToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 30</value>
   </data>
   <data name="assortmentToolStripMenuItem.Text" xml:space="preserve">
     <value>Assortment</value>
   </data>
-  <data name="shopsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ownersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 30</value>
   </data>
-  <data name="shopsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Shops</value>
+  <data name="ownersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Owners</value>
   </data>
   <data name="routesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 30</value>
@@ -183,16 +177,10 @@
     <value>0</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 30</value>
+    <value>124, 30</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
-  </data>
-  <data name="openSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 30</value>
-  </data>
-  <data name="openSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open settings</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -221,18 +209,6 @@
   <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openSettingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>openSettingsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;openSettingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;managementToolStripMenuItem.Name" xml:space="preserve">
     <value>managementToolStripMenuItem</value>
   </data>
@@ -245,10 +221,10 @@
   <data name="&gt;&gt;assortmentToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;shopsToolStripMenuItem.Name" xml:space="preserve">
-    <value>shopsToolStripMenuItem</value>
+  <data name="&gt;&gt;ownersToolStripMenuItem.Name" xml:space="preserve">
+    <value>ownersToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;shopsToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;ownersToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;routesToolStripMenuItem.Name" xml:space="preserve">

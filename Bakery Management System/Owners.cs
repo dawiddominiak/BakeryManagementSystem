@@ -13,7 +13,7 @@ using Shared.Structs;
 
 namespace BakeryManagementSystem
 {
-    public partial class Shops : Form
+    public partial class Owners : Form
     {
         public List<Control> OwnerBasicTextBoxes { get; set; }
         public List<Control> OwnerBasicButtons { get; set; }
@@ -24,7 +24,7 @@ namespace BakeryManagementSystem
         public Owner CurrentOwner { get; set; }
         public Phone? CurrentOwnerPhone { get; set; }
 
-        public Shops()
+        public Owners()
         {
             InitializeComponent();
             OwnerBasicTextBoxes = new List<Control>()
@@ -207,7 +207,7 @@ namespace BakeryManagementSystem
         {
             EnsureCurrentOwner();
 
-            Mapper.CreateMap<Shops, Owner>()
+            Mapper.CreateMap<Owners, Owner>()
                 .ForMember(dest => dest.Code, opt => opt.MapFrom(src => src.codeTextBox.Text))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.nameTextBox.Text))
                 .ForMember(dest => dest.TaxIdentificationNumber, opt => opt.MapFrom(src => src.taxIdentificationNumberTextBox.Text))
