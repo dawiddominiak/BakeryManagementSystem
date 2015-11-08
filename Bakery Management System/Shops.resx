@@ -243,6 +243,9 @@
   <data name="nameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="nameTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="nameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 56</value>
   </data>
@@ -534,6 +537,9 @@
   <data name="streetTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="streetTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="streetTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 7</value>
   </data>
@@ -560,6 +566,9 @@
   </data>
   <data name="postalCodeTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
+  </data>
+  <data name="postalCodeTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="postalCodeTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 48</value>
@@ -588,6 +597,9 @@
   <data name="cityTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="cityTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="cityTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 89</value>
   </data>
@@ -614,6 +626,9 @@
   </data>
   <data name="countryTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
+  </data>
+  <data name="countryTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="countryTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 131</value>
@@ -672,6 +687,9 @@
   <data name="codeTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="codeTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="codeTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 10</value>
   </data>
@@ -698,6 +716,9 @@
   </data>
   <data name="ownerComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
+  </data>
+  <data name="ownerComboBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="ownerComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 101</value>
@@ -782,6 +803,9 @@
   </data>
   <data name="paymentsHistoryButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
+  </data>
+  <data name="paymentsHistoryButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="paymentsHistoryButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>508, 22</value>
@@ -870,6 +894,9 @@
   <data name="numberPartTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="numberPartTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="numberPartTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 9</value>
   </data>
@@ -896,6 +923,9 @@
   </data>
   <data name="areaPartTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
+  </data>
+  <data name="areaPartTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="areaPartTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>85, 9</value>
@@ -924,6 +954,9 @@
   <data name="countryPartTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
   </data>
+  <data name="countryPartTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="countryPartTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 9</value>
   </data>
@@ -951,6 +984,9 @@
   <data name="savePhoneButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="savePhoneButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="savePhoneButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>530, 3</value>
   </data>
@@ -977,6 +1013,9 @@
   </data>
   <data name="removePhoneButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="removePhoneButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="removePhoneButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>643, 3</value>
@@ -1152,6 +1191,9 @@
   <data name="saveShopButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="saveShopButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="saveShopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 5</value>
   </data>
@@ -1181,6 +1223,9 @@
   </data>
   <data name="deleteShopButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="deleteShopButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="deleteShopButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

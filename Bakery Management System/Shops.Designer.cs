@@ -37,37 +37,37 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.basicDataGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.codeLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.ownerLabel = new System.Windows.Forms.Label();
             this.addressLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.countryLabel = new System.Windows.Forms.Label();
             this.streetLabel = new System.Windows.Forms.Label();
-            this.paymentsHistoryGroupBox = new System.Windows.Forms.GroupBox();
-            this.paymentsHistoryButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.saveShopButton = new System.Windows.Forms.Button();
-            this.deleteShopButton = new System.Windows.Forms.Button();
-            this.phonesGroupBox = new System.Windows.Forms.GroupBox();
             this.postalCodelabel = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
-            this.countryLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.addNewPhoneButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.phonesListBox = new System.Windows.Forms.ListBox();
-            this.codeTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.countryPartTextBox = new System.Windows.Forms.TextBox();
-            this.ownerComboBox = new System.Windows.Forms.ComboBox();
             this.streetTextBox = new System.Windows.Forms.TextBox();
             this.postalCodeTextBox = new System.Windows.Forms.TextBox();
             this.cityTextBox = new System.Windows.Forms.TextBox();
             this.countryTextBox = new System.Windows.Forms.TextBox();
-            this.areaPartTextBox = new System.Windows.Forms.TextBox();
+            this.codeTextBox = new System.Windows.Forms.TextBox();
+            this.ownerComboBox = new System.Windows.Forms.ComboBox();
+            this.paymentsHistoryGroupBox = new System.Windows.Forms.GroupBox();
+            this.paymentsHistoryButton = new System.Windows.Forms.Button();
+            this.phonesGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.addNewPhoneButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.numberPartTextBox = new System.Windows.Forms.TextBox();
+            this.areaPartTextBox = new System.Windows.Forms.TextBox();
+            this.countryPartTextBox = new System.Windows.Forms.TextBox();
             this.savePhoneButton = new System.Windows.Forms.Button();
             this.removePhoneButton = new System.Windows.Forms.Button();
+            this.phonesListBox = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.saveShopButton = new System.Windows.Forms.Button();
+            this.deleteShopButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,10 +79,10 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.paymentsHistoryGroupBox.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.phonesGroupBox.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -116,6 +116,7 @@
             resources.ApplyResources(this.addNewShop, "addNewShop");
             this.addNewShop.Name = "addNewShop";
             this.addNewShop.UseVisualStyleBackColor = true;
+            this.addNewShop.Click += new System.EventHandler(this.addNewShop_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -152,6 +153,11 @@
             this.tableLayoutPanel5.Controls.Add(this.ownerComboBox, 1, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             // 
+            // nameTextBox
+            // 
+            resources.ApplyResources(this.nameTextBox, "nameTextBox");
+            this.nameTextBox.Name = "nameTextBox";
+            // 
             // codeLabel
             // 
             resources.ApplyResources(this.codeLabel, "codeLabel");
@@ -185,10 +191,56 @@
             this.tableLayoutPanel6.Controls.Add(this.countryTextBox, 1, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             // 
+            // countryLabel
+            // 
+            resources.ApplyResources(this.countryLabel, "countryLabel");
+            this.countryLabel.Name = "countryLabel";
+            // 
             // streetLabel
             // 
             resources.ApplyResources(this.streetLabel, "streetLabel");
             this.streetLabel.Name = "streetLabel";
+            // 
+            // postalCodelabel
+            // 
+            resources.ApplyResources(this.postalCodelabel, "postalCodelabel");
+            this.postalCodelabel.Name = "postalCodelabel";
+            // 
+            // cityLabel
+            // 
+            resources.ApplyResources(this.cityLabel, "cityLabel");
+            this.cityLabel.Name = "cityLabel";
+            // 
+            // streetTextBox
+            // 
+            resources.ApplyResources(this.streetTextBox, "streetTextBox");
+            this.streetTextBox.Name = "streetTextBox";
+            // 
+            // postalCodeTextBox
+            // 
+            resources.ApplyResources(this.postalCodeTextBox, "postalCodeTextBox");
+            this.postalCodeTextBox.Name = "postalCodeTextBox";
+            // 
+            // cityTextBox
+            // 
+            resources.ApplyResources(this.cityTextBox, "cityTextBox");
+            this.cityTextBox.Name = "cityTextBox";
+            // 
+            // countryTextBox
+            // 
+            resources.ApplyResources(this.countryTextBox, "countryTextBox");
+            this.countryTextBox.Name = "countryTextBox";
+            // 
+            // codeTextBox
+            // 
+            resources.ApplyResources(this.codeTextBox, "codeTextBox");
+            this.codeTextBox.Name = "codeTextBox";
+            // 
+            // ownerComboBox
+            // 
+            resources.ApplyResources(this.ownerComboBox, "ownerComboBox");
+            this.ownerComboBox.FormattingEnabled = true;
+            this.ownerComboBox.Name = "ownerComboBox";
             // 
             // paymentsHistoryGroupBox
             // 
@@ -203,46 +255,12 @@
             this.paymentsHistoryButton.Name = "paymentsHistoryButton";
             this.paymentsHistoryButton.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel3
-            // 
-            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
-            this.tableLayoutPanel3.Controls.Add(this.saveShopButton, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.deleteShopButton, 1, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            // 
-            // saveShopButton
-            // 
-            resources.ApplyResources(this.saveShopButton, "saveShopButton");
-            this.saveShopButton.Name = "saveShopButton";
-            this.saveShopButton.UseVisualStyleBackColor = true;
-            // 
-            // deleteShopButton
-            // 
-            resources.ApplyResources(this.deleteShopButton, "deleteShopButton");
-            this.deleteShopButton.Name = "deleteShopButton";
-            this.deleteShopButton.UseVisualStyleBackColor = true;
-            // 
             // phonesGroupBox
             // 
             this.phonesGroupBox.Controls.Add(this.tableLayoutPanel7);
             resources.ApplyResources(this.phonesGroupBox, "phonesGroupBox");
             this.phonesGroupBox.Name = "phonesGroupBox";
             this.phonesGroupBox.TabStop = false;
-            // 
-            // postalCodelabel
-            // 
-            resources.ApplyResources(this.postalCodelabel, "postalCodelabel");
-            this.postalCodelabel.Name = "postalCodelabel";
-            // 
-            // cityLabel
-            // 
-            resources.ApplyResources(this.cityLabel, "cityLabel");
-            this.cityLabel.Name = "cityLabel";
-            // 
-            // countryLabel
-            // 
-            resources.ApplyResources(this.countryLabel, "countryLabel");
-            this.countryLabel.Name = "countryLabel";
             // 
             // tableLayoutPanel7
             // 
@@ -268,62 +286,20 @@
             this.tableLayoutPanel8.Controls.Add(this.removePhoneButton, 4, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             // 
-            // phonesListBox
+            // numberPartTextBox
             // 
-            resources.ApplyResources(this.phonesListBox, "phonesListBox");
-            this.phonesListBox.FormattingEnabled = true;
-            this.phonesListBox.Name = "phonesListBox";
-            // 
-            // codeTextBox
-            // 
-            resources.ApplyResources(this.codeTextBox, "codeTextBox");
-            this.codeTextBox.Name = "codeTextBox";
-            // 
-            // nameTextBox
-            // 
-            resources.ApplyResources(this.nameTextBox, "nameTextBox");
-            this.nameTextBox.Name = "nameTextBox";
-            // 
-            // countryPartTextBox
-            // 
-            resources.ApplyResources(this.countryPartTextBox, "countryPartTextBox");
-            this.countryPartTextBox.Name = "countryPartTextBox";
-            // 
-            // ownerComboBox
-            // 
-            resources.ApplyResources(this.ownerComboBox, "ownerComboBox");
-            this.ownerComboBox.FormattingEnabled = true;
-            this.ownerComboBox.Name = "ownerComboBox";
-            // 
-            // streetTextBox
-            // 
-            resources.ApplyResources(this.streetTextBox, "streetTextBox");
-            this.streetTextBox.Name = "streetTextBox";
-            // 
-            // postalCodeTextBox
-            // 
-            resources.ApplyResources(this.postalCodeTextBox, "postalCodeTextBox");
-            this.postalCodeTextBox.Name = "postalCodeTextBox";
-            // 
-            // cityTextBox
-            // 
-            resources.ApplyResources(this.cityTextBox, "cityTextBox");
-            this.cityTextBox.Name = "cityTextBox";
-            // 
-            // countryTextBox
-            // 
-            resources.ApplyResources(this.countryTextBox, "countryTextBox");
-            this.countryTextBox.Name = "countryTextBox";
+            resources.ApplyResources(this.numberPartTextBox, "numberPartTextBox");
+            this.numberPartTextBox.Name = "numberPartTextBox";
             // 
             // areaPartTextBox
             // 
             resources.ApplyResources(this.areaPartTextBox, "areaPartTextBox");
             this.areaPartTextBox.Name = "areaPartTextBox";
             // 
-            // numberPartTextBox
+            // countryPartTextBox
             // 
-            resources.ApplyResources(this.numberPartTextBox, "numberPartTextBox");
-            this.numberPartTextBox.Name = "numberPartTextBox";
+            resources.ApplyResources(this.countryPartTextBox, "countryPartTextBox");
+            this.countryPartTextBox.Name = "countryPartTextBox";
             // 
             // savePhoneButton
             // 
@@ -336,6 +312,31 @@
             resources.ApplyResources(this.removePhoneButton, "removePhoneButton");
             this.removePhoneButton.Name = "removePhoneButton";
             this.removePhoneButton.UseVisualStyleBackColor = true;
+            // 
+            // phonesListBox
+            // 
+            resources.ApplyResources(this.phonesListBox, "phonesListBox");
+            this.phonesListBox.FormattingEnabled = true;
+            this.phonesListBox.Name = "phonesListBox";
+            // 
+            // tableLayoutPanel3
+            // 
+            resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
+            this.tableLayoutPanel3.Controls.Add(this.saveShopButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.deleteShopButton, 1, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            // 
+            // saveShopButton
+            // 
+            resources.ApplyResources(this.saveShopButton, "saveShopButton");
+            this.saveShopButton.Name = "saveShopButton";
+            this.saveShopButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteShopButton
+            // 
+            resources.ApplyResources(this.deleteShopButton, "deleteShopButton");
+            this.deleteShopButton.Name = "deleteShopButton";
+            this.deleteShopButton.UseVisualStyleBackColor = true;
             // 
             // Shops
             // 
@@ -357,11 +358,11 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.paymentsHistoryGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.phonesGroupBox.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
