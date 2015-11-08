@@ -69,6 +69,7 @@
     <Compile Include="Assortment.Designer.cs">
       <DependentUpon>Assortment.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelperClasses\ControlsManager.cs" />
     <Compile Include="Loggers\WarningMessageBox.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>

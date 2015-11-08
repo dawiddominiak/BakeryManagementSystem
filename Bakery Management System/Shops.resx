@@ -864,6 +864,9 @@
   <data name="addNewPhoneButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="addNewPhoneButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="addNewPhoneButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 150</value>
   </data>

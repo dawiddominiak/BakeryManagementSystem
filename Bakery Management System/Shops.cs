@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BakeryManagementSystem.HelperClasses;
+using Controller.Shop;
 using Domain.Shop;
 using Shared.Structs;
 
@@ -14,13 +10,14 @@ namespace BakeryManagementSystem
 {
     public partial class Shops : Form
     {
-        public List<Control> ShopBasicTextBoxes { get; set; } = new List<Control>();
-        public List<Control> ShopBasicButtons { get; set; } = new List<Control>();
-        public List<Control> ShopModificationButtons { get; set; } = new List<Control>();
-        public List<Control> ShopPhoneTextBoxes { get; set; } = new List<Control>();
-        public List<Control> ShopPhoneButtons { get; set; } = new List<Control>();
+        public List<Control> ShopBasicTextBoxes { get; set; }
+        public List<Control> ShopBasicButtons { get; set; }
+        public List<Control> ShopModificationButtons { get; set; }
+        public List<Control> ShopPhoneTextBoxes { get; set; }
+        public List<Control> ShopPhoneButtons { get; set; }
         public Shop CurrentShop { get; set; }
         public Phone? CurrentShopPhone { get; set; }
+        public ShopController ShopController { get; set; } = new ShopController();
 
         public Shops()
         {
@@ -54,15 +51,31 @@ namespace BakeryManagementSystem
             };
             ShopPhoneButtons = new List<Control>
             {
-                addNewPhoneButton,
+                savePhoneButton,
                 removePhoneButton
             };
             //TODO: refresh function
         }
 
+        #region Helpers
+        private void NewCurrentShop()
+        {
+            CurrentShop = new Shop(ShopController.NextShopId());
+        }
+        #endregion
+
+
         private void addNewShop_Click(object sender, EventArgs e)
         {
-
+            ControlsManager.SwitchButtons(ShopBasicButtons, true);
+            ControlsManager.SwitchButtons(ShopModificationButtons, true);
+            ControlsManager.SwitchButtons(ShopBasicTextBoxes, true);
+            ControlsManager.SwitchButtons(ShopPhoneTextBoxes, false);
+            ControlsManager.SwitchButtons(ShopPhoneButtons, false);
+            NewCurrentShop();
+            //TODO: refresh phone list function
         }
+
+
     }
 }

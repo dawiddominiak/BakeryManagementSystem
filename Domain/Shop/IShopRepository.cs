@@ -8,6 +8,7 @@ namespace Domain.Shop
         Shop GetByCode(string code);
         List<Shop> GetAll();
         void Save(Shop shop);
-        ShopId GetNextId();
+        void Remove(Shop shop);
+        ShopId NextShopId();
     }
 }

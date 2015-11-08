@@ -10,6 +10,7 @@ using Domain.Shop;
 using Shared.Exceptions;
 using Shared.Logger;
 using Shared.Structs;
+using BakeryManagementSystem.HelperClasses;
 
 namespace BakeryManagementSystem
 {
@@ -63,23 +64,7 @@ namespace BakeryManagementSystem
         }
 
         #region Helpers
-
-        private void SwitchButtons(IEnumerable<Control> controlList, bool enabled)
-        {
-            foreach (var control in controlList)
-            {
-                control.Enabled = enabled;
-            }
-        }
-
-        private void EmptyButtons(IEnumerable<Control> controlList)
-        {
-            foreach (var control in controlList)
-            {
-                control.Text = "";
-            }
-        }
-
+        
         private void FillButtons(Owner owner)
         {
             if (owner != null)
@@ -133,16 +118,16 @@ namespace BakeryManagementSystem
 
         private void addNewPhoneButton_Click(object sender, EventArgs e)
         {
-            SwitchButtons(OwnerPhoneTextBoxes, true);
-            SwitchButtons(OwnerPhoneButtons, true);
-            EmptyButtons(OwnerPhoneTextBoxes);
+            ControlsManager.SwitchButtons(OwnerPhoneTextBoxes, true);
+            ControlsManager.SwitchButtons(OwnerPhoneButtons, true);
+            ControlsManager.EmptyButtons(OwnerPhoneTextBoxes);
             CurrentOwnerPhone = null;
         }
 
         private void addPhoneButton_Click(object sender, EventArgs e)
         {
-            SwitchButtons(OwnerPhoneTextBoxes, false);
-            SwitchButtons(OwnerPhoneButtons, false);
+            ControlsManager.SwitchButtons(OwnerPhoneTextBoxes, false);
+            ControlsManager.SwitchButtons(OwnerPhoneButtons, false);
 
             var newPhone = new Phone(countryPartTextBox.Text, areaPartTextBox.Text, numberTextBox.Text);
 
@@ -174,8 +159,8 @@ namespace BakeryManagementSystem
             areaPartTextBox.Text = CurrentOwnerPhone.Value.RegionalCode;
             numberTextBox.Text = CurrentOwnerPhone.Value.Number;
 
-            SwitchButtons(OwnerPhoneTextBoxes, true);
-            SwitchButtons(OwnerPhoneButtons, true);
+            ControlsManager.SwitchButtons(OwnerPhoneTextBoxes, true);
+            ControlsManager.SwitchButtons(OwnerPhoneButtons, true);
         }
 
         private void removePhoneButton_Click(object sender, EventArgs e)
@@ -189,16 +174,15 @@ namespace BakeryManagementSystem
             RefreshOwnerPhoneListBox();
         }
 
-        #endregion
 
         private void addNewOwner_Click(object sender, EventArgs e)
         {
-            SwitchButtons(OwnerBasicTextBoxes, true);
-            SwitchButtons(OwnerBasicButtons, true);
-            SwitchButtons(OwnerPhoneTextBoxes, false);
-            SwitchButtons(OwnerPhoneButtons, false);
-            EmptyButtons(OwnerBasicTextBoxes);
-            EmptyButtons(OwnerPhoneTextBoxes);
+            ControlsManager.SwitchButtons(OwnerBasicTextBoxes, true);
+            ControlsManager.SwitchButtons(OwnerBasicButtons, true);
+            ControlsManager.SwitchButtons(OwnerPhoneTextBoxes, false);
+            ControlsManager.SwitchButtons(OwnerPhoneButtons, false);
+            ControlsManager.EmptyButtons(OwnerBasicTextBoxes);
+            ControlsManager.EmptyButtons(OwnerPhoneTextBoxes);
             NewCurrentOwner();
             RefreshOwnerPhoneListBox();
         }
@@ -249,13 +233,13 @@ namespace BakeryManagementSystem
 
         private void ownerListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            EmptyButtons(OwnerPhoneTextBoxes);
-            SwitchButtons(OwnerPhoneTextBoxes, false);
-            SwitchButtons(OwnerPhoneButtons, false);
+            ControlsManager.EmptyButtons(OwnerPhoneTextBoxes);
+            ControlsManager.SwitchButtons(OwnerPhoneTextBoxes, false);
+            ControlsManager.SwitchButtons(OwnerPhoneButtons, false);
             CurrentOwner = (Owner)ownerListBox.SelectedItem;
             FillButtons(CurrentOwner);
-            SwitchButtons(OwnerBasicTextBoxes, true);
-            SwitchButtons(OwnerBasicButtons, true);
+            ControlsManager.SwitchButtons(OwnerBasicTextBoxes, true);
+            ControlsManager.SwitchButtons(OwnerBasicButtons, true);
         }
 
         private void removeOwnerButton_Click(object sender, EventArgs e)
@@ -290,5 +274,7 @@ namespace BakeryManagementSystem
                 }
             }
         }
+
+        #endregion
     }
 }

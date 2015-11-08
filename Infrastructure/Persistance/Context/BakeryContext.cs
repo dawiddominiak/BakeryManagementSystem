@@ -68,13 +68,6 @@ namespace Infrastructure.Persistance.Context
                 .HasForeignKey(o => o.OwnerId)
                 .WillCascadeOnDelete(true)
             ;
-                    
-
-//            modelBuilder.Entity<OwnerPhone>()
-//                .HasRequired<Owner>(op => op.Owner)
-//                .WithMany(o => o.Phones)
-//                .HasForeignKey(o => o.OwnerId)
-//            ;
 
         }
     }

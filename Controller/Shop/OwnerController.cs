@@ -6,13 +6,8 @@ namespace Controller.Shop
 {
     public class OwnerController
     {
-        public IOwnerRepository OwnerRepository { get; set; }
-
-        public OwnerController()
-        {
-            OwnerRepository = new OwnerRepository();
-        }
-
+        public IOwnerRepository OwnerRepository { get; set; } = new OwnerRepository();
+        
         public void Save(Owner owner)
         {
             OwnerRepository.Save(owner);
