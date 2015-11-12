@@ -62,6 +62,14 @@ namespace BakeryManagementSystem
         {
             CurrentShop = new Shop(ShopController.NextShopId());
         }
+
+        private void RefreshShopPhoneListBox()
+        {
+            if (CurrentShop == null) return;
+            var list = CurrentShop.Phones ?? new List<Phone>();
+            phonesListBox.DataSource = new List<Phone>(list);
+            //TODO: consider phonesListBox.Refresh();
+        }
         #endregion
 
 
@@ -76,6 +84,52 @@ namespace BakeryManagementSystem
             //TODO: refresh phone list function
         }
 
+        private void addNewPhoneButton_Click(object sender, EventArgs e)
+        {
+            ControlsManager.SwitchButtons(ShopPhoneTextBoxes, true);
+            ControlsManager.SwitchButtons(ShopPhoneButtons, true);
+            ControlsManager.EmptyButtons(ShopPhoneTextBoxes);
+            CurrentShopPhone = null;
+        }
 
+        //TODO: IPhoneManagement interface or abstract class
+        private void savePhoneButton_Click(object sender, EventArgs e)
+        {
+            ControlsManager.SwitchButtons(ShopPhoneTextBoxes, false);
+            ControlsManager.SwitchButtons(ShopPhoneButtons, false);
+
+            var newPhone = new Phone(countryPartTextBox.Text, areaPartTextBox.Text, numberPartTextBox.Text);
+
+            if (CurrentShop.Phones == null)
+            {
+                CurrentShop.Phones = new List<Phone>();
+            }
+
+            if (CurrentShopPhone != null)
+            {
+                CurrentShop.Phones.Add(newPhone);
+            }
+
+            CurrentShop.Phones.Add(newPhone);
+            RefreshShopPhoneListBox();
+            phonesListBox.SelectedItem = newPhone;
+        }
+
+        private void phonesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (phonesListBox.SelectedItem == null)
+            {
+                return;
+            }
+
+            CurrentShopPhone = (Phone) phonesListBox.SelectedItem;
+
+            countryPartTextBox.Text = CurrentShopPhone.Value.CountryCode;
+            areaPartTextBox.Text = CurrentShopPhone.Value.RegionalCode;
+            numberPartTextBox.Text = CurrentShopPhone.Value.Number;
+
+            ControlsManager.SwitchButtons(ShopPhoneTextBoxes, true);
+            ControlsManager.SwitchButtons(ShopPhoneTextBoxes, true);
+        }
     }
 }

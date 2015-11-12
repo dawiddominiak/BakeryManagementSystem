@@ -275,6 +275,7 @@
             resources.ApplyResources(this.addNewPhoneButton, "addNewPhoneButton");
             this.addNewPhoneButton.Name = "addNewPhoneButton";
             this.addNewPhoneButton.UseVisualStyleBackColor = true;
+            this.addNewPhoneButton.Click += new System.EventHandler(this.addNewPhoneButton_Click);
             // 
             // tableLayoutPanel8
             // 
@@ -306,6 +307,7 @@
             resources.ApplyResources(this.savePhoneButton, "savePhoneButton");
             this.savePhoneButton.Name = "savePhoneButton";
             this.savePhoneButton.UseVisualStyleBackColor = true;
+            this.savePhoneButton.Click += new System.EventHandler(this.savePhoneButton_Click);
             // 
             // removePhoneButton
             // 
@@ -318,6 +320,7 @@
             resources.ApplyResources(this.phonesListBox, "phonesListBox");
             this.phonesListBox.FormattingEnabled = true;
             this.phonesListBox.Name = "phonesListBox";
+            this.phonesListBox.SelectedIndexChanged += new System.EventHandler(this.phonesListBox_SelectedIndexChanged);
             // 
             // tableLayoutPanel3
             // 
